@@ -37,7 +37,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="pages/widgets.html" class="nav-link">
+                     <a href="<?=base_url();?>Data_penduduk/view_admin_utama" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Data Penduduk
