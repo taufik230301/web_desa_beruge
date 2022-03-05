@@ -36,6 +36,7 @@
                          </p>
                      </a>
                  </li>
+
                  <li class="nav-item">
                      <a href="pages/widgets.html" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
@@ -44,14 +45,7 @@
                          </p>
                      </a>
                  </li>
-                 <li class="nav-item">
-                     <a href="pages/widgets.html" class="nav-link">
-                         <i class="nav-icon fas fa-th"></i>
-                         <p>
-                             Data Kegiatan
-                         </p>
-                     </a>
-                 </li>
+
                  <li class="nav-item">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-copy"></i>
@@ -75,29 +69,7 @@
                          </li>
                      </ul>
                  </li>
-                 <li class="nav-item">
-                     <a href="#" class="nav-link">
-                         <i class="nav-icon fas fa-copy"></i>
-                         <p>
-                             Filter RT Penduduk
-                             <i class="fas fa-angle-left right"></i>
-                         </p>
-                     </a>
-                     <ul class="nav nav-treeview">
-                         <li class="nav-item">
-                             <a href="pages/layout/top-nav.html" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>Penerima Bantuan</p>
-                             </a>
-                         </li>
-                         <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                 <i class="far fa-circle nav-icon"></i>
-                                 <p>Tidak Menerima Bantuan</p>
-                             </a>
-                         </li>
-                     </ul>
-                 </li>
+
 
              </ul>
          </nav>
