@@ -29,7 +29,7 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                     <a href="pages/widgets.html" class="nav-link">
+                     <a href="<?=base_url();?>Dashboard/view_admin_rt" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Dashboard
