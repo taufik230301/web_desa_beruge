@@ -6,4 +6,11 @@ class Login extends CI_Controller {
 	{
 		$this->load->view('login');
 	}
+
+	public function proses()
+	{
+		$username = $this->input->post("username");
+		$password = $this->input->post("password");
+		
+	}
 }
