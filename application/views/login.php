@@ -13,9 +13,45 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <!-- Main css -->
     <link rel="stylesheet" href="<?= base_url();?>assets/login/css/style.css">
+    <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
-
+<?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terdaftar!",
+        text: "Silahkan Anda Login!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Eror!",
+        text: "Terjadi Kesalahan Dalam Proses data!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('loggin_err')){ ?>
+    <script>
+    swal({
+        title: "Session Anda Berakhir!",
+        text: "Silahkan Login Ulang!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('loggin_err_no_user')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Password dan Username Yang Anda Masukan Salah!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="main">
 
         <!-- Sing in  Form -->

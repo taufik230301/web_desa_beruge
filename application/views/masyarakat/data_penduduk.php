@@ -84,13 +84,6 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="id_kategori_bantuan">Pilih Kategori Bantuan</label>
-                                    <select class="form-control" id="id_kategori_bantuan" name="id_kategori_bantuan">
-                                        <option>1</option>
-                                        <option>2</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
                                     <label for="id_kategori_kelas_ekonomi">Pilih Kategori Kelas Ekonomi</label>
                                     <select class="form-control" id="id_kategori_kelas_ekonomi" name="id_kategori_kelas_ekonomi">
                                         <option>1</option>
