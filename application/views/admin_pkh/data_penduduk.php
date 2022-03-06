@@ -1,16 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php $this->load->view("admin_utama/components/header.php") ?>
+<?php $this->load->view("admin_pkh/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-        <?php $this->load->view("admin_utama/components/navbar.php") ?>
 
-        <?php $this->load->view("admin_utama/components/sidebar.php") ?>
 
-        <?php $this->load->view("admin_utama/components/navbar_link.php") ?>
+        <?php $this->load->view("admin_pkh/components/navbar.php") ?>
+
+        <?php $this->load->view("admin_pkh/components/sidebar.php") ?>
+        <?php $this->load->view("admin_pkh/components/navbar_link.php") ?>
+
+
+
+
+
+
 
         <!-- Main content -->
         <section class="content">
@@ -55,7 +62,7 @@
                                             <td> 4</td>
                                             <td>asjkajs</td>
                                             <td>Win 95+</td>
-                                            <td> 4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                                            <td> 4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>                                        
                                         </tr>
                                         <tr>
                                             <td>ahsjas</td>
@@ -71,7 +78,10 @@
                                             <td>asjkajs</td>
                                             <td>Win 95+</td>
                                             <td> 4</td>
+                                            
                                         </tr>
+
+
                                     </tbody>
                                 </table>
                             </div>
@@ -97,7 +107,7 @@
     </div>
     <!-- ./wrapper -->
 
-    <?php $this->load->view("admin_utama/components/js.php") ?>
+    <?php $this->load->view("admin_pkh/components/js.php") ?>
 </body>
 
 </html>
