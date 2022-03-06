@@ -11,6 +11,7 @@
         <?php $this->load->view("admin_pkh/components/navbar.php") ?>
 
         <?php $this->load->view("admin_pkh/components/sidebar.php") ?>
+        
         <?php $this->load->view("admin_pkh/components/navbar_link.php") ?>
         
 

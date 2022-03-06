@@ -25,23 +25,53 @@
                             <div class="card-body">
                                 <table id="example1" class="table table-bordered table-striped">
                                     <thead>
-
                                         <tr>
-                                            <th>Nama Mahasiswa</th>
-                                            <th>Tanggal Lahir</th>
+                                            <th>Nama</th>
                                             <th>Email</th>
-                                            <th>Jurusan</th>
+                                            <th>No HP</th>
+                                            <th>NIK</th>
+                                            <th>Tempat Lahir</th>
+                                            <th>Tanggal Lahir</th>
                                             <th>Alamat</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Pekerjaan</th>
+                                            <th>RT</th>
+                                            <th>Kategori Bantuan</th>
+                                            <th>Kategori Kelas Ekonomi</th>
+                                            <th>Keterangan</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                         <tr>
                                             <td>ahsjas</td>
                                             <td>asjkajs</td>
                                             <td>Win 95+</td>
                                             <td> 4</td>
                                             <td> 4</td>
+                                            <td>ahsjas</td>
+                                            <td>asjkas</td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td> 4</td>
+                                            <td>asjkajs</td>
+                                            <td>Win 95+</td>
+                                            <td> 4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ahsjas</td>
+                                            <td>asjkajs</td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td> 4</td>
+                                            <td>ahsjas</td>
+                                            <td>asjkajs</td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+                                            <td> 4</td>
+                                            <td>asjkajs</td>
+                                            <td>Win 95+</td>
+                                            <td> 4</td>
+
                                         </tr>
 
 

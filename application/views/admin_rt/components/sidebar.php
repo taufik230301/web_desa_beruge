@@ -38,7 +38,7 @@
                  </li>
                  <li class="nav-item">
                      <a href="<?=base_url();?>Data_penduduk/view_admin_rt" class="nav-link">
-                         <i class="nav-icon fas fa-th"></i>
+                         <i class="nav-icon fas fa-address-card"></i>
                          <p>
                              Data Penduduk
                          </p>

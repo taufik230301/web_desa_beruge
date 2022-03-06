@@ -28,6 +28,10 @@ class Login extends CI_Controller {
 
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
+				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('email', $user['email']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
+				
 				
 				redirect('Dashboard/view_admin_utama');
 
@@ -35,6 +39,9 @@ class Login extends CI_Controller {
 
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
+				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('email', $user['email']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 			
 				redirect('Dashboard/view_admin_pkh');
 
@@ -43,6 +50,9 @@ class Login extends CI_Controller {
 
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
+				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('email', $user['email']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 			
 				$this->session->set_flashdata('login_success','login_success');
 				redirect('Dashboard/view_admin_rt');
@@ -51,6 +61,9 @@ class Login extends CI_Controller {
 
 				$this->session->set_userdata('logged_in', true);
 				$this->session->set_userdata('id', $user['id']);
+				$this->session->set_userdata('username', $user['username']);
+				$this->session->set_userdata('email', $user['email']);
+				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				
 				$this->session->set_flashdata('login_success','login_success');
 				redirect('Dashboard/view_masyarakat');

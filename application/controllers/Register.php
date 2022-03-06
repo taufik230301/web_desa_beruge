@@ -23,16 +23,6 @@ class Register extends CI_Controller {
 		$re_password = $this->input->post("re_password");
 		$id_user_level = 4;
 
-		// echo $username;
-		// echo "<br>";
-		// echo $email;
-		// echo "<br>";
-		// echo $no_hp;
-		// echo "<br>";
-		// echo $password;
-		// echo "<br>";
-		// echo $re_password;
-		// die();
 		if($password == $re_password){
 			$hasil = $this->m_user->pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level);
 	
