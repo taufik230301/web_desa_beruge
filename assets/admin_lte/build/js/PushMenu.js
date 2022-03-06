@@ -32,10 +32,10 @@ const CLASS_NAME_IS_OPENING = 'sidebar-is-opening'
 const CLASS_NAME_CLOSED = 'sidebar-closed'
 
 const Default = {
-  autoCollapseSize: 992,
-  enableRemember: false,
-  noTransitionAfterReload: true,
-  animationSpeed: 300
+    autoCollapseSize: 992,
+    enableRemember: false,
+    noTransitionAfterReload: true,
+    animationSpeed: 300
 }
 
 /**
@@ -44,153 +44,153 @@ const Default = {
  */
 
 class PushMenu {
-  constructor(element, options) {
-    this._element = element
-    this._options = $.extend({}, Default, options)
+    constructor(element, options) {
+        this._element = element
+        this._options = $.extend({}, Default, options)
 
-    if ($(SELECTOR_OVERLAY).length === 0) {
-      this._addOverlay()
+        if ($(SELECTOR_OVERLAY).length === 0) {
+            this._addOverlay()
+        }
+
+        this._init()
     }
 
-    this._init()
-  }
+    // Public
 
-  // Public
+    expand() {
+        const $bodySelector = $(SELECTOR_BODY)
 
-  expand() {
-    const $bodySelector = $(SELECTOR_BODY)
+        if (this._options.autoCollapseSize && $(window).width() <= this._options.autoCollapseSize) {
+            $bodySelector.addClass(CLASS_NAME_OPEN)
+        }
 
-    if (this._options.autoCollapseSize && $(window).width() <= this._options.autoCollapseSize) {
-      $bodySelector.addClass(CLASS_NAME_OPEN)
-    }
-
-    $bodySelector.addClass(CLASS_NAME_IS_OPENING).removeClass(`${CLASS_NAME_COLLAPSED} ${CLASS_NAME_CLOSED}`).delay(50).queue(function () {
-      $bodySelector.removeClass(CLASS_NAME_IS_OPENING)
-      $(this).dequeue()
-    })
-
-    if (this._options.enableRemember) {
-      localStorage.setItem(`remember${EVENT_KEY}`, CLASS_NAME_OPEN)
-    }
-
-    $(this._element).trigger($.Event(EVENT_SHOWN))
-  }
-
-  collapse() {
-    const $bodySelector = $(SELECTOR_BODY)
-
-    if (this._options.autoCollapseSize && $(window).width() <= this._options.autoCollapseSize) {
-      $bodySelector.removeClass(CLASS_NAME_OPEN).addClass(CLASS_NAME_CLOSED)
-    }
-
-    $bodySelector.addClass(CLASS_NAME_COLLAPSED)
-
-    if (this._options.enableRemember) {
-      localStorage.setItem(`remember${EVENT_KEY}`, CLASS_NAME_COLLAPSED)
-    }
-
-    $(this._element).trigger($.Event(EVENT_COLLAPSED))
-
-    setTimeout(() => {
-      $(this._element).trigger($.Event(EVENT_COLLAPSED_DONE))
-    }, this._options.animationSpeed)
-  }
-
-  toggle() {
-    if ($(SELECTOR_BODY).hasClass(CLASS_NAME_COLLAPSED)) {
-      this.expand()
-    } else {
-      this.collapse()
-    }
-  }
-
-  autoCollapse(resize = false) {
-    if (!this._options.autoCollapseSize) {
-      return
-    }
-
-    const $bodySelector = $(SELECTOR_BODY)
-
-    if ($(window).width() <= this._options.autoCollapseSize) {
-      if (!$bodySelector.hasClass(CLASS_NAME_OPEN)) {
-        this.collapse()
-      }
-    } else if (resize === true) {
-      if ($bodySelector.hasClass(CLASS_NAME_OPEN)) {
-        $bodySelector.removeClass(CLASS_NAME_OPEN)
-      } else if ($bodySelector.hasClass(CLASS_NAME_CLOSED)) {
-        this.expand()
-      }
-    }
-  }
-
-  remember() {
-    if (!this._options.enableRemember) {
-      return
-    }
-
-    const $body = $('body')
-    const toggleState = localStorage.getItem(`remember${EVENT_KEY}`)
-
-    if (toggleState === CLASS_NAME_COLLAPSED) {
-      if (this._options.noTransitionAfterReload) {
-        $body.addClass('hold-transition').addClass(CLASS_NAME_COLLAPSED).delay(50).queue(function () {
-          $(this).removeClass('hold-transition')
-          $(this).dequeue()
+        $bodySelector.addClass(CLASS_NAME_IS_OPENING).removeClass(`${CLASS_NAME_COLLAPSED} ${CLASS_NAME_CLOSED}`).delay(50).queue(function() {
+            $bodySelector.removeClass(CLASS_NAME_IS_OPENING)
+            $(this).dequeue()
         })
-      } else {
-        $body.addClass(CLASS_NAME_COLLAPSED)
-      }
-    } else if (this._options.noTransitionAfterReload) {
-      $body.addClass('hold-transition').removeClass(CLASS_NAME_COLLAPSED).delay(50).queue(function () {
-        $(this).removeClass('hold-transition')
-        $(this).dequeue()
-      })
-    } else {
-      $body.removeClass(CLASS_NAME_COLLAPSED)
+
+        if (this._options.enableRemember) {
+            localStorage.setItem(`remember${EVENT_KEY}`, CLASS_NAME_OPEN)
+        }
+
+        $(this._element).trigger($.Event(EVENT_SHOWN))
     }
-  }
 
-  // Private
+    collapse() {
+        const $bodySelector = $(SELECTOR_BODY)
 
-  _init() {
-    this.remember()
-    this.autoCollapse()
+        if (this._options.autoCollapseSize && $(window).width() <= this._options.autoCollapseSize) {
+            $bodySelector.removeClass(CLASS_NAME_OPEN).addClass(CLASS_NAME_CLOSED)
+        }
 
-    $(window).resize(() => {
-      this.autoCollapse(true)
-    })
-  }
+        $bodySelector.addClass(CLASS_NAME_COLLAPSED)
 
-  _addOverlay() {
-    const overlay = $('<div />', {
-      id: 'sidebar-overlay'
-    })
+        if (this._options.enableRemember) {
+            localStorage.setItem(`remember${EVENT_KEY}`, CLASS_NAME_COLLAPSED)
+        }
 
-    overlay.on('click', () => {
-      this.collapse()
-    })
+        $(this._element).trigger($.Event(EVENT_COLLAPSED))
 
-    $(SELECTOR_WRAPPER).append(overlay)
-  }
+        setTimeout(() => {
+            $(this._element).trigger($.Event(EVENT_COLLAPSED_DONE))
+        }, this._options.animationSpeed)
+    }
 
-  // Static
+    toggle() {
+        if ($(SELECTOR_BODY).hasClass(CLASS_NAME_COLLAPSED)) {
+            this.expand()
+        } else {
+            this.collapse()
+        }
+    }
 
-  static _jQueryInterface(operation) {
-    return this.each(function () {
-      let data = $(this).data(DATA_KEY)
-      const _options = $.extend({}, Default, $(this).data())
+    autoCollapse(resize = false) {
+        if (!this._options.autoCollapseSize) {
+            return
+        }
 
-      if (!data) {
-        data = new PushMenu(this, _options)
-        $(this).data(DATA_KEY, data)
-      }
+        const $bodySelector = $(SELECTOR_BODY)
 
-      if (typeof operation === 'string' && /collapse|expand|toggle/.test(operation)) {
-        data[operation]()
-      }
-    })
-  }
+        if ($(window).width() <= this._options.autoCollapseSize) {
+            if (!$bodySelector.hasClass(CLASS_NAME_OPEN)) {
+                this.collapse()
+            }
+        } else if (resize === true) {
+            if ($bodySelector.hasClass(CLASS_NAME_OPEN)) {
+                $bodySelector.removeClass(CLASS_NAME_OPEN)
+            } else if ($bodySelector.hasClass(CLASS_NAME_CLOSED)) {
+                this.expand()
+            }
+        }
+    }
+
+    remember() {
+        if (!this._options.enableRemember) {
+            return
+        }
+
+        const $body = $('body')
+        const toggleState = localStorage.getItem(`remember${EVENT_KEY}`)
+
+        if (toggleState === CLASS_NAME_COLLAPSED) {
+            if (this._options.noTransitionAfterReload) {
+                $body.addClass('hold-transition').addClass(CLASS_NAME_COLLAPSED).delay(0).queue(function() {
+                    $(this).removeClass('hold-transition')
+                    $(this).dequeue()
+                })
+            } else {
+                $body.addClass(CLASS_NAME_COLLAPSED)
+            }
+        } else if (this._options.noTransitionAfterReload) {
+            $body.addClass('hold-transition').removeClass(CLASS_NAME_COLLAPSED).delay(0).queue(function() {
+                $(this).removeClass('hold-transition')
+                $(this).dequeue()
+            })
+        } else {
+            $body.removeClass(CLASS_NAME_COLLAPSED)
+        }
+    }
+
+    // Private
+
+    _init() {
+        this.remember()
+        this.autoCollapse()
+
+        $(window).resize(() => {
+            this.autoCollapse(true)
+        })
+    }
+
+    _addOverlay() {
+        const overlay = $('<div />', {
+            id: 'sidebar-overlay'
+        })
+
+        overlay.on('click', () => {
+            this.collapse()
+        })
+
+        $(SELECTOR_WRAPPER).append(overlay)
+    }
+
+    // Static
+
+    static _jQueryInterface(operation) {
+        return this.each(function() {
+            let data = $(this).data(DATA_KEY)
+            const _options = $.extend({}, Default, $(this).data())
+
+            if (!data) {
+                data = new PushMenu(this, _options)
+                $(this).data(DATA_KEY, data)
+            }
+
+            if (typeof operation === 'string' && /collapse|expand|toggle/.test(operation)) {
+                data[operation]()
+            }
+        })
+    }
 }
 
 /**
@@ -199,19 +199,19 @@ class PushMenu {
  */
 
 $(document).on('click', SELECTOR_TOGGLE_BUTTON, event => {
-  event.preventDefault()
+    event.preventDefault()
 
-  let button = event.currentTarget
+    let button = event.currentTarget
 
-  if ($(button).data('widget') !== 'pushmenu') {
-    button = $(button).closest(SELECTOR_TOGGLE_BUTTON)
-  }
+    if ($(button).data('widget') !== 'pushmenu') {
+        button = $(button).closest(SELECTOR_TOGGLE_BUTTON)
+    }
 
-  PushMenu._jQueryInterface.call($(button), 'toggle')
+    PushMenu._jQueryInterface.call($(button), 'toggle')
 })
 
 $(window).on('load', () => {
-  PushMenu._jQueryInterface.call($(SELECTOR_TOGGLE_BUTTON))
+    PushMenu._jQueryInterface.call($(SELECTOR_TOGGLE_BUTTON))
 })
 
 /**
@@ -221,9 +221,9 @@ $(window).on('load', () => {
 
 $.fn[NAME] = PushMenu._jQueryInterface
 $.fn[NAME].Constructor = PushMenu
-$.fn[NAME].noConflict = function () {
-  $.fn[NAME] = JQUERY_NO_CONFLICT
-  return PushMenu._jQueryInterface
+$.fn[NAME].noConflict = function() {
+    $.fn[NAME] = JQUERY_NO_CONFLICT
+    return PushMenu._jQueryInterface
 }
 
 export default PushMenu
