@@ -2,10 +2,17 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Data_penduduk extends CI_Controller {
+	public function __construct()
+    {
+		parent::__construct();
+		$this->load->model('m_user');
+	}
 	public function view_admin_utama()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
-
+		$data['penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+		echo var_dump($data);
+		die();
 		$this->load->view('admin_utama/data_penduduk');
 
 	}else{

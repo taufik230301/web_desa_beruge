@@ -4,9 +4,19 @@
 <?php $this->load->view("admin_rt/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('login_success')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Login Berhasil, Selamat Datang Admin !",
+        icon: "success",
+        timer: 950
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
-      
+
 
         <?php $this->load->view("admin_rt/components/navbar.php") ?>
 
@@ -34,11 +44,11 @@
                 <!-- /.container-fluid -->
             </div>
             <!-- /.content-header -->
-        
 
-       
 
-        
+
+
+
 
             <!-- Main content -->
             <section class="content">
@@ -111,7 +121,7 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
-                   
+
                     <!-- /.row (main row) -->
                 </div>
                 <!-- /.container-fluid -->
@@ -119,7 +129,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-      
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

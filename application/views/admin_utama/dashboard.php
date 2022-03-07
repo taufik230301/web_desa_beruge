@@ -4,6 +4,16 @@
 <?php $this->load->view("admin_utama/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('login_success')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Login Berhasil, Selamat Datang Admin !",
+        icon: "success",
+        timer: 950
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
 
@@ -23,8 +33,10 @@
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
-                                <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/view_admin_utama">Dashboard</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="<?=base_url();?>Dashboard/view_admin_utama">Dashboard</a></li>
                             </ol>
                         </div>
                         <!-- /.col -->

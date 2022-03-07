@@ -4,16 +4,26 @@
 <?php $this->load->view("admin_pkh/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('login_success')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Login Berhasil, Selamat Datang Admin !",
+        icon: "success",
+        timer: 950
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
-      
+
 
         <?php $this->load->view("admin_pkh/components/navbar.php") ?>
 
         <?php $this->load->view("admin_pkh/components/sidebar.php") ?>
-        
-      <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper">
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <div class="content-header">
                 <div class="container-fluid">
@@ -26,7 +36,7 @@
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a href="#">Home</a></li>
                                 <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                               
+
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -37,9 +47,9 @@
             </div>
             <!-- /.content-header -->
 
-       
 
-        
+
+
 
             <!-- Main content -->
             <section class="content">
@@ -112,7 +122,7 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
-                   
+
                     <!-- /.row (main row) -->
                 </div>
                 <!-- /.container-fluid -->
@@ -120,7 +130,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

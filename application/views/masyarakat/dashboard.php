@@ -4,14 +4,26 @@
 <?php $this->load->view("masyarakat/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+
+    <?php if ($this->session->flashdata('login_success')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Login Berhasil, Selamat Datang Admin !",
+        icon: "success",
+        timer: 950
+    });
+    </script>
+    <?php } ?>
+
     <div class="wrapper">
 
-      
+
 
         <?php $this->load->view("masyarakat/components/navbar.php") ?>
 
         <?php $this->load->view("masyarakat/components/sidebar.php") ?>
-        
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
@@ -109,7 +121,7 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
-                   
+
                     <!-- /.row (main row) -->
                 </div>
                 <!-- /.container-fluid -->
@@ -117,7 +129,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">

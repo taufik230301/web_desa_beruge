@@ -46,7 +46,7 @@
                   <div class="dropdown-divider"></div>
                   <a href="#" class="dropdown-item dropdown-footer">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a href="#" class="dropdown-item dropdown-footer">Log Out</a>
+                  <a href="<?= base_url()?>Login/log_out" class="dropdown-item dropdown-footer">Log Out</a>
               </div>
           </li>
          
