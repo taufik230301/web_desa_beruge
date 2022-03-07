@@ -6,17 +6,39 @@
 <body class="hold-transition sidebar-mini layout-fixed">
     <div class="wrapper">
 
-      
+
 
         <?php $this->load->view("admin_utama/components/navbar.php") ?>
 
         <?php $this->load->view("admin_utama/components/sidebar.php") ?>
-        <?php $this->load->view("admin_utama/components/navbar_link.php") ?>
-        
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1 class="m-0">Dashboard</h1>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-6">
+                            <ol class="breadcrumb float-sm-right">
+                                <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
+                                <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/view_admin_utama">Dashboard</a></li>
+                            </ol>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                </div>
+                <!-- /.container-fluid -->
+            </div>
+            <!-- /.content-header -->
 
-       
 
-        
+
+
+
 
             <!-- Main content -->
             <section class="content">
@@ -89,7 +111,7 @@
                         <!-- ./col -->
                     </div>
                     <!-- /.row -->
-                   
+
                     <!-- /.row (main row) -->
                 </div>
                 <!-- /.container-fluid -->
@@ -97,7 +119,7 @@
             <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
-       
+
 
         <!-- Control Sidebar -->
         <aside class="control-sidebar control-sidebar-dark">
