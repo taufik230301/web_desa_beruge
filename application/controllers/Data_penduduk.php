@@ -10,10 +10,9 @@ class Data_penduduk extends CI_Controller {
 	public function view_admin_utama()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
-		$data['penduduk'] = $this->m_user->get_user_penduduk()->result_array();
-		echo var_dump($data);
-		die();
-		$this->load->view('admin_utama/data_penduduk');
+		$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+		
+		$this->load->view('admin_utama/data_penduduk', $data);
 
 	}else{
 
@@ -44,8 +43,8 @@ class Data_penduduk extends CI_Controller {
 	{
 
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
-
-		$this->load->view('admin_pkh/data_penduduk');
+		$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+		$this->load->view('admin_pkh/data_penduduk', $data);
 
 	}else{
 
@@ -58,8 +57,8 @@ class Data_penduduk extends CI_Controller {
     public function view_admin_rt()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
-
-		$this->load->view('admin_rt/data_penduduk');
+		$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+		$this->load->view('admin_rt/data_penduduk', $data);
 
 	}else{
 
@@ -72,8 +71,8 @@ class Data_penduduk extends CI_Controller {
     public function view_masyarakat()
 	{
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 4) {
-
-		$this->load->view('masyarakat/data_penduduk');
+		$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+		$this->load->view('masyarakat/data_penduduk', $data);
 
 	}else{
 

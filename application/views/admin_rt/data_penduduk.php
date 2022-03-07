@@ -54,6 +54,7 @@
                                 <div class="card-body">
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
+
                                             <tr>
                                                 <th>Nama</th>
                                                 <th>Email</th>
@@ -71,39 +72,44 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                  
+                                  $id = 0;
+                                  foreach($data_penduduk as $i)
+                                  :
+                                  $id++;
+                                  $nama = $i['nama'];
+                                  $email = $i['email'];
+                                  $no_hp = $i['no_hp']; 
+                                  $nik = $i['nik']; 
+                                  $tempat_lahir = $i['tempat_lahir']; 
+                                  $tgl_lahir = $i['tgl_lahir']; 
+                                  $alamat = $i['alamat']; 
+                                  $jenis_kelamin = $i['jenis_kelamin']; 
+                                  $pekerjaan = $i['pekerjaan']; 
+                                  $nomor_rt = $i['nomor_rt']; 
+                                  $kategori_bantuan = $i['kategori_bantuan']; 
+                                  $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
+                                  $keterangan = $i['keterangan']; 
+
+                
+                              ?>
                                             <tr>
-                                                <td>ahsjas</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td> 4</td>
-                                                <td>ahsjas</td>
-                                                <td>asjkas</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td> 4</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</td>
+                                                <td><?= $nama ?></td>
+                                                <td><?= $email ?></td>
+                                                <td><?= $no_hp ?></td>
+                                                <td><?= $nik ?></td>
+                                                <td><?= $tempat_lahir ?></td>
+                                                <td><?= $tgl_lahir ?></td>
+                                                <td><?= $alamat ?></td>
+                                                <td><?= $jenis_kelamin ?></td>
+                                                <td><?= $pekerjaan ?></td>
+                                                <td><?= $nomor_rt ?></td>
+                                                <td><?= $kategori_bantuan ?></td>
+                                                <td><?= $kategori_kelas_ekonomi ?></td>
+                                                <td><?= $keterangan ?></td>
                                             </tr>
-                                            <tr>
-                                                <td>ahsjas</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td> 4</td>
-                                                <td>ahsjas</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                                <td> 4</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-
-                                            </tr>
-
-
+                                            <?php endforeach?>
                                         </tbody>
                                     </table>
                                 </div>
