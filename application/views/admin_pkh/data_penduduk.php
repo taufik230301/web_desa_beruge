@@ -4,6 +4,65 @@
 <?php $this->load->view("admin_pkh/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+<?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_file')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data File Terlalu Besar !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diedit!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
 
