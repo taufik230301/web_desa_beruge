@@ -195,6 +195,7 @@
                                                     </div>
                                                 </td>
                                             </tr>
+
                                             <!-- Modal Hapus Data Penduduk -->
                                             <div class="modal fade" id="hapus<?= $id_user ?>"
                                                 tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -307,7 +308,7 @@
                                                                 <div class="form-group">
                                                                     <label for="alamat">Alamat</label>
                                                                     <textarea class="form-control" id="alamat" rows="3"
-                                                                        name="alamat" value="<?= $alamat ?>"></textarea>
+                                                                        name="alamat" ><?= $alamat ?></textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="jenis_kelamin">Jenis Kelamin</label>

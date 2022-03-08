@@ -10,17 +10,29 @@ class Kegiatan extends CI_Controller {
 
 	public function view_admin_utama()
 	{
-	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 
-		$data['kegiatan'] = $this->m_kegiatan->get_kegiatan()->result_array();
-		$this->load->view('admin_utama/kegiatan', $data);
+			$data['kegiatan'] = $this->m_kegiatan->get_kegiatan()->result_array();
+			$this->load->view('admin_utama/kegiatan', $data);
 
-	}else{
+		}else{
 
-		$this->session->set_flashdata('loggin_err','loggin_err');
-		redirect('Login/index');
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
 
+		}
 	}
-    }
+	
+	public function input_data_admin_utama(){
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$masa_berlaku = $this->input->post("masa_berlaku");
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+	}
     
 }
