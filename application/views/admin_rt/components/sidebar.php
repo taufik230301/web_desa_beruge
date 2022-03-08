@@ -80,13 +80,85 @@
                          <li class="nav-item">
                              <a href="pages/layout/top-nav.html" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Penerima Bantuan</p>
+                                 <p>RT 001</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>Tidak Menerima Bantuan</p>
+                                 <p>RT 002</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 003</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 004</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 005</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 006</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 007</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 008</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 009</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 010</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 011</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 012</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 013</p>
+                             </a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>RT 014</p>
                              </a>
                          </li>
                      </ul>

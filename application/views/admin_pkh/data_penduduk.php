@@ -65,6 +65,7 @@
                                         <thead>
 
                                             <tr>
+                                                <th>No</th>
                                                 <th>Nama</th>
                                                 <th>Email</th>
                                                 <th>No HP</th>
@@ -104,6 +105,7 @@
                 
                               ?>
                                             <tr>
+                                                <td><?= $id ?></td>
                                                 <td><?= $nama ?></td>
                                                 <td><?= $email ?></td>
                                                 <td><?= $no_hp ?></td>
