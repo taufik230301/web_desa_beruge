@@ -136,7 +136,8 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form>
+                            <form  action="<?= base_url(); ?>Data_penduduk/input_data_admin_rt"
+                                                        enctype="multipart/form-data" method="POST">
                                     <div class="form-group">
                                         <label for="nama">Nama Lengkap</label>
                                         <input type="text" class="form-control" id="nama" name="nama"
@@ -159,7 +160,7 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="nik">NIK</label>
-                                        <input type="text" class="form-control" id="nik">
+                                        <input type="text" class="form-control" id="nik" name="nik">
                                     </div>
                                     <div class="form-group">
                                         <label for="tempat_lahir">Tempat Lahir</label>
@@ -170,18 +171,14 @@
                                         <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
                                     </div>
                                     <div class="form-group">
-                                        <label for="tempat_lahir">Tempat Lahir</label>
-                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
-                                    </div>
-                                    <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="jenis_kelamin">Jenis Kelamin</label>
                                         <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
-                                            <option>1</option>
-                                            <option>2</option>
+                                            <option value="L">Laki-Laki</option>
+                                            <option value="P">Perempuan</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
@@ -190,25 +187,48 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="id_rt">Pilih RT</label>
-                                        <select class="form-control" id="id_rt" name="id_rt">
-                                            <option>1</option>
-                                            <option>2</option>
+                                        <select class="form-control" id="id_rt"
+                                            name="id_rt">
+                                            <?php foreach($rt_data as $u)
+                                                                :
+                                                                $id_rt = $u["id_rt"];
+                                                                $nomor_rt = $u["nomor_rt"];
+                                                                ?>
+                                          
+                                            <option value="<?=$id_rt?>"><?= $nomor_rt ?></option>
+                                            <?php endforeach?>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="id_kategori_kelas_ekonomi">Pilih Kategori Kelas Ekonomi</label>
                                         <select class="form-control" id="id_kategori_kelas_ekonomi"
                                             name="id_kategori_kelas_ekonomi">
-                                            <option>1</option>
-                                            <option>2</option>
+                                            <?php foreach($kategori_kelas_ekonomi_data as $u)
+                                                                :
+                                                                $id_kategori_kelas_ekonomi = $u["id_kategori_kelas_ekonomi"];
+                                                                $kategori_kelas_ekonomi = $u["kategori_kelas_ekonomi"];
+                                                                ?>
+                                          
+                                            <option value="<?=$id_kategori_kelas_ekonomi?>"><?= $kategori_kelas_ekonomi ?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_kategori_bantuan">Pilih Kategori Bantuan</label>
+                                        <select class="form-control" id="id_kategori_bantuan"
+                                            name="id_kategori_bantuan">
+                                            <?php foreach($kategori_bantuan_data as $u)
+                                                                :
+                                                                $id_kategori_bantuan = $u["id_kategori_bantuan"];
+                                                                $kategori_bantuan = $u["kategori_bantuan"];
+                                                                ?>
+                                          
+                                            <option value="<?=$id_kategori_bantuan?>"><?= $kategori_bantuan ?></option>
+                                            <?php endforeach?>
                                         </select>
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
                             </div>
                         </div>
                     </div>
