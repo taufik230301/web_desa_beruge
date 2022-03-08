@@ -22,8 +22,10 @@
                         <!-- /.col -->
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
-                                <li class="breadcrumb-item"><a href="<?=base_url();?>Kegiatan/view_admin_utama">Kegiatan</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
+                                <li class="breadcrumb-item"><a
+                                        href="<?=base_url();?>Kegiatan/view_admin_utama">Kegiatan</a></li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -55,6 +57,7 @@
                                     <table id="example1" class="table table-bordered table-striped">
                                         <thead>
                                             <tr>
+                                                <th>No</th>
                                                 <th>Nama Kegiatan</th>
                                                 <th>Foto Kegiatan</th>
                                                 <th>Keterangan</th>
@@ -62,18 +65,28 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            <?php
+                                  
+                                  $id = 0;
+                                  foreach($kegiatan as $i)
+                                  :
+                                  $id++;
+                                  $nama_kegiatan = $i['nama_kegiatan'];
+                                  $foto_kegiatan = $i['foto_kegiatan'];
+                                  $keterangan = $i['keterangan'];
+                                  $tgl_kegiatan = $i['tgl_kegiatan'];
+                                
+
+                
+                              ?>
                                             <tr>
-                                                <td>ahsjas</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
+                                                <td><?= $id ?></td>
+                                                <td><?= $nama_kegiatan ?></td>
+                                                <td><?= $foto_kegiatan ?></td>
+                                                <td><?= $keterangan ?></td>
+                                                <td><?= $tgl_kegiatan ?></td>
                                             </tr>
-                                            <tr>
-                                                <td> 4</td>
-                                                <td>asjkajs</td>
-                                                <td>Win 95+</td>
-                                                <td> 4</td>
-                                            </tr>
+                                            <?php endforeach?>
                                         </tbody>
                                     </table>
                                 </div>
