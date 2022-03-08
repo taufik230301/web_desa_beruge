@@ -50,7 +50,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                                    <h3 class="card-title">Data Kegiatan</h3>
                                 </div>
                                 <!-- /.card-header -->
                                 <div class="card-body">
@@ -106,13 +106,13 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kegiatan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form action="<?= base_url(); ?>Kegiatan/input_data_admin_utama" enctype="multipart/form-data" method="POST" >
                                 <div class="form-group">
                                     <label for="nama_kegiatan">Nama Kegiatan</label>
                                     <input type="text" class="form-control" id="nama_kegiatan"
@@ -128,13 +128,15 @@
                                     <textarea class="form-control" id="keterangan" rows="3" name="keterangan"
                                         "></textarea>
                                 </div>
+                                <div class="form-group">
+                                    <label for="tgl_kegiatan">Tanggal Kegiatan</label>
+                                    <input type="date" class="form-control" id="tgl_kegiatan"
+                                        aria-describedby="emailHelp" name="tgl_kegiatan">
+                                </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
+                        
                     </div>
                 </div>
             </div>

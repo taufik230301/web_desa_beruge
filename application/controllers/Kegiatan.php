@@ -25,7 +25,11 @@ class Kegiatan extends CI_Controller {
 	
 	public function input_data_admin_utama(){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
-			$masa_berlaku = $this->input->post("masa_berlaku");
+			$nama_kegiatan = $this->input->post("nama_kegiatan");
+
+			echo $nama_kegiatan;
+			echo "<br>";
+			die();
 
 		}else{
 
