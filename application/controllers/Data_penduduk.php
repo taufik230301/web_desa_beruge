@@ -355,10 +355,13 @@ class Data_penduduk extends CI_Controller {
 	
 		}
 	
-    public function view_masyarakat()
+    public function view_masyarakat($id)
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 4) {
-			$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_id($id)->result_array();
+			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
+			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
+			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
 			$this->load->view('masyarakat/data_penduduk', $data);
 
 		}else{

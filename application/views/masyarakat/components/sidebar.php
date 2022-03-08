@@ -37,8 +37,8 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="<?=base_url();?>Data_penduduk/view_masyarakat" class="nav-link">
-                         <i class="fas fa-address-card"></i>
+                     <a href="<?=base_url();?>Data_penduduk/view_masyarakat/<?=$this->session->userdata('id');?>" class="nav-link">
+                         <i class="nav-icon fas fa-th"></i>
                          <p>
                              Update Data
                          </p>

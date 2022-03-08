@@ -82,7 +82,11 @@
                                             <tr>
                                                 <td><?= $id ?></td>
                                                 <td><?= $nama_kegiatan ?></td>
-                                                <td><?= $foto_kegiatan ?></td>
+                                                <td><center> <a
+                                                              href="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
+                                                              target="_blank"><img
+                                                                  src="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
+                                                                  style="width: 25%"> </a></td>
                                                 <td><?= $keterangan ?></td>
                                                 <td><?= $tgl_kegiatan ?></td>
                                             </tr>
