@@ -113,6 +113,7 @@ class Data_penduduk extends CI_Controller {
 			$keterangan = $this->input->post("keterangan");
 			$nama = $this->input->post("nama");
 			$id = $this->input->post("id");
+			$id_user_detail = $this->input->post("id_user_detail");
 			$id_user_level = 4;
 	
 			// echo $nama;
@@ -147,7 +148,7 @@ class Data_penduduk extends CI_Controller {
 			// echo "<br>";
 			// die();
 
-			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id);
+			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail);
 		
 				if($hasil==false){
 					$this->session->set_flashdata('eror_edit','eror_edit');
@@ -163,6 +164,28 @@ class Data_penduduk extends CI_Controller {
 	
 		}
 	
+		}
+
+		public function hapus_data_admin_utama(){
+			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+
+				$id = $this->input->post("id");
+				$id_user_detail = $this->input->post("id_user_detail");
+
+				$hasil = $this->m_user->delete_data_penduduk($id, $id_user_detail );
+		
+				if($hasil==false){
+					$this->session->set_flashdata('eror_hapus','eror_hapus');
+				}else{
+					$this->session->set_flashdata('hapus','hapus');
+				}
+				redirect('Data_penduduk/view_admin_utama');
+			}else{
+	
+				$this->session->set_flashdata('loggin_err','loggin_err');
+				redirect('Login/index');
+		
+			}
 		}
 	
     public function view_admin_pkh()

@@ -5,7 +5,7 @@ class M_user extends CI_Model
     public function pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level){
         $this->db->trans_start();
        $this->db->query("INSERT INTO user(username,password,email ,no_hp ,id_user_level, id_user_detail) VALUES ('$username','$password','$email','$no_hp','$id_user_level',autoInc())");
-       $this->db->query("INSERT INTO user_detail(nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan) VALUES (null, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL)");
+       $this->db->query("INSERT INTO user_detail(id_user_detail, nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan) VALUES (autoInc_user_detail(), null, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL)");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;
@@ -40,12 +40,10 @@ class M_user extends CI_Model
             return false;
        }
 
-   
-
-        public function update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id){
+        public function update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail){
             $this->db->trans_start();
             $this->db->query("UPDATE user SET username='$username',  password='$password',  email='$email',  no_hp='$no_hp'  WHERE id='$id'");
-            $this->db->query("UPDATE user_detail SET nama='$nama',  nik='$nik',  tempat_lahir='$tempat_lahir',  tgl_lahir='$tgl_lahir',  alamat='$alamat',  jenis_kelamin='$jenis_kelamin',  pekerjaan='$pekerjaan', id_rt='$id_rt', id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', keterangan='$keterangan' WHERE id_user_detail='$id'");
+            $this->db->query("UPDATE user_detail SET nama='$nama',  nik='$nik',  tempat_lahir='$tempat_lahir',  tgl_lahir='$tgl_lahir',  alamat='$alamat',  jenis_kelamin='$jenis_kelamin',  pekerjaan='$pekerjaan', id_rt='$id_rt', id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', keterangan='$keterangan' WHERE id_user_detail='$id_user_detail'");
             $this->db->trans_complete();
             if($this->db->trans_status()==true)
                 return true;
@@ -53,4 +51,14 @@ class M_user extends CI_Model
                 return false;
            }
 
+        public function delete_data_penduduk($id, $id_user_detail){
+            $this->db->trans_start();
+            $this->db->query("DELETE FROM user WHERE id='$id'");
+            $this->db->query("DELETE FROM user_detail WHERE id_user_detail='$id_user_detail'");
+            $this->db->trans_complete();
+           if($this->db->trans_status()==true)
+           return true;
+           else
+           return false;
+        }
 }
