@@ -21,6 +21,7 @@ class Login extends CI_Controller {
 
 		$user = $this->m_user->cek_user($username, $password);
 
+		
 		if ($user->num_rows()>0){
 			$user = $user->row_array();
 
