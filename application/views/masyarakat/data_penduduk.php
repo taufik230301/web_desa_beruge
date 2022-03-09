@@ -123,7 +123,7 @@
                 
                               ?>
                             <form action="<?= base_url(); ?>Data_penduduk/edit_data_masyarakat"
-                                enctype="multipart/form-data" method="POST">
+                                enctype="multipart/form-data" method="POST"  class="mb-3">
                                 <input type="text" name="id" value="<?= $id_user ?>" hidden>
                                 <input type="text" name="id_user_detail" value="<?= $id_user_detail ?>" hidden>
                                 <div class="form-group">
@@ -132,8 +132,26 @@
                                         aria-describedby="emailHelp" value="<?=$nama?>">
                                 </div>
                                 <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username"
+                                        aria-describedby="emailHelp" value="<?=$username?>">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="text" class="form-control" id="password" name="password"
+                                        aria-describedby="emailHelp" value="<?=$password?>">
+                                </div>
+                                <div class="form-group">
                                     <label for="nik">NIK</label>
-                                    <input type="text" class="form-control" id="nik" value="<?=$nik?>">
+                                    <input type="text" class="form-control" id="nik" value="<?=$nik?>" name="nik">
+                                </div>
+                                <div class="form-group">
+                                    <label for="no_hp">NO HP</label>
+                                    <input type="text" class="form-control" id="no_hp" value="<?=$no_hp?>" name="no_hp">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" id="email" value="<?=$email?>" name="email">
                                 </div>
                                 <div class="form-group">
                                     <label for="tempat_lahir">Tempat Lahir</label>

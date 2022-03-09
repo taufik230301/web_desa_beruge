@@ -430,37 +430,37 @@ class Data_penduduk extends CI_Controller {
 			$id_user_detail = $this->input->post("id_user_detail");
 			$id_user_level = 4;
 	
-			echo $nama;
-			echo "<br>";
-			echo $username;
-			echo "<br>";
-			echo $password;
-			echo "<br>";
-			echo $no_hp;
-			echo "<br>";
-			echo $email;
-			echo "<br>";
-			echo $nik;
-			echo "<br>";
-			echo $tempat_lahir;
-			echo "<br>";
-			echo $tanggal_lahir;
-			echo "<br>";
-			echo $alamat;
-			echo "<br>";
-			echo $jenis_kelamin;
-			echo "<br>";
-			echo $pekerjaan;
-			echo "<br>";
-			echo $id_rt;
-			echo "<br>";
-			echo $id_kategori_kelas_ekonomi;
-			echo "<br>";
-			echo $id_kategori_bantuan;
-			echo "<br>";
-			echo $id;
-			echo "<br>";
-			die();
+			// echo $nama;
+			// echo "<br>";
+			// echo $username;
+			// echo "<br>";
+			// echo $password;
+			// echo "<br>";
+			// echo $no_hp;
+			// echo "<br>";
+			// echo $email;
+			// echo "<br>";
+			// echo $nik;
+			// echo "<br>";
+			// echo $tempat_lahir;
+			// echo "<br>";
+			// echo $tgl_lahir;
+			// echo "<br>";
+			// echo $alamat;
+			// echo "<br>";
+			// echo $jenis_kelamin;
+			// echo "<br>";
+			// echo $pekerjaan;
+			// echo "<br>";
+			// echo $id_rt;
+			// echo "<br>";
+			// echo $id_kategori_kelas_ekonomi;
+			// echo "<br>";
+			// echo $id_kategori_bantuan;
+			// echo "<br>";
+			// echo $id;
+			// echo "<br>";
+			// die();
 
 			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail);
 		
@@ -470,7 +470,7 @@ class Data_penduduk extends CI_Controller {
 				}else{
 					$this->session->set_flashdata('edit','edit');
 				}
-				redirect('Data_penduduk/view_masyarakat');
+				redirect('Data_penduduk/view_masyarakat/'.$id);
 		}else{
 	
 			$this->session->set_flashdata('loggin_err','loggin_err');
