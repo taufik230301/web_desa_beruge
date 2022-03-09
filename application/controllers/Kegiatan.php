@@ -142,5 +142,44 @@ class Kegiatan extends CI_Controller {
 
 		}
 	}
+
+	public function hapus_data_admin_utama(){
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$id = $this->input->post("id");
+
+			// echo $nama_kegiatan;
+			// echo "<br>";
+			// echo $keterangan;
+			// echo "<br>";
+			// echo $tgl_kegiatan;
+			// echo "<br>";
+			// echo $file_name;
+			// echo "<br>";
+			// echo $id;
+			// echo "<br>";
+			// die();
+
+			$path = './assets/kegiatan/';
+			
+			$hasil = $this->m_kegiatan->delete_data_kegiatan($id);
+	
+			if($hasil==false){
+				$this->session->set_flashdata('eror','eror');
+			
+			}else{
+				$this->session->set_flashdata('hapus','hapus');
+			
+			}
+			
+			@unlink($path.$this->input->post('foto_kegiatan_old'));
+			redirect('Kegiatan/view_admin_utama');
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+	}
     
 }

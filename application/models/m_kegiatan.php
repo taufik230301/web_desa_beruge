@@ -26,4 +26,15 @@ class M_kegiatan extends CI_Model
         else
             return false;
        }
+
+       
+       public function delete_data_kegiatan($id){
+        $this->db->trans_start();
+        $this->db->query("DELETE FROM kegiatan WHERE id_kegiatan='$id'");
+        $this->db->trans_complete();
+       if($this->db->trans_status()==true)
+       return true;
+       else
+       return false;
+    }
 }

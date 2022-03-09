@@ -177,6 +177,51 @@
                                                     </div>
                                                 </td>
                                             </tr>
+
+                                            <!-- Modal Hapus Data kegiatan -->
+                                            <div class="modal fade" id="hapus<?= $id_kegiatan ?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Hapus Data
+                                                                Kegiatan
+                                                            </h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form
+                                                                action="<?php echo base_url()?>Kegiatan/hapus_data_admin_utama?>"
+                                                                method="post" enctype="multipart/form-data">
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <input type="hidden" name="id"
+                                                                            value="<?php echo $id_kegiatan?>" />
+                                                                        <input type="text" class="form-control"
+                                                                            id="foto_kegiatan_old"
+                                                                            aria-describedby="emailHelp"
+                                                                            name="foto_kegiatan_old"
+                                                                            value="<?=$foto_kegiatan?>" hidden>
+                                                                        <p>Apakah kamu yakin ingin menghapus data
+                                                                            ini?</i></b></p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-danger ripple"
+                                                                        data-dismiss="modal">Tidak</button>
+                                                                    <button type="submit"
+                                                                        class="btn btn-success ripple save-category">Ya</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Modal Edit Kegiatan -->
                                             <div class="modal fade" id="edit_kegiatan<?= $id_kegiatan ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
@@ -194,10 +239,8 @@
                                                                 action="<?= base_url(); ?>Kegiatan/edit_data_admin_utama"
                                                                 enctype="multipart/form-data" method="POST">
                                                                 <div class="form-group">
-                                                                    <input type="text" class="form-control"
-                                                                        id="id"
-                                                                        aria-describedby="emailHelp"
-                                                                        name="id"
+                                                                    <input type="text" class="form-control" id="id"
+                                                                        aria-describedby="emailHelp" name="id"
                                                                         value="<?=$id_kegiatan?>" hidden>
                                                                     <label for="nama_kegiatan">Nama Kegiatan</label>
                                                                     <input type="text" class="form-control"
