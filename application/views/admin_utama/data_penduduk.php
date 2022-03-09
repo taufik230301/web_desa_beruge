@@ -197,8 +197,8 @@
                                             </tr>
 
                                             <!-- Modal Hapus Data Penduduk -->
-                                            <div class="modal fade" id="hapus<?= $id_user ?>"
-                                                tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                            <div class="modal fade" id="hapus<?= $id_user ?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
                                                         <div class="modal-header">
@@ -214,11 +214,9 @@
                                                                 method="post" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
-                                                                        <input type="hidden"
-                                                                            name="id"
+                                                                        <input type="hidden" name="id"
                                                                             value="<?php echo $id_user?>" />
-                                                                            <input type="hidden"
-                                                                            name="id_user_detail"
+                                                                        <input type="hidden" name="id_user_detail"
                                                                             value="<?php echo $id_user_detail?>" />
                                                                         <p>Apakah kamu yakin ingin menghapus data
                                                                             ini?</i></b></p>
@@ -255,7 +253,8 @@
                                                                 enctype="multipart/form-data" method="POST">
                                                                 <input type="text" name="id" value="<?= $id_user ?>"
                                                                     hidden>
-                                                                    <input type="text" name="id_user_detail" value="<?= $id_user_detail ?>" hidden>
+                                                                <input type="text" name="id_user_detail"
+                                                                    value="<?= $id_user_detail ?>" hidden>
                                                                 <div class="form-group">
                                                                     <label for="username">Username</label>
                                                                     <input type="text" class="form-control"
@@ -308,7 +307,7 @@
                                                                 <div class="form-group">
                                                                     <label for="alamat">Alamat</label>
                                                                     <textarea class="form-control" id="alamat" rows="3"
-                                                                        name="alamat" ><?= $alamat ?></textarea>
+                                                                        name="alamat"><?= $alamat ?></textarea>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="jenis_kelamin">Jenis Kelamin</label>

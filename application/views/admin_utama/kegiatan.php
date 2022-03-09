@@ -4,6 +4,65 @@
 <?php $this->load->view("admin_utama/components/header.php") ?>
 
 <body class="hold-transition sidebar-mini layout-fixed">
+    <?php if ($this->session->flashdata('input')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Ditambahkan!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Diedit!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('hapus')){ ?>
+    <script>
+    swal({
+        title: "Success!",
+        text: "Data Berhasil Dihapus!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Ditambahkan!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('error_file')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data File Terlalu Besar !",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
+
+    <?php if ($this->session->flashdata('eror_edit')){ ?>
+    <script>
+    swal({
+        title: "Erorr!",
+        text: "Data Gagal Diedit!",
+        icon: "error"
+    });
+    </script>
+    <?php } ?>
     <div class="wrapper">
 
         <?php $this->load->view("admin_utama/components/navbar.php") ?>
@@ -82,11 +141,13 @@
                                             <tr>
                                                 <td><?= $id ?></td>
                                                 <td><?= $nama_kegiatan ?></td>
-                                                <td><center> <a
-                                                              href="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
-                                                              target="_blank"><img
-                                                                  src="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
-                                                                  style="width: 25%"> </a></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/kegiatan/<?php echo $foto_kegiatan?>"
+                                                                style="width: 25%"> </a>
+                                                </td>
                                                 <td><?= $keterangan ?></td>
                                                 <td><?= $tgl_kegiatan ?></td>
                                             </tr>
@@ -116,7 +177,8 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url(); ?>Kegiatan/input_data_admin_utama" enctype="multipart/form-data" method="POST" >
+                            <form action="<?= base_url(); ?>Kegiatan/input_data_admin_utama"
+                                enctype="multipart/form-data" method="POST">
                                 <div class="form-group">
                                     <label for="nama_kegiatan">Nama Kegiatan</label>
                                     <input type="text" class="form-control" id="nama_kegiatan"
@@ -129,10 +191,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="nama_kegiatan">Keterangan</label>
-                                    <textarea class="form-control" id="keterangan" rows="3" name="keterangan"
-                                        "></textarea>
+                                    <textarea class="form-control" id="keterangan" rows="3" name="keterangan" "></textarea>
                                 </div>
-                                <div class="form-group">
+                                <div class=" form-group">
                                     <label for="tgl_kegiatan">Tanggal Kegiatan</label>
                                     <input type="date" class="form-control" id="tgl_kegiatan"
                                         aria-describedby="emailHelp" name="tgl_kegiatan">

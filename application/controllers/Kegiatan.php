@@ -53,8 +53,6 @@ class Kegiatan extends CI_Controller {
 		$this->upload->initialize($config);
 		$foto_kegiatan = $this->upload->do_upload('foto_kegiatan');
 
-		
-
 			if($foto_kegiatan){
 				$foto_kegiatan = $this->upload->data();
 			}else{

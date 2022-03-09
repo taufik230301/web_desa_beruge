@@ -72,4 +72,30 @@ class M_user extends CI_Model
            else
            return false;
         }
+
+        
+    function get_penduduk(){
+            $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_penduduk FROM user WHERE id_user_level=4");
+            return $hasil;
+    }
+    function get_penduduk_bantuan_tunai_langsung(){
+        $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_bantuan_tunai_langsung FROM user_detail WHERE id_kategori_bantuan=2");
+        return $hasil;
+    }
+
+    function get_penduduk_bantuan_tunai_bupati(){
+        $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_bantuan_tunai_bupati FROM user_detail WHERE id_kategori_bantuan=3");
+        return $hasil;
+    }
+
+    function get_penduduk_mampu(){
+        $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_penduduk_mampu FROM user_detail WHERE id_kategori_kelas_ekonomi=2");
+        return $hasil;
+    }
+
+    function get_penduduk_tidak_mampu(){
+        $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_penduduk_tidak_mampu FROM user_detail WHERE id_kategori_kelas_ekonomi=3");
+        return $hasil;
+    }
+
 }
