@@ -62,13 +62,13 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_kelas_ekonomi/3" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Penerima Bantuan</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_kelas_ekonomi/2" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Tidak Menerima Bantuan</p>
                              </a>
@@ -76,7 +76,7 @@
                      </ul>
                  </li>
                  <li class="nav-item">
-                     <a href="#" class="nav-link">
+                     <a href="#"  class="nav-link">
                          <i class="nav-icon fas fa-copy"></i>
                          <p>
                              Filter RT Penduduk
@@ -85,85 +85,85 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/2" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 001</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/3" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 002</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/4" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 003</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/5" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 004</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/6" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 005</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/7" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 006</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/8" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 007</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/9" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 008</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/10" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 009</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/11" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 010</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/12" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 011</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/13" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 012</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/14" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 013</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/15" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>RT 014</p>
                              </a>

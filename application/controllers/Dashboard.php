@@ -6,6 +6,7 @@ class Dashboard extends CI_Controller {
     {
 		parent::__construct();
 		$this->load->model('m_user');
+		$this->load->model('m_kegiatan');
 	}
 	public function view_admin_utama()
 	{
@@ -16,6 +17,7 @@ class Dashboard extends CI_Controller {
 		$data['penduduk_mampu'] = $this->m_user->get_penduduk_mampu()->row_array();
 		$data['penduduk_tidak_mampu'] = $this->m_user->get_penduduk_tidak_mampu()->row_array();
 		$data['penduduk'] = $this->m_user->get_penduduk()->row_array();
+		$data['kegiatan'] = $this->m_kegiatan->get_total_kegiatan()->row_array();
 		// echo var_dump($data);
 		// die();
 		$this->load->view('admin_utama/dashboard', $data);

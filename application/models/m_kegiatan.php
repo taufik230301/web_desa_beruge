@@ -37,4 +37,9 @@ class M_kegiatan extends CI_Model
        else
        return false;
     }
+
+    function get_total_kegiatan(){
+        $hasil=$this->db->query("SELECT COUNT(id_kegiatan) as total_kegiatan FROM kegiatan");
+        return $hasil;
+}
 }

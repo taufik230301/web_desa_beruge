@@ -40,10 +40,31 @@ class M_user extends CI_Model
         return $hasil;
        }
 
+       public function get_user_penduduk_by_kelas_ekonomi($id){
+        $hasil=$this->db->query("SELECT * FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        JOIN rt ON user_detail.id_rt = rt.id_rt
+        JOIN kategori_kelas_ekonomi ON user_detail.id_kategori_kelas_ekonomi = kategori_kelas_ekonomi.id_kategori_kelas_ekonomi
+        JOIN kategori_bantuan ON user_detail.id_kategori_bantuan = kategori_bantuan.id_kategori_bantuan
+        WHERE user.id_user_level = 4 AND user_detail.id_kategori_kelas_ekonomi = '$id'");
+        return $hasil;
+       }
+
+       public function get_user_penduduk_by_nomor_rt($id){
+        $hasil=$this->db->query("SELECT * FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        JOIN rt ON user_detail.id_rt = rt.id_rt
+        JOIN kategori_kelas_ekonomi ON user_detail.id_kategori_kelas_ekonomi = kategori_kelas_ekonomi.id_kategori_kelas_ekonomi
+        JOIN kategori_bantuan ON user_detail.id_kategori_bantuan = kategori_bantuan.id_kategori_bantuan
+        WHERE user.id_user_level = 4 AND user_detail.id_rt = '$id'");
+        return $hasil;
+       }
+
+
     public function insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan){
         $this->db->trans_start();
         $this->db->query("INSERT INTO user(username,password,email ,no_hp ,id_user_level, id_user_detail) VALUES ('$username','$password','$email','$no_hp','$id_user_level',autoInc())");
-       $this->db->query("INSERT INTO user_detail(nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan) VALUES ('$nama', '$nik', '$tempat_lahir', '$tgl_lahir', '$alamat', '$jenis_kelamin', '$pekerjaan', '$id_rt', '$id_kategori_bantuan', '$id_kategori_kelas_ekonomi', '$keterangan')");
+       $this->db->query("INSERT INTO user_detail(id_user_detail,nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan) VALUES (autoInc_user_detail(),'$nama', '$nik', '$tempat_lahir', '$tgl_lahir', '$alamat', '$jenis_kelamin', '$pekerjaan', '$id_rt', '$id_kategori_bantuan', '$id_kategori_kelas_ekonomi', '$keterangan')");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;

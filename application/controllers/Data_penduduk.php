@@ -28,6 +28,42 @@ class Data_penduduk extends CI_Controller {
 		}
 	}
 
+	public function view_admin_utama_filter_kelas_ekonomi($id)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_kelas_ekonomi($id)->result_array();
+			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
+			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
+			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+
+			$this->load->view('admin_utama/data_penduduk', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+	}
+
+	public function view_admin_utama_filter_rt($id)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_nomor_rt($id)->result_array();
+			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
+			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
+			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+
+			$this->load->view('admin_utama/data_penduduk', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+	}
+
 	public function input_data_admin_utama(){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 			$nama = $this->input->post("nama");
@@ -76,7 +112,7 @@ class Data_penduduk extends CI_Controller {
 			// echo $id_kategori_bantuan;
 			// echo "<br>";
 			// die();
-			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan);
+			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan);
 		
 				if($hasil==false){
 					$this->session->set_flashdata('eror_input','eror_input');
