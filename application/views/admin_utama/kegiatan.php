@@ -121,6 +121,8 @@
                                                 <th>Foto Kegiatan</th>
                                                 <th>Keterangan</th>
                                                 <th>Tanggal Kegiatan</th>
+                                                <th>Penulis</th>
+                                                <th>Tanggal Publish</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -134,6 +136,8 @@
                                   $foto_kegiatan = $i['foto_kegiatan'];
                                   $keterangan = $i['keterangan'];
                                   $tgl_kegiatan = $i['tgl_kegiatan'];
+                                  $username = $i['username'];
+                                  $created_at = $i['created_at'];
                                 
 
                 
@@ -150,6 +154,8 @@
                                                 </td>
                                                 <td><?= $keterangan ?></td>
                                                 <td><?= $tgl_kegiatan ?></td>
+                                                <td><?= $username ?></td>
+                                                <td><?= $created_at ?></td>
                                             </tr>
                                             <?php endforeach?>
                                         </tbody>
