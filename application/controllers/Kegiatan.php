@@ -70,6 +70,7 @@ class Kegiatan extends CI_Controller {
 				$this->session->set_flashdata('input','input');
 			
 			}
+			redirect('Kegiatan/view_admin_utama');
 
 		}else{
 
@@ -81,10 +82,13 @@ class Kegiatan extends CI_Controller {
 
 	public function edit_data_admin_utama(){
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			$id = $this->input->post("id");
 			$nama_kegiatan = $this->input->post("nama_kegiatan");
 			$keterangan = $this->input->post("keterangan");
 			$tgl_kegiatan = $this->input->post("tgl_kegiatan");
+			$foto_kegiatan_old = $this->input->post("foto_kegiatan_old");
 			$file_name = md5($nama_kegiatan.$keterangan);
+
 			// echo $nama_kegiatan;
 			// echo "<br>";
 			// echo $keterangan;
@@ -92,6 +96,8 @@ class Kegiatan extends CI_Controller {
 			// echo $tgl_kegiatan;
 			// echo "<br>";
 			// echo $file_name;
+			// echo "<br>";
+			// echo $foto_kegiatan_old;
 			// echo "<br>";
 			// die();
 
@@ -116,15 +122,18 @@ class Kegiatan extends CI_Controller {
 				redirect('Kegiatan/view_admin_utama');
 			}
 			
-			$hasil = $this->m_kegiatan->insert_data_kegiatan($nama_kegiatan,  $foto_kegiatan['file_name'], $keterangan, $tgl_kegiatan);
+			$hasil = $this->m_kegiatan->edit_data_kegiatan($nama_kegiatan,  $foto_kegiatan['file_name'], $keterangan, $tgl_kegiatan, $id);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror','eror');
 			
 			}else{
-				$this->session->set_flashdata('input','input');
+				$this->session->set_flashdata('edit','edit');
 			
 			}
+			
+			@unlink($path.$this->input->post('foto_kegiatan_old'));
+			redirect('Kegiatan/view_admin_utama');
 
 		}else{
 

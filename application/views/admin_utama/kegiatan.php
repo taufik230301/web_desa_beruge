@@ -123,6 +123,7 @@
                                                 <th>Tanggal Kegiatan</th>
                                                 <th>Penulis</th>
                                                 <th>Tanggal Publish</th>
+                                                <th>Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -132,6 +133,7 @@
                                   foreach($kegiatan as $i)
                                   :
                                   $id++;
+                                  $id_kegiatan = $i['id_kegiatan'];
                                   $nama_kegiatan = $i['nama_kegiatan'];
                                   $foto_kegiatan = $i['foto_kegiatan'];
                                   $keterangan = $i['keterangan'];
@@ -156,7 +158,81 @@
                                                 <td><?= $tgl_kegiatan ?></td>
                                                 <td><?= $username ?></td>
                                                 <td><?= $created_at ?></td>
+                                                <td>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" class="btn btn-primary" data-toggle="modal"
+                                                                data-target="#edit_kegiatan<?= $id_kegiatan ?>">
+                                                                <i class="fas fa-edit"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="table-responsive">
+                                                        <div class="table table-striped table-hover ">
+                                                            <a href="" data-toggle="modal"
+                                                                data-target="#hapus<?php echo  $id_kegiatan ?>"
+                                                                class="btn btn-danger"><i class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
                                             </tr>
+                                            <div class="modal fade" id="edit_kegiatan<?= $id_kegiatan ?>" tabindex="-1"
+                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data
+                                                                Kegiatan</h5>
+                                                            <button type="button" class="close" data-dismiss="modal"
+                                                                aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form
+                                                                action="<?= base_url(); ?>Kegiatan/edit_data_admin_utama"
+                                                                enctype="multipart/form-data" method="POST">
+                                                                <div class="form-group">
+                                                                    <input type="text" class="form-control"
+                                                                        id="id"
+                                                                        aria-describedby="emailHelp"
+                                                                        name="id"
+                                                                        value="<?=$id_kegiatan?>" hidden>
+                                                                    <label for="nama_kegiatan">Nama Kegiatan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="nama_kegiatan" aria-describedby="emailHelp"
+                                                                        name="nama_kegiatan"
+                                                                        value="<?= $nama_kegiatan ?>">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_kegiatan">Foto Kegiatan</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_kegiatan" aria-describedby="emailHelp"
+                                                                        name="foto_kegiatan">
+
+                                                                </div>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_kegiatan_old" aria-describedby="emailHelp"
+                                                                    name="foto_kegiatan_old" value="<?=$foto_kegiatan?>"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="nama_kegiatan">Keterangan</label>
+                                                                    <textarea class="form-control" id="keterangan"
+                                                                        rows="3" name="keterangan" "><?= $keterangan ?></textarea>
+                                                                </div>
+                                                                <div class=" form-group">
+                                                                    <label for="tgl_kegiatan">Tanggal Kegiatan</label>
+                                                                    <input type="date" class="form-control" id="tgl_kegiatan"
+                                                                        aria-describedby="emailHelp" name="tgl_kegiatan" value="<?= $tgl_kegiatan?>">
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <?php endforeach?>
                                         </tbody>
                                     </table>
@@ -198,32 +274,34 @@
                                 <div class="form-group">
                                     <label for="nama_kegiatan">Keterangan</label>
                                     <textarea class="form-control" id="keterangan" rows="3" name="keterangan" "></textarea>
+                                                                </div>
+                                                                <div class=" form-group">
+                                                                    <label for="tgl_kegiatan">Tanggal Kegiatan</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tgl_kegiatan" aria-describedby="emailHelp"
+                                                                        name="tgl_kegiatan">
+                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
+                                                            </form>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
                                 </div>
-                                <div class=" form-group">
-                                    <label for="tgl_kegiatan">Tanggal Kegiatan</label>
-                                    <input type="date" class="form-control" id="tgl_kegiatan"
-                                        aria-describedby="emailHelp" name="tgl_kegiatan">
-                                </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                            </form>
-                        </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- /.content-wrapper -->
+                                <!-- /.content-wrapper -->
 
 
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
-    </div>
-    <!-- ./wrapper -->
+                                <!-- Control Sidebar -->
+                                <aside class="control-sidebar control-sidebar-dark">
+                                    <!-- Control sidebar content goes here -->
+                                </aside>
+                                <!-- /.control-sidebar -->
+                            </div>
+                            <!-- ./wrapper -->
 
-    <?php $this->load->view("admin_utama/components/js.php") ?>
+                            <?php $this->load->view("admin_utama/components/js.php") ?>
 </body>
 
 </html>

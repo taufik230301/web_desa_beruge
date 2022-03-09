@@ -7,9 +7,19 @@ class M_kegiatan extends CI_Model
     }
 
 
-public function insert_data_kegiatan($nama_kegiatan,  $foto_kegiatan, $keterangan, $tgl_kegiatan, $id_penulis){
+        public function insert_data_kegiatan($nama_kegiatan,  $foto_kegiatan, $keterangan, $tgl_kegiatan, $id_penulis){
+            $this->db->trans_start();
+            $this->db->query("INSERT INTO kegiatan(nama_kegiatan,foto_kegiatan,keterangan ,tgl_kegiatan, id_penulis, created_at) VALUES ('$nama_kegiatan','$foto_kegiatan', '$keterangan', '$tgl_kegiatan', '$id_penulis', NOW())");
+            $this->db->trans_complete();
+            if($this->db->trans_status()==true)
+                return true;
+            else
+                return false;
+       }
+
+       public function edit_data_kegiatan($nama_kegiatan,  $foto_kegiatan, $keterangan, $tgl_kegiatan, $id){
         $this->db->trans_start();
-        $this->db->query("INSERT INTO kegiatan(nama_kegiatan,foto_kegiatan,keterangan ,tgl_kegiatan, id_penulis, created_at) VALUES ('$nama_kegiatan','$foto_kegiatan', '$keterangan', '$tgl_kegiatan', '$id_penulis', NOW())");
+        $this->db->query("UPDATE kegiatan SET nama_kegiatan='$nama_kegiatan',  foto_kegiatan='$foto_kegiatan',  keterangan='$keterangan',  tgl_kegiatan='$tgl_kegiatan'  WHERE id_kegiatan='$id'");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;
