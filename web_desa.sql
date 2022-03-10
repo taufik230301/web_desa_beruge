@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 08, 2022 at 04:14 AM
+-- Generation Time: Mar 10, 2022 at 04:44 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -29,8 +29,19 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `autoInc` () RETURNS INT(10) BEGIN
         DECLARE getCount INT(10);
 
         SET getCount = (
-            SELECT COUNT(id)
-            FROM user) + 1;
+            SELECT id_user_detail
+            FROM user ORDER BY ID DESC LIMIT 1) + 1;
+
+        RETURN getCount;
+    END$$
+
+CREATE DEFINER=`root`@`localhost` FUNCTION `autoInc_user_detail` () RETURNS INT(11) NO SQL
+BEGIN
+        DECLARE getCount INT(10);
+
+        SET getCount = (
+            SELECT id_user_detail
+            FROM user ORDER BY ID DESC LIMIT 1);
 
         RETURN getCount;
     END$$
@@ -54,8 +65,8 @@ CREATE TABLE `kategori_bantuan` (
 
 INSERT INTO `kategori_bantuan` (`id_kategori_bantuan`, `kategori_bantuan`) VALUES
 (1, 'Belum Ada Kategori'),
-(2, 'Mampu'),
-(3, 'Tidak Mampu');
+(2, 'Bantuan Langsung Tunai'),
+(3, 'Bantuan Dana Bupati\r\n');
 
 -- --------------------------------------------------------
 
@@ -74,8 +85,8 @@ CREATE TABLE `kategori_kelas_ekonomi` (
 
 INSERT INTO `kategori_kelas_ekonomi` (`id_kategori_kelas_ekonomi`, `kategori_kelas_ekonomi`) VALUES
 (1, 'Belum Ada Kategori'),
-(2, 'Bantuan Langsung Tunai'),
-(3, 'Bantuan Dana Bupati\r\n');
+(2, 'Mampu'),
+(3, 'Tidak Mampu');
 
 -- --------------------------------------------------------
 
@@ -88,15 +99,17 @@ CREATE TABLE `kegiatan` (
   `nama_kegiatan` varchar(250) NOT NULL,
   `foto_kegiatan` varchar(250) NOT NULL,
   `keterangan` text NOT NULL,
-  `tgl_kegiatan` date NOT NULL
+  `tgl_kegiatan` date NOT NULL,
+  `id_penulis` int(11) NOT NULL,
+  `created_at` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `kegiatan`
 --
 
-INSERT INTO `kegiatan` (`id_kegiatan`, `nama_kegiatan`, `foto_kegiatan`, `keterangan`, `tgl_kegiatan`) VALUES
-(1, 'Gotong Royong Antar RT', 'gotong_royong.jpg', 'Masyarakat Menggelar Gotong Royong', '2022-03-08');
+INSERT INTO `kegiatan` (`id_kegiatan`, `nama_kegiatan`, `foto_kegiatan`, `keterangan`, `tgl_kegiatan`, `id_penulis`, `created_at`) VALUES
+(5, 'Gotong Royong', '4242c1f292fb50177492336833874018.png', 'Gotong Royong', '2022-03-09', 1, '2022-03-09');
 
 -- --------------------------------------------------------
 
@@ -155,9 +168,17 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_hp`, `id_user_lev
 (2, 'admin_pkh', 'admin123', 'admin_pkh@gmail.com', '08126712', 2, 2),
 (3, 'admin_rt', 'admin123', 'admin_rt@gmail.com', '01821726712', 3, 3),
 (4, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 4),
-(5, 'taufik230301', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 5),
-(6, 'Kresna', 'kresna12', 'kresna123@gmail.com', '091281928912', 4, 6),
-(7, 'wahyu', 'wahyu123', 'wahyu@gmail.com', '091281982912', 4, 7);
+(19, 'admin_rt_01', 'admin123', 'admin_rt_01@gmail.com', '0812781728', 3, 5),
+(20, 'kresna123', 'kresna12', 'kresna123@gmail.com', '0812781728', 4, 6),
+(21, 'Zaki12', 'zaki123', 'zaki12@gmail.com', '08129819821', 4, 7),
+(22, 'Heru', 'heru123', 'haru23@gmail.com', '01821291892', 4, 8),
+(23, 'Hendra', 'hendra123', 'hendra@gmail.com', '0812781721', 4, 9),
+(24, 'admin_rt_02', 'admin123', 'admin_rt_02@gmail.com', '0812781728', 3, 10),
+(25, 'admin_rt_03', 'admin123', 'admin_rt_03@gmail.com', '0812781728', 3, 11),
+(26, 'admin_rt_04', 'admin123', 'admin_rt_04@gmail.com', '0812781728', 3, 12),
+(27, 'admin_rt_05', 'admin123', 'admin_rt_05@gmail.com', '0812781728', 3, 13),
+(29, 'aziz12', 'aziz23', 'aziz25@gmail.com', '081271281', 4, 15),
+(30, 'malian12', 'malian123', 'malian123@gmail.com', '0812781728', 4, 16);
 
 -- --------------------------------------------------------
 
@@ -188,10 +209,18 @@ INSERT INTO `user_detail` (`id_user_detail`, `nama`, `nik`, `tempat_lahir`, `tgl
 (1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
 (3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Taufiiqulhakim', '16172121298192', 'Palembang', '2022-02-10', 'Jl. Belanti, RT 002, RW 002, Tanjung raja Timur, Tanjung Raja, Ogan Ilir', 'L', 'Programmer', 1, 1, 1, NULL),
-(5, 'Taufiiqulhakim', '018281727172', 'Palembang', '0000-00-00', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 1, 1, ''),
-(6, 'Kresna Vespri', '0617267126712', 'Bukit', '0000-00-00', 'Jl. Bukit', 'L', 'Pengajar, Programmer', 1, 1, 1, ''),
-(7, 'wahyu ziyadi', '01829189281', 'tg elok', '0000-00-00', 'Jl. Tg Elok', 'L', 'PNS', 1, 1, 1, 'Bagus');
+(4, 'Taufiiqulhakim', '16172121298192', 'Palembang', '2022-02-10', 'Jl.Belanti', 'L', 'Programmer', 1, 1, 2, 'Bagus'),
+(5, '', '', '', '0000-00-00', '', 'L', '', 2, 2, 1, ''),
+(6, 'Kresna Vespri', '1929102', 'Palembang', '2022-03-08', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 3, 'Bgus'),
+(7, 'Zaki Tirta', '0128918921', 'Kenten', '2022-03-16', 'Jl. Sekip', 'L', 'Siswa', 2, 2, 3, 'Bagus'),
+(8, 'Heru M', '06182718728172', 'Bukit', '2022-03-08', 'Bagus', 'L', 'Programmer', 3, 2, 3, 'Bagus'),
+(9, 'Hendra Nasution', '061827187281', 'Palembang', '2022-03-08', 'Jl. Sekip', 'L', 'PNS', 3, 2, 2, 'Bagus'),
+(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, 1, NULL),
+(11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, 1, NULL),
+(12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 1, 1, NULL),
+(13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, 1, NULL),
+(15, 'Aziz Akbar', '0617267126712', 'Tg Raja', '0000-00-00', 'Jl. Sekip', 'L', 'PNS', 2, 1, 1, 'Bagus'),
+(16, 'Malian', '061727817821', 'Sekip', '2022-03-09', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 1, 1, 'Bagus');
 
 -- --------------------------------------------------------
 
@@ -280,7 +309,7 @@ ALTER TABLE `kategori_kelas_ekonomi`
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rt`
@@ -292,13 +321,7 @@ ALTER TABLE `rt`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `user_detail`
---
-ALTER TABLE `user_detail`
-  MODIFY `id_user_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `user_level`

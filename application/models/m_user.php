@@ -119,6 +119,11 @@ class M_user extends CI_Model
             $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_penduduk FROM user WHERE id_user_level=4");
             return $hasil;
     }
+
+    function get_penduduk_by_id_rt($id_rt){
+        $hasil=$this->db->query("SELECT COUNT(id) as total_penduduk FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE id_rt='$id_rt' AND id_user_level=4");
+        return $hasil;
+}
     function get_penduduk_bantuan_tunai_langsung(){
         $hasil=$this->db->query("SELECT COUNT(id_user_detail) as total_bantuan_tunai_langsung FROM user_detail WHERE id_kategori_bantuan=2");
         return $hasil;

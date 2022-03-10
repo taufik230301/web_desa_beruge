@@ -68,7 +68,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_penduduk/view_admin_utama" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -84,7 +84,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_kelas_ekonomi/2" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -100,7 +100,7 @@
                                 <div class="icon">
                                     <i class="ion ion-minus-circled"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_kelas_ekonomi/3" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -116,7 +116,7 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_penduduk/view_admin_utama" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -131,7 +131,7 @@
                                 <div class="icon">
                                     <i class="ion ion-connection-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_penduduk/view_admin_utama" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -146,7 +146,7 @@
                                 <div class="icon">
                                     <i class="ion ion-connection-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Kegiatan/view_admin_utama" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

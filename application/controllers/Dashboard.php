@@ -53,8 +53,8 @@ class Dashboard extends CI_Controller {
 	{
 		
 	if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
-
-		$this->load->view('admin_rt/dashboard');
+		$data['penduduk'] = $this->m_user->get_penduduk_by_id_rt($this->session->userdata('id_rt'))->row_array();
+		$this->load->view('admin_rt/dashboard', $data);
 
 	}else{
 

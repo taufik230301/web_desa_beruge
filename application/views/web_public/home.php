@@ -17,7 +17,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="<?= base_url();?><?= base_url();?>assets/public/assets/public/<?= base_url();?>assets/public/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="<?= base_url();?><?= base_url();?>assets/public/assets/vendor/aos/aos.css" rel="stylesheet">
   <link href="<?= base_url();?>assets/public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="<?= base_url();?>assets/public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="<?= base_url();?>assets/public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -81,8 +81,8 @@
   <!-- ======= Hero Section ======= -->
   <section id="hero">
     <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-      <h1>Welcome to Regna</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
+      <h1>Selamat Datang di Desa Wanamukti</h1>
+      <h2>Sistem Informasi Desa Wanamukti</h2>
       <a href="#about" class="btn-get-started">Get Started</a>
     </div>
   </section><!-- End Hero Section -->

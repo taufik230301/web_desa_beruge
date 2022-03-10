@@ -47,12 +47,8 @@
             </div>
             <!-- /.content-header -->
 
-
-
-
-
-            <!-- Main content -->
-            <section class="content">
+              <!-- Main content -->
+              <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
@@ -67,7 +63,7 @@
                                 <div class="icon">
                                     <i class="ion ion-person-stalker"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_penduduk/view_admin_pkh" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -83,7 +79,7 @@
                                 <div class="icon">
                                     <i class="ion ion-stats-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_Penduduk/view_admin_pkh_filter_kelas_ekonomi/2" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -99,7 +95,7 @@
                                 <div class="icon">
                                     <i class="ion ion-minus-circled"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_Penduduk/view_admin_pkh_filter_kelas_ekonomi/3" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -115,7 +111,7 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Dashboard/view_admin_pkh" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -130,22 +126,7 @@
                                 <div class="icon">
                                     <i class="ion ion-connection-bars"></i>
                                 </div>
-                                <a href="#" class="small-box-footer">More info <i
-                                        class="fas fa-arrow-circle-right"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-6">
-                            <!-- small box -->
-                            <div class="small-box bg-danger">
-                                <div class="inner">
-                                    <h3><?=$kegiatan['total_kegiatan']?></h3>
-
-                                    <p>Jumlah Kegiatan</p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-connection-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Dashboard/view_admin_pkh" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

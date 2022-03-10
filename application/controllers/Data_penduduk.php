@@ -381,6 +381,28 @@ class Data_penduduk extends CI_Controller {
 			}
 	
 		}
+
+		public function hapus_data_admin_rt(){
+			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
+
+				$id = $this->input->post("id");
+				$id_user_detail = $this->input->post("id_user_detail");
+
+				$hasil = $this->m_user->delete_data_penduduk($id, $id_user_detail );
+		
+				if($hasil==false){
+					$this->session->set_flashdata('eror_hapus','eror_hapus');
+				}else{
+					$this->session->set_flashdata('hapus','hapus');
+				}
+				redirect('Data_penduduk/view_admin_rt');
+			}else{
+	
+				$this->session->set_flashdata('loggin_err','loggin_err');
+				redirect('Login/index');
+		
+			}
+		}
 	
     public function view_admin_rt()
 	{
@@ -466,7 +488,7 @@ class Data_penduduk extends CI_Controller {
 		}
 
 		public function edit_data_admin_rt(){
-			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
 				$nama = $this->input->post("nama");
 				$username = $this->input->post("username");
 				$password = $this->input->post("password");
@@ -501,7 +523,7 @@ class Data_penduduk extends CI_Controller {
 				// echo "<br>";
 				// echo $tempat_lahir;
 				// echo "<br>";
-				// echo $tanggal_lahir;
+				// echo $tgl_lahir;
 				// echo "<br>";
 				// echo $alamat;
 				// echo "<br>";
@@ -516,6 +538,10 @@ class Data_penduduk extends CI_Controller {
 				// echo $id_kategori_bantuan;
 				// echo "<br>";
 				// echo $id;
+				// echo "<br>";
+				// echo $id_user_detail;
+				// echo "<br>";
+				// echo $keterangan;
 				// echo "<br>";
 				// die();
 

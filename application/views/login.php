@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Main css -->
     <link rel="stylesheet" href="<?= base_url();?>assets/login/css/style.css">
     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon"href="<?= base_url() ?>assets/image/logo.jpg" />
 </head>
 <body>
 <?php if ($this->session->flashdata('input')){ ?>

@@ -1,7 +1,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AdminLTE 3 | Dashboard</title>
+    <title>SISM-DWM</title>
 
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
@@ -31,4 +31,5 @@
     <link rel="stylesheet" href="<?= base_url();?>assets/admin_lte/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?= base_url();?>assets/admin_lte/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="icon"href="<?= base_url() ?>assets/image/logo.jpg" />
 </head>
