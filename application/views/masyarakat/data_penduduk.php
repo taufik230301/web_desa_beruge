@@ -74,7 +74,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Update Data Diri</h1>
+                            <h1 class="m-0">Update Data Diri Kelengkapan Bantuan Desa</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">

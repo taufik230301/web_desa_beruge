@@ -242,6 +242,24 @@ class Data_penduduk extends CI_Controller {
 		}
 	}
 
+	public function view_admin_pkh_filter_kelas_ekonomi($id)
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_kelas_ekonomi($id)->result_array();
+			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
+			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
+			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+
+			$this->load->view('admin_pkh/data_penduduk', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+	}
+
 	public function input_data_admin_pkh(){
 			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
 				$nama = $this->input->post("nama");

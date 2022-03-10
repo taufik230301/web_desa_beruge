@@ -36,7 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Sign up</h2>
+                        <h2 class="form-title">Daftar Akun</h2>
                         <form method="POST" class="register-form" action="<?=base_url()?>Register/proses"
                             id="register-form">
                             <div class="form-group">
@@ -66,7 +66,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </form>
                     </div>
                     <div class="signup-image">
-                        <figure><img src="<?= base_url();?>assets/login/images/signup-image.jpg" alt="sing up image">
+                        <figure><img src="<?= base_url();?>assets/image/logo_desa.jpeg" alt="sing up image">
                         </figure>
                         <a href="<?= base_url();?>Login/index" class="signup-image-link">Sudah Terdaftar ?</a>
                     </div>

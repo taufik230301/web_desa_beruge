@@ -56,13 +56,13 @@
                      </a>
                      <ul class="nav nav-treeview">
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_pkh_filter_kelas_ekonomi/3" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Penerima Bantuan</p>
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                             <a href="<?=base_url();?>Data_Penduduk/view_admin_pkh_filter_kelas_ekonomi/2" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Tidak Menerima Bantuan</p>
                              </a>

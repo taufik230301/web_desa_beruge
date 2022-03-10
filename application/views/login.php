@@ -59,7 +59,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <div class="container">
                 <div class="signin-content">
                     <div class="signin-image">
-                        <figure><img src="<?= base_url();?>assets/login/images/signin-image.jpg" alt="sing up image"></figure>
+                        <figure><img src="<?= base_url();?>assets/image/logo_desa.jpeg" alt="sing up image"></figure>
                         <a href="<?= base_url()?>Register/index" class="signup-image-link">Buat akun !</a>
                     </div>
 
