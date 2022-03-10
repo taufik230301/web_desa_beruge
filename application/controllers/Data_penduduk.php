@@ -464,6 +464,78 @@ class Data_penduduk extends CI_Controller {
 			}
 	
 		}
+
+		public function edit_data_admin_rt(){
+			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
+				$nama = $this->input->post("nama");
+				$username = $this->input->post("username");
+				$password = $this->input->post("password");
+				$no_hp = $this->input->post("no_hp");
+				$email = $this->input->post("email");
+				$nik = $this->input->post("nik");
+				$tempat_lahir = $this->input->post("tempat_lahir");
+				$tgl_lahir = $this->input->post("tanggal_lahir");
+				$alamat = $this->input->post("alamat");
+				$jenis_kelamin = $this->input->post("jenis_kelamin");
+				$pekerjaan = $this->input->post("pekerjaan");
+				$id_rt = $this->input->post("id_rt");
+				$id_kategori_kelas_ekonomi = $this->input->post("id_kategori_kelas_ekonomi");
+				$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
+				$keterangan = $this->input->post("keterangan");
+				$nama = $this->input->post("nama");
+				$id = $this->input->post("id");
+				$id_user_detail = $this->input->post("id_user_detail");
+				$id_user_level = 4;
+		
+				// echo $nama;
+				// echo "<br>";
+				// echo $username;
+				// echo "<br>";
+				// echo $password;
+				// echo "<br>";
+				// echo $no_hp;
+				// echo "<br>";
+				// echo $email;
+				// echo "<br>";
+				// echo $nik;
+				// echo "<br>";
+				// echo $tempat_lahir;
+				// echo "<br>";
+				// echo $tanggal_lahir;
+				// echo "<br>";
+				// echo $alamat;
+				// echo "<br>";
+				// echo $jenis_kelamin;
+				// echo "<br>";
+				// echo $pekerjaan;
+				// echo "<br>";
+				// echo $id_rt;
+				// echo "<br>";
+				// echo $id_kategori_kelas_ekonomi;
+				// echo "<br>";
+				// echo $id_kategori_bantuan;
+				// echo "<br>";
+				// echo $id;
+				// echo "<br>";
+				// die();
+
+				$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail);
+			
+					if($hasil==false){
+						$this->session->set_flashdata('eror_edit','eror_edit');
+					
+					}else{
+						$this->session->set_flashdata('edit','edit');
+					}
+					redirect('Data_penduduk/view_admin_rt');
+			}else{
+		
+				$this->session->set_flashdata('loggin_err','loggin_err');
+				redirect('Login/index');
+		
+			}
+	
+		}
 	
     public function view_masyarakat($id)
 	{
