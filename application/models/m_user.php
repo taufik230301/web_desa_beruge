@@ -29,6 +29,16 @@ class M_user extends CI_Model
         return $hasil;
        }
 
+       public function get_user_penduduk_by_id_rt($id_rt){
+        $hasil=$this->db->query("SELECT * FROM user 
+        JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
+        JOIN rt ON user_detail.id_rt = rt.id_rt
+        JOIN kategori_kelas_ekonomi ON user_detail.id_kategori_kelas_ekonomi = kategori_kelas_ekonomi.id_kategori_kelas_ekonomi
+        JOIN kategori_bantuan ON user_detail.id_kategori_bantuan = kategori_bantuan.id_kategori_bantuan
+        WHERE user.id_user_level = 4 AND user_detail.id_rt = '$id_rt'");
+        return $hasil;
+       }
+
        public function get_user_penduduk_by_id($id){
         $hasil=$this->db->query("SELECT * FROM user 
         JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
@@ -75,7 +85,17 @@ class M_user extends CI_Model
         public function update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail){
             $this->db->trans_start();
             $this->db->query("UPDATE user SET username='$username',  password='$password',  email='$email',  no_hp='$no_hp'  WHERE id='$id'");
-            $this->db->query("UPDATE user_detail SET nama='$nama',  nik='$nik',  tempat_lahir='$tempat_lahir',  tgl_lahir='$tgl_lahir',  alamat='$alamat',  jenis_kelamin='$jenis_kelamin',  pekerjaan='$pekerjaan', id_rt='$id_rt', id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', keterangan='$keterangan' WHERE id_user_detail='$id_user_detail'");
+            $this->db->query("UPDATE user_detail SET nama='$nama',  nik='$nik',  tempat_lahir='$tempat_lahir',  tgl_lahir='$tgl_lahir',  alamat='$alamat',  jenis_kelamin='$jenis_kelamin',  pekerjaan='$pekerjaan', id_rt='$id_rt', id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', keterangan='$keterangan' WHERE id_user_detail='$id_user_detail'");
+            $this->db->trans_complete();
+            if($this->db->trans_status()==true)
+                return true;
+            else
+                return false;
+           }
+
+           public function update_data_kategori_penduduk( $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $id_user_detail){
+            $this->db->trans_start();
+            $this->db->query("UPDATE user_detail SET id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi'  WHERE id_user_detail='$id_user_detail'");
             $this->db->trans_complete();
             if($this->db->trans_status()==true)
                 return true;

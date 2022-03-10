@@ -33,8 +33,14 @@ class Dashboard extends CI_Controller {
     public function view_admin_pkh()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+			$data['penduduk_bantuan_tunai_langsung'] = $this->m_user->get_penduduk_bantuan_tunai_langsung()->row_array();
+			$data['penduduk_bantuan_tunai_bupati'] = $this->m_user->get_penduduk_bantuan_tunai_bupati()->row_array();
+			$data['penduduk_mampu'] = $this->m_user->get_penduduk_mampu()->row_array();
+			$data['penduduk_tidak_mampu'] = $this->m_user->get_penduduk_tidak_mampu()->row_array();
+			$data['penduduk'] = $this->m_user->get_penduduk()->row_array();
+			$data['kegiatan'] = $this->m_kegiatan->get_total_kegiatan()->row_array();
 
-		$this->load->view('admin_pkh/dashboard');
+		$this->load->view('admin_pkh/dashboard', $data);
 
 	}else{
 

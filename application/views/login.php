@@ -64,15 +64,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Sign in</h2>
+                        <h2 class="form-title">Log in Akun</h2>
                         <form method="POST" class="register-form" id="login-form" action="<?= base_url()?>Login/proses">
                             <div class="form-group">
                                 <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="your_name" placeholder="Your Name"/>
+                                <input type="text" name="username" id="your_name" placeholder="Masukan Nama"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="your_pass" placeholder="Password"/>
+                                <input type="password" name="password" id="your_pass" placeholder="Kata Sandi"/>
                             </div>
                             <div class="form-group">
                                 <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />

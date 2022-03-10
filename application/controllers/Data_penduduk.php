@@ -325,11 +325,67 @@ class Data_penduduk extends CI_Controller {
 			}
 	
 		}
+
+		public function edit_data_admin_pkh(){
+			if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 2) {
+				$id_kategori_kelas_ekonomi = $this->input->post("id_kategori_kelas_ekonomi");
+				$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
+				$id_user_detail = $this->input->post("id_user_detail");
+		
+				// echo $nama;
+				// echo "<br>";
+				// echo $username;
+				// echo "<br>";
+				// echo $password;
+				// echo "<br>";
+				// echo $no_hp;
+				// echo "<br>";
+				// echo $email;
+				// echo "<br>";
+				// echo $nik;
+				// echo "<br>";
+				// echo $tempat_lahir;
+				// echo "<br>";
+				// echo $tanggal_lahir;
+				// echo "<br>";
+				// echo $alamat;
+				// echo "<br>";
+				// echo $jenis_kelamin;
+				// echo "<br>";
+				// echo $pekerjaan;
+				// echo "<br>";
+				// echo $id_rt;
+				// echo "<br>";
+				// echo $id_kategori_kelas_ekonomi;
+				// echo "<br>";
+				// echo $id_kategori_bantuan;
+				// echo "<br>";
+				// echo $id;
+				// echo "<br>";
+				// die();
+
+				$hasil = $this->m_user->update_data_kategori_penduduk($id_kategori_bantuan, $id_kategori_kelas_ekonomi, $id_user_detail);
+			
+					if($hasil==false){
+						$this->session->set_flashdata('eror_edit','eror_edit');
+					
+					}else{
+						$this->session->set_flashdata('edit','edit');
+					}
+					redirect('Data_penduduk/view_admin_pkh');
+			}else{
+		
+				$this->session->set_flashdata('loggin_err','loggin_err');
+				redirect('Login/index');
+		
+			}
+	
+		}
 	
     public function view_admin_rt()
 	{
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 3) {
-			$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk_by_id_rt($this->session->userdata('id_rt'))->result_array();
 			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
 			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
 			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
