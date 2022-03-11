@@ -6,6 +6,11 @@ class M_kegiatan extends CI_Model
         return $hasil;
     }
 
+    function get_kegiatan_by_id($id){
+        $hasil=$this->db->query("SELECT * FROM kegiatan JOIN user ON kegiatan.id_penulis = user.id WHERE id_kegiatan='$id'");
+        return $hasil;
+    }
+
 
         public function insert_data_kegiatan($nama_kegiatan,  $foto_kegiatan, $keterangan, $tgl_kegiatan, $id_penulis){
             $this->db->trans_start();
@@ -19,7 +24,7 @@ class M_kegiatan extends CI_Model
 
        public function edit_data_kegiatan($nama_kegiatan,  $foto_kegiatan, $keterangan, $tgl_kegiatan, $id){
         $this->db->trans_start();
-        $this->db->query("UPDATE kegiatan SET nama_kegiatan='$nama_kegiatan',  foto_kegiatan='$foto_kegiatan',  keterangan='$keterangan',  tgl_kegiatan='$tgl_kegiatan'  WHERE id_kegiatan='$id'");
+        $this->db->query("UPDATE kegiatan SET nama_kegiatan='$nama_kegiatan',  foto_kegiatan='$foto_kegiatan',  keterangan='$keterangan',  tgl_kegiatan='$tgl_kegiatan' WHERE id_kegiatan='$id'");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;

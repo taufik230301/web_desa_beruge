@@ -30,6 +30,7 @@ class Kegiatan extends CI_Controller {
 			$tgl_kegiatan = $this->input->post("tgl_kegiatan");
 			$file_name = md5($nama_kegiatan.$keterangan);
 			$id_penulis = $this->session->userdata('id');
+
 			// echo $nama_kegiatan;
 			// echo "<br>";
 			// echo $keterangan;
@@ -37,6 +38,8 @@ class Kegiatan extends CI_Controller {
 			// echo $tgl_kegiatan;
 			// echo "<br>";
 			// echo $file_name;
+			// echo "<br>";
+			// echo $id_penulis;
 			// echo "<br>";
 			// die();
 
@@ -46,7 +49,7 @@ class Kegiatan extends CI_Controller {
 
 		$this->load->library('upload');
 		$config['upload_path'] = './assets/kegiatan';
-		$config['allowed_types'] = 'pdf|docx|jpg|png';
+		$config['allowed_types'] = 'pdf|docx|jpg|png|jpeg';
 		$config['max_size'] = '4048';  //2MB max
 		$config['max_width'] = '4480'; // pixel
 		$config['max_height'] = '4480'; // pixel
@@ -57,7 +60,7 @@ class Kegiatan extends CI_Controller {
 			if($foto_kegiatan){
 				$foto_kegiatan = $this->upload->data();
 			}else{
-				$this->session->set_flashdata('error_fil','error_file');
+				$this->session->set_flashdata('error_file','error_file');
 				redirect('Kegiatan/view_admin_utama');
 			}
 			
@@ -107,7 +110,7 @@ class Kegiatan extends CI_Controller {
 
 		$this->load->library('upload');
 		$config['upload_path'] = './assets/kegiatan';
-		$config['allowed_types'] = 'pdf|docx|jpg|png';
+		$config['allowed_types'] = 'pdf|docx|jpg|png|jpeg';
 		$config['max_size'] = '4048';  //2MB max
 		$config['max_width'] = '4480'; // pixel
 		$config['max_height'] = '4480'; // pixel
@@ -118,7 +121,7 @@ class Kegiatan extends CI_Controller {
 			if($foto_kegiatan){
 				$foto_kegiatan = $this->upload->data();
 			}else{
-				$this->session->set_flashdata('error_fil','error_file');
+				$this->session->set_flashdata('error_file','error_file');
 				redirect('Kegiatan/view_admin_utama');
 			}
 			

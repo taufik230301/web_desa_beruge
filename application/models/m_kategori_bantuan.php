@@ -6,4 +6,6 @@ class M_kategori_bantuan extends CI_Model
         return $hasil;
     }
 
+    
+
 }
