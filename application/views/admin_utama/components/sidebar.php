@@ -52,6 +52,7 @@
                          </p>
                      </a>
                  </li>
+                 
                  <li class="nav-item">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-bars"></i>
@@ -170,6 +171,26 @@
                                  <p>RT 014</p>
                              </a>
                          </li>
+                     </ul>
+                 </li>
+
+                 <li class="nav-item">
+                     <a href="#" class="nav-link">
+                         <i class="nav-icon fas fa-bars"></i>
+                         <p>
+                             Master Data
+                             <i class="fas fa-angle-left right"></i>
+                         </p>
+                     </a>
+                     <ul class="nav nav-treeview">
+                         <li class="nav-item">
+                             <a href="<?=base_url();?>Kategori_bantuan/view_admin_utama"
+                                 class="nav-link">
+                                 <i class="far fa-circle nav-icon"></i>
+                                 <p>Kategori Bantuan</p>
+                             </a>
+                         </li>
+                        
                      </ul>
                  </li>
 

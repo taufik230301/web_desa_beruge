@@ -6,6 +6,15 @@ class M_kategori_bantuan extends CI_Model
         return $hasil;
     }
 
-    
 
+
+    public function insert_data_kategori_bantuan($kategori_bantuan){
+        $this->db->trans_start();
+        $this->db->query("INSERT INTO kategori_bantuan(kategori_bantuan) VALUES ('$kategori_bantuan')");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+       }
 }

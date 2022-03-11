@@ -138,7 +138,7 @@
                               ?>
                                             <tr>
                                                 <td><?= $id ?></td>
-                                               
+
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td>
                                                     <div class="table-responsive">
@@ -199,7 +199,8 @@
                                             </div>
 
                                             <!-- Modal Edit Kegiatan -->
-                                            <div class="modal fade" id="edit_kategori_bantuan<?= $id_kategori_bantuan ?>" tabindex="-1"
+                                            <div class="modal fade"
+                                                id="edit_kategori_bantuan<?= $id_kategori_bantuan ?>" tabindex="-1"
                                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                                 <div class="modal-dialog">
                                                     <div class="modal-content">
@@ -219,16 +220,19 @@
                                                                     <input type="text" class="form-control" id="id"
                                                                         aria-describedby="emailHelp" name="id"
                                                                         value="<?=$id_kategori_bantuan?>" hidden>
-                                                                    <label for="kategori_bantuan">Nama Kategori Bantuan</label>
+                                                                    <label for="kategori_bantuan">Nama Kategori
+                                                                        Bantuan</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="kategori_bantuan" aria-describedby="emailHelp"
+                                                                        id="kategori_bantuan"
+                                                                        aria-describedby="emailHelp"
                                                                         name="kategori_bantuan"
-                                                                        value="<?= $kategori_bantuan ?>" >
+                                                                        value="<?= $kategori_bantuan ?>">
                                                                 </div>
-                                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
                                                             </form>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -252,55 +256,39 @@
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kegiatan</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data Kategori Bantuan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form action="<?= base_url(); ?>Kegiatan/input_data_admin_utama"
+                            <form action="<?= base_url(); ?>Kategori_bantuan/input_data_admin_utama"
                                 enctype="multipart/form-data" method="POST">
                                 <div class="form-group">
-                                    <label for="nama_kegiatan">Nama Kegiatan</label>
-                                    <input type="text" class="form-control" id="nama_kegiatan"
-                                        aria-describedby="emailHelp" name="nama_kegiatan" required>
+                                    <label for="kategori_bantuan">Nama Kategori Bantuan</label>
+                                    <input type="text" class="form-control" id="kategori_bantuan"
+                                        aria-describedby="emailHelp" name="kategori_bantuan" required>
                                 </div>
-                                <div class="form-group">
-                                    <label for="foto_kegiatan">Foto Kegiatan</label>
-                                    <input type="file" class="form-control" id="foto_kegiatan"
-                                        aria-describedby="emailHelp" name="foto_kegiatan">
-                                </div>
-                                <div class="form-group">
-                                    <label for="nama_kegiatan">Keterangan</label>
-                                    <textarea class="form-control" id="keterangan" rows="3" name="keterangan" "></textarea>
-                                                                </div>
-                                                                <div class=" form-group">
-                                                                    <label for="tgl_kegiatan">Tanggal Kegiatan</label>
-                                                                    <input type="date" class="form-control"
-                                                                        id="tgl_kegiatan" aria-describedby="emailHelp"
-                                                                        name="tgl_kegiatan">
-                                                                </div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Submit</button>
-                                                            </form>
-                                                        </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
 
-                                                    </div>
-                                                </div>
-                                            </div>
-                                </div>
-                                <!-- /.content-wrapper -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.content-wrapper -->
 
 
-                                <!-- Control Sidebar -->
-                                <aside class="control-sidebar control-sidebar-dark">
-                                    <!-- Control sidebar content goes here -->
-                                </aside>
-                                <!-- /.control-sidebar -->
-                            </div>
-                            <!-- ./wrapper -->
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Control sidebar content goes here -->
+        </aside>
+        <!-- /.control-sidebar -->
+    </div>
+    <!-- ./wrapper -->
 
-                            <?php $this->load->view("admin_utama/components/js.php") ?>
+    <?php $this->load->view("admin_utama/components/js.php") ?>
 </body>
 
 </html>
