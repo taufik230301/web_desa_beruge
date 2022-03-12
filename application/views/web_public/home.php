@@ -53,29 +53,22 @@
             <nav id="navbar" class="navbar">
                 <ul>
                     <li><a class="nav-link scrollto active" href="<?= base_url()?>Web_public/index">Home</a></li>
-                    <li><a class="nav-link scrollto" href="#about">About</a></li>
-                    <li><a class="nav-link scrollto" href="#services">Services</a></li>
-                    <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-                    <li><a class="nav-link scrollto" href="#team">Team</a></li>
-                    <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
+                    <li><a class="nav-link scrollto" href="#about">Tentang</a></li>
+                    <li><a class="nav-link scrollto" href="#services">Pendaftaran</a></li>
+                    <li><a class="nav-link scrollto " href="#portfolio">Kegiatan</a></li>
+                    <li class="dropdown"><a href="#"><span>Data Bantuan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Drop Down 1</a></li>
+                            <li><a href="#">Data Bantuan</a></li>
                             <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
                                         class="bi bi-chevron-right"></i></a>
                                 <ul>
                                     <li><a href="#">Deep Drop Down 1</a></li>
-                                    <li><a href="#">Deep Drop Down 2</a></li>
-                                    <li><a href="#">Deep Drop Down 3</a></li>
-                                    <li><a href="#">Deep Drop Down 4</a></li>
-                                    <li><a href="#">Deep Drop Down 5</a></li>
                                 </ul>
                             </li>
-                            <li><a href="#">Drop Down 2</a></li>
-                            <li><a href="#">Drop Down 3</a></li>
-                            <li><a href="#">Drop Down 4</a></li>
+                           
                         </ul>
                     </li>
-                    <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="<?=base_url();?>" target="_blank">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
@@ -263,13 +256,11 @@
             <div class="container">
                 <div class="row" data-aos="zoom-in">
                     <div class="col-lg-9 text-center text-lg-start">
-                        <h3 class="cta-title">Call To Action</h3>
-                        <p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                            culpa qui officia deserunt mollit anim id est laborum.</p>
+                        <h3 class="cta-title">Lengkapi data bantuan masyarakat</h3>
+                        <p class="cta-text"> Validasi data bantuan masyarakat desa wanamukti.</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Call To Action</a>
+                        <a class="cta-btn align-middle" href="#">Lengkapi Data Anda</a>
                     </div>
                 </div>
 
@@ -324,78 +315,7 @@
             </div>
         </section><!-- End Portfolio Section -->
 
-        <!-- ======= Team Section ======= -->
-        <section id="team">
-            <div class="container" data-aos="fade-up">
-                <div class="section-header">
-                    <h3 class="section-title">Team</h3>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque</p>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="100">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team-1.jpg" alt="">
-                            </div>
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="200">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team-2.jpg" alt="">
-                            </div>
-                            <h4>Sarah Jhinson</h4>
-                            <span>Product Manager</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="300">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team-3.jpg" alt="">
-                            </div>
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-3 col-md-6">
-                        <div class="member" data-aos="fade-up" data-aos-delay="400">
-                            <div class="pic"><img src="<?= base_url();?>assets/public/assets/img/team-4.jpg" alt="">
-                            </div>
-                            <h4>Amanda Jepson</h4>
-                            <span>Accountant</span>
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </section><!-- End Team Section -->
+      
 
         <!-- ======= Contact Section ======= -->
         <section id="contact">
