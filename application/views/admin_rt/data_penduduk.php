@@ -228,6 +228,11 @@
                                                                             value="<?php echo $id_user?>" />
                                                                         <input type="hidden" name="id_user_detail"
                                                                             value="<?php echo $id_user_detail?>" />
+                                                                            <input type="text" class="form-control"
+                                                                            id="foto_ktp_old"
+                                                                            aria-describedby="emailHelp"
+                                                                            name="foto_ktp_old" value="<?=$foto_ktp?>"
+                                                                            hidden>
                                                                         <p>Apakah kamu yakin ingin menghapus data
                                                                             ini?</i></b></p>
                                                                     </div>

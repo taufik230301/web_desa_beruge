@@ -255,6 +255,8 @@ class Data_penduduk extends CI_Controller {
 				$id = $this->input->post("id");
 				$id_user_detail = $this->input->post("id_user_detail");
 
+				$path = './assets/ktp/';
+
 				$hasil = $this->m_user->delete_data_penduduk($id, $id_user_detail );
 		
 				if($hasil==false){
@@ -262,6 +264,7 @@ class Data_penduduk extends CI_Controller {
 				}else{
 					$this->session->set_flashdata('hapus','hapus');
 				}
+				@unlink($path.$this->input->post('foto_ktp_old'));
 				redirect('Data_penduduk/view_admin_utama');
 			}else{
 	
@@ -454,7 +457,7 @@ class Data_penduduk extends CI_Controller {
 			}
 			
 				
-				$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name']);
+				$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name']);
 			
 					if($hasil==false){
 						$this->session->set_flashdata('eror_input','eror_input');
@@ -477,6 +480,8 @@ class Data_penduduk extends CI_Controller {
 
 				$id = $this->input->post("id");
 				$id_user_detail = $this->input->post("id_user_detail");
+				
+				$path = './assets/ktp/';
 				$hasil = $this->m_user->delete_data_penduduk($id, $id_user_detail );
 		
 				if($hasil==false){
@@ -484,6 +489,7 @@ class Data_penduduk extends CI_Controller {
 				}else{
 					$this->session->set_flashdata('hapus','hapus');
 				}
+				@unlink($path.$this->input->post('foto_ktp_old'));
 				redirect('Data_penduduk/view_admin_rt');
 			}else{
 	
