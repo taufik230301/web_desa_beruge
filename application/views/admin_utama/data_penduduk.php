@@ -389,6 +389,16 @@
                                                                         id="keterangan" name="keterangan"
                                                                         value="<?= $keterangan ?>">
                                                                 </div>
+                                                                <div class="form-group">
+                                                                        <label for="foto_ktp">Foto KTP</label>
+                                                                        <input type="file" class="form-control"
+                                                                            id="foto_ktp" name="foto_ktp"
+                                                                            value="<?= $foto_ktp ?>">
+                                                                    </div>
+                                                                    <input type="text" class="form-control"
+                                                                    id="foto_ktp_old" aria-describedby="emailHelp"
+                                                                    name="foto_ktp_old" value="<?=$foto_ktp?>"
+                                                                    hidden>
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
                                                             </form>

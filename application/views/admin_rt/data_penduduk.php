@@ -129,6 +129,7 @@
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
+                                                <th>Foto KTP</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -157,6 +158,7 @@
                                   $kategori_bantuan = $i['kategori_bantuan']; 
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
+                                  $foto_ktp = $i['foto_ktp']; 
 
                 
                               ?>
@@ -175,6 +177,13 @@
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td><?= $kategori_kelas_ekonomi ?></td>
                                                 <td><?= $keterangan ?></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
+                                                                style="width: 25%"> </a>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -235,131 +244,7 @@
                                                 </div>
                                             </div>
 
-                                            <!-- Modal Tambah -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1"
-                                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <h5 class="modal-title" id="exampleModalLabel">Tambah Data
-                                                                Penduduk</h5>
-                                                            <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close">
-                                                                <span aria-hidden="true">&times;</span>
-                                                            </button>
-                                                        </div>
-                                                        <div class="modal-body">
-                                                            <form
-                                                                action="<?= base_url(); ?>Data_penduduk/input_data_admin_rt"
-                                                                enctype="multipart/form-data" method="POST">
-                                                                <div class="form-group">
-                                                                    <label for="nama">Nama Lengkap</label>
-                                                                    <input type="text" class="form-control" id="nama"
-                                                                        name="nama" aria-describedby="emailHelp">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="username">Username</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="username" name="username"
-                                                                        aria-describedby="emailHelp">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="password">Password</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="password" name="password"
-                                                                        aria-describedby="emailHelp">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="no_hp">No HP</label>
-                                                                    <input type="text" class="form-control" id="no_hp"
-                                                                        name="no_hp" aria-describedby="emailHelp">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="email">Email</label>
-                                                                    <input type="text" class="form-control" id="email"
-                                                                        name="email" aria-describedby="emailHelp">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="nik">NIK</label>
-                                                                    <input type="text" class="form-control" id="nik"
-                                                                        name="nik">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="tempat_lahir" name="tempat_lahir">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
-                                                                    <input type="date" class="form-control"
-                                                                        id="tanggal_lahir" name="tanggal_lahir">
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="alamat">Alamat</label>
-                                                                    <textarea class="form-control" id="alamat" rows="3"
-                                                                        name="alamat"></textarea>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="jenis_kelamin">Jenis Kelamin</label>
-                                                                    <select class="form-control" id="jenis_kelamin"
-                                                                        name="jenis_kelamin">
-                                                                        <option value="L">Laki-Laki</option>
-                                                                        <option value="P">Perempuan</option>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="pekerjaan">Pekerjaan</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="pekerjaan" name="pekerjaan">
-                                                                </div>
-                                                                <input type="text" value="<?= $id_rt?>" name="id_rt"
-                                                                    hidden>
-                                                                <div class="form-group">
-                                                                    <label for="id_kategori_kelas_ekonomi">Pilih
-                                                                        Kategori Kelas Ekonomi</label>
-                                                                    <select class="form-control"
-                                                                        id="id_kategori_kelas_ekonomi"
-                                                                        name="id_kategori_kelas_ekonomi">
-                                                                        <?php foreach($kategori_kelas_ekonomi_data as $u)
-                                                                :
-                                                                $id_kategori_kelas_ekonomi = $u["id_kategori_kelas_ekonomi"];
-                                                                $kategori_kelas_ekonomi = $u["kategori_kelas_ekonomi"];
-                                                                ?>
 
-                                                                        <option value="<?=$id_kategori_kelas_ekonomi?>">
-                                                                            <?= $kategori_kelas_ekonomi ?></option>
-                                                                        <?php endforeach?>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="id_kategori_bantuan">Pilih Kategori
-                                                                        Bantuan</label>
-                                                                    <select class="form-control"
-                                                                        id="id_kategori_bantuan"
-                                                                        name="id_kategori_bantuan">
-                                                                        <?php foreach($kategori_bantuan_data as $u)
-                                                                :
-                                                                $id_kategori_bantuan = $u["id_kategori_bantuan"];
-                                                                $kategori_bantuan = $u["kategori_bantuan"];
-                                                                ?>
-
-                                                                        <option value="<?=$id_kategori_bantuan?>">
-                                                                            <?= $kategori_bantuan ?></option>
-                                                                        <?php endforeach?>
-                                                                    </select>
-                                                                </div>
-                                                                <div class="form-group">
-                                                                    <label for="keterangan">Keterangan</label>
-                                                                    <input type="text" class="form-control"
-                                                                        id="keterangan" name="keterangan">
-                                                                </div>
-                                                                <button type="submit"
-                                                                    class="btn btn-primary">Submit</button>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
 
                                             <!-- Modal Edit -->
                                             <div class="modal fade" id="edit_data_penduduk<?= $id_user ?>" tabindex="-1"
@@ -451,8 +336,8 @@
                                                                             id="pekerjaan" name="pekerjaan"
                                                                             value="<?= $pekerjaan ?>">
                                                                     </div>
-                                                                    <input type="text" value="<?= $id_rt?>" name="id_rt"
-                                                                        >
+                                                                    <input type="text" value="<?= $id_rt?>"
+                                                                        name="id_rt" hidden>
                                                                     <div class="form-group">
                                                                         <label for="id_kategori_kelas_ekonomi">Pilih
                                                                             Kategori Kelas Ekonomi</label>
@@ -494,6 +379,16 @@
                                                                             id="keterangan" name="keterangan"
                                                                             value="<?= $keterangan ?>">
                                                                     </div>
+                                                                    <div class="form-group">
+                                                                        <label for="foto_ktp">Foto KTP</label>
+                                                                        <input type="file" class="form-control"
+                                                                            id="foto_ktp" name="foto_ktp"
+                                                                            value="<?= $foto_ktp ?>">
+                                                                    </div>
+                                                                    <input type="text" class="form-control"
+                                                                    id="foto_ktp_old" aria-describedby="emailHelp"
+                                                                    name="foto_ktp_old" value="<?=$foto_ktp?>"
+                                                                    hidden>
                                                                     <button type="submit"
                                                                         class="btn btn-primary">Submit</button>
                                                             </form>
@@ -504,6 +399,129 @@
                                             <?php endforeach?>
                                         </tbody>
                                     </table>
+                                </div>
+                                <!-- Modal Tambah -->
+                                <div class="modal fade" id="exampleModal" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Tambah Data
+                                                    Penduduk</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form action="<?= base_url(); ?>Data_penduduk/input_data_admin_rt"
+                                                    enctype="multipart/form-data" method="POST">
+                                                    <div class="form-group">
+                                                        <label for="nama">Nama Lengkap</label>
+                                                        <input type="text" class="form-control" id="nama" name="nama"
+                                                            aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="username">Username</label>
+                                                        <input type="text" class="form-control" id="username"
+                                                            name="username" aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="password">Password</label>
+                                                        <input type="text" class="form-control" id="password"
+                                                            name="password" aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="no_hp">No HP</label>
+                                                        <input type="text" class="form-control" id="no_hp" name="no_hp"
+                                                            aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="email">Email</label>
+                                                        <input type="text" class="form-control" id="email" name="email"
+                                                            aria-describedby="emailHelp">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="nik">NIK</label>
+                                                        <input type="text" class="form-control" id="nik" name="nik">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="tempat_lahir">Tempat Lahir</label>
+                                                        <input type="text" class="form-control" id="tempat_lahir"
+                                                            name="tempat_lahir">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                        <input type="date" class="form-control" id="tanggal_lahir"
+                                                            name="tanggal_lahir">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="alamat">Alamat</label>
+                                                        <textarea class="form-control" id="alamat" rows="3"
+                                                            name="alamat"></textarea>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="jenis_kelamin">Jenis Kelamin</label>
+                                                        <select class="form-control" id="jenis_kelamin"
+                                                            name="jenis_kelamin">
+                                                            <option value="L">Laki-Laki</option>
+                                                            <option value="P">Perempuan</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="pekerjaan">Pekerjaan</label>
+                                                        <input type="text" class="form-control" id="pekerjaan"
+                                                            name="pekerjaan">
+                                                    </div>
+                                                    <input type="text" value="<?=  $this->session->userdata('id_rt') ?>"
+                                                        name="id_rt" hidden>
+                                                    <div class="form-group">
+                                                        <label for="id_kategori_kelas_ekonomi">Pilih
+                                                            Kategori Kelas Ekonomi</label>
+                                                        <select class="form-control" id="id_kategori_kelas_ekonomi"
+                                                            name="id_kategori_kelas_ekonomi">
+                                                            <?php foreach($kategori_kelas_ekonomi_data as $u)
+                                                                :
+                                                                $id_kategori_kelas_ekonomi = $u["id_kategori_kelas_ekonomi"];
+                                                                $kategori_kelas_ekonomi = $u["kategori_kelas_ekonomi"];
+                                                                ?>
+
+                                                            <option value="<?=$id_kategori_kelas_ekonomi?>">
+                                                                <?= $kategori_kelas_ekonomi ?></option>
+                                                            <?php endforeach?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_kategori_bantuan">Pilih Kategori
+                                                            Bantuan</label>
+                                                        <select class="form-control" id="id_kategori_bantuan"
+                                                            name="id_kategori_bantuan">
+                                                            <?php foreach($kategori_bantuan_data as $u)
+                                                                :
+                                                                $id_kategori_bantuan = $u["id_kategori_bantuan"];
+                                                                $kategori_bantuan = $u["kategori_bantuan"];
+                                                                ?>
+
+                                                            <option value="<?=$id_kategori_bantuan?>">
+                                                                <?= $kategori_bantuan ?></option>
+                                                            <?php endforeach?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="keterangan">Keterangan</label>
+                                                        <input type="text" class="form-control" id="keterangan"
+                                                            name="keterangan">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="foto_ktp">Foto KTP</label>
+                                                        <input type="file" class="form-control" id="foto_ktp"
+                                                            name="foto_ktp">
+                                                    </div>
+                                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <!-- /.card-body -->
                             </div>
