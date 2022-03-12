@@ -82,6 +82,7 @@ class Data_penduduk extends CI_Controller {
 			$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
 			$keterangan = $this->input->post("keterangan");
 			$id_user_level = 4;
+			$file_name = md5($username.$password);
 
 			// echo $nama;
 			// echo "<br>";
@@ -112,7 +113,31 @@ class Data_penduduk extends CI_Controller {
 			// echo $id_kategori_bantuan;
 			// echo "<br>";
 			// die();
-			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan);
+
+			$path = './assets/ktp/';
+
+
+
+		$this->load->library('upload');
+		$config['upload_path'] = './assets/ktp';
+		$config['allowed_types'] = 'jpg|png|jpeg';
+		$config['max_size'] = '4048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $file_name;
+		$this->upload->initialize($config);
+		$foto_ktp = $this->upload->do_upload('foto_ktp');
+
+			if($foto_ktp){
+				$foto_ktp = $this->upload->data();
+			}else{
+				$this->session->set_flashdata('error_file','error_file');
+				redirect('Data_penduduk/view_admin_utama');
+			}
+			
+					
+
+			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name']);
 		
 				if($hasil==false){
 					$this->session->set_flashdata('eror_input','eror_input');
@@ -353,6 +378,7 @@ class Data_penduduk extends CI_Controller {
 				$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
 				$keterangan = $this->input->post("keterangan");
 				$id_user_level = 4;
+				$file_name = md5($username.$password);
 		
 				// echo $nama;
 				// echo "<br>";
@@ -383,7 +409,31 @@ class Data_penduduk extends CI_Controller {
 				// echo $id_kategori_bantuan;
 				// echo "<br>";
 				// die();
-				$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan);
+
+				$path = './assets/ktp/';
+
+
+
+		$this->load->library('upload');
+		$config['upload_path'] = './assets/ktp';
+		$config['allowed_types'] = 'jpg|png|jpeg';
+		$config['max_size'] = '4048';  //2MB max
+		$config['max_width'] = '4480'; // pixel
+		$config['max_height'] = '4480'; // pixel
+		$config['file_name'] = $file_name;
+		$this->upload->initialize($config);
+		$foto_ktp = $this->upload->do_upload('foto_ktp');
+
+			if($foto_ktp){
+				$foto_ktp = $this->upload->data();
+			}else{
+				$this->session->set_flashdata('error_file','error_file');
+				redirect('Data_penduduk/view_admin_utama');
+			}
+			
+					echo var_dump($foto_ktp['file_name']);
+					die();
+				$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name']);
 			
 					if($hasil==false){
 						$this->session->set_flashdata('eror_input','eror_input');

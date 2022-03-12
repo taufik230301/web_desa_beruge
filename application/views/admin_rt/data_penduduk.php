@@ -452,7 +452,7 @@
                                                                             value="<?= $pekerjaan ?>">
                                                                     </div>
                                                                     <input type="text" value="<?= $id_rt?>" name="id_rt"
-                                                                        hidden>
+                                                                        >
                                                                     <div class="form-group">
                                                                         <label for="id_kategori_kelas_ekonomi">Pilih
                                                                             Kategori Kelas Ekonomi</label>

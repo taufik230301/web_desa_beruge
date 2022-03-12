@@ -130,6 +130,7 @@
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
+                                                <th>Foto KTP</th>
                                                 <th>Aksi</th>
 
                                             </tr>
@@ -158,6 +159,7 @@
                                   $kategori_bantuan = $i['kategori_bantuan']; 
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
+                                  $foto_ktp = $i['foto_ktp']; 
 
                 
                               ?>
@@ -176,6 +178,13 @@
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td><?= $kategori_kelas_ekonomi ?></td>
                                                 <td><?= $keterangan ?></td>
+                                                <td>
+                                                    <center> <a
+                                                            href="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
+                                                            target="_blank"><img
+                                                                src="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
+                                                                style="width: 25%"> </a>
+                                                </td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">
@@ -512,6 +521,10 @@
                                     <div class="form-group">
                                         <label for="keterangan">Keterangan</label>
                                         <input type="text" class="form-control" id="keterangan" name="keterangan">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="foto_ktp">Foto KTP</label>
+                                        <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
                                     </div>
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
