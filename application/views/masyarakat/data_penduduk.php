@@ -119,11 +119,12 @@
                                   $kategori_bantuan = $i['kategori_bantuan']; 
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
+                                  $foto_ktp = $i['foto_ktp']; 
 
                 
                               ?>
                             <form action="<?= base_url(); ?>Data_penduduk/edit_data_masyarakat"
-                                enctype="multipart/form-data" method="POST"  class="mb-3">
+                                enctype="multipart/form-data" method="POST" class="mb-3">
                                 <input type="text" name="id" value="<?= $id_user ?>" hidden>
                                 <input type="text" name="id_user_detail" value="<?= $id_user_detail ?>" hidden>
                                 <div class="form-group">
@@ -235,6 +236,12 @@
                                     <input type="text" class="form-control" id="keterangan" name="keterangan"
                                         value="<?= $keterangan ?>">
                                 </div>
+                                <div class="form-group">
+                                    <label for="foto_ktp">Foto KTP</label>
+                                    <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
+                                </div>
+                                <input type="text" class="form-control" id="foto_ktp_old" aria-describedby="emailHelp"
+                                    name="foto_ktp_old" value="<?=$foto_ktp?>" hidden>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                             <?php endforeach?>
