@@ -236,9 +236,19 @@
                                     <input type="text" class="form-control" id="keterangan" name="keterangan"
                                         value="<?= $keterangan ?>">
                                 </div>
+                                
+
                                 <div class="form-group">
                                     <label for="foto_ktp">Foto KTP</label>
                                     <input type="file" class="form-control" id="foto_ktp" name="foto_ktp">
+                                </div>
+                                <div class="form-group">
+                                    <label for="keterangan">Preview KTP</label>
+                                    <?php if($foto_ktp){?>
+                                    <img src="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>" style="width: 25%">
+                                    <?php }else{ ?>
+                                        <p>Masukan Foto KTP !</p>
+                                    <?php } ?>
                                 </div>
                                 <input type="text" class="form-control" id="foto_ktp_old" aria-describedby="emailHelp"
                                     name="foto_ktp_old" value="<?=$foto_ktp?>" hidden>
