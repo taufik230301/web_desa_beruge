@@ -16,6 +16,7 @@ class Data_penduduk extends CI_Controller {
 		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
 			$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
 			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
+			$data['status_verifikasi_data'] = $this->m_status_verifikasi->get_status_verifikasi()->result_array();
 			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
 			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
 
@@ -82,6 +83,7 @@ class Data_penduduk extends CI_Controller {
 			$id_kategori_kelas_ekonomi = $this->input->post("id_kategori_kelas_ekonomi");
 			$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
 			$keterangan = $this->input->post("keterangan");
+			$id_status_verifikasi = $this->input->post("id_status_verifikasi");
 			$id_user_level = 4;
 			$file_name = md5($username.$password);
 
@@ -138,7 +140,7 @@ class Data_penduduk extends CI_Controller {
 			
 					
 
-			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name']);
+			$hasil = $this->m_user->insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tanggal_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp['file_name'], $id_status_verifikasi);
 		
 				if($hasil==false){
 					$this->session->set_flashdata('eror_input','eror_input');

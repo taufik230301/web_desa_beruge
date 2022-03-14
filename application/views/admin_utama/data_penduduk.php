@@ -130,6 +130,7 @@
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
+                                                <th>Status Verfikasi</th>
                                                 <th>Foto KTP</th>
                                                 <th>Aksi</th>
 
@@ -160,6 +161,7 @@
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
                                   $foto_ktp = $i['foto_ktp']; 
+                                  $status_verifikasi = $i['status_verifikasi']; 
 
                 
                               ?>
@@ -178,6 +180,7 @@
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td><?= $kategori_kelas_ekonomi ?></td>
                                                 <td><?= $keterangan ?></td>
+                                                <td><?= $status_verifikasi ?></td>
                                                 <td>
                                                     <center> <a
                                                             href="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
@@ -389,6 +392,23 @@
                                                                     </select>
                                                                 </div>
                                                                 <div class="form-group">
+                                                                    <label for="id_status_verifikasi">Pilih Status
+                                                                        Verfikasi</label>
+                                                                    <select class="form-control"
+                                                                        id="id_status_verifikasi"
+                                                                        name="id_status_verifikasi">
+                                                                        <?php foreach($status_verifikasi_data as $u)
+                                                                :
+                                                                $id_status_verifikasi = $u["id_status_verifikasi"];
+                                                                $status_verifikasi = $u["status_verifikasi"];
+                                                                ?>
+
+                                                                        <option value="<?=$id_status_verifikasi?>">
+                                                                            <?= $status_verifikasi ?></option>
+                                                                        <?php endforeach?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
                                                                     <label for="keterangan">Keterangan</label>
                                                                     <input type="text" class="form-control"
                                                                         id="keterangan" name="keterangan"
@@ -529,6 +549,21 @@
                                                                 ?>
 
                                             <option value="<?=$id_kategori_bantuan?>"><?= $kategori_bantuan ?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="id_status_verifikasi">Pilih Status Verfikasi</label>
+                                        <select class="form-control" id="id_status_verifikasi"
+                                            name="id_status_verifikasi">
+                                            <?php foreach($status_verifikasi_data as $u)
+                                                                :
+                                                                $id_status_verifikasi = $u["id_status_verifikasi"];
+                                                                $status_verifikasi = $u["status_verifikasi"];
+                                                                ?>
+
+                                            <option value="<?=$id_status_verifikasi?>"><?= $status_verifikasi ?>
+                                            </option>
                                             <?php endforeach?>
                                         </select>
                                     </div>

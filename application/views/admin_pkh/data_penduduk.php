@@ -138,6 +138,7 @@
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
+                                                <th>Status Verfikasi</th>
                                                 <th>Aksi</th>
                                             </tr>
                                         </thead>
@@ -163,6 +164,7 @@
                                   $kategori_bantuan = $i['kategori_bantuan']; 
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
+                                  $status_verifikasi = $i['status_verifikasi']; 
 
                 
                               ?>
@@ -181,6 +183,7 @@
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td><?= $kategori_kelas_ekonomi ?></td>
                                                 <td><?= $keterangan ?></td>
+                                                <td><?= $status_verifikasi ?></td>
                                                 <td>
                                                     <div class="table-responsive">
                                                         <div class="table table-striped table-hover ">

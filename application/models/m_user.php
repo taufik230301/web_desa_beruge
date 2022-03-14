@@ -74,10 +74,10 @@ class M_user extends CI_Model
        }
 
 
-    public function insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp){
+    public function insert_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $foto_ktp, $id_status_verifikasi){
         $this->db->trans_start();
         $this->db->query("INSERT INTO user(username,password,email ,no_hp ,id_user_level, id_user_detail) VALUES ('$username','$password','$email','$no_hp','$id_user_level',autoInc())");
-       $this->db->query("INSERT INTO user_detail(id_user_detail,nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan, foto_ktp) VALUES (autoInc_user_detail(),'$nama', '$nik', '$tempat_lahir', '$tgl_lahir', '$alamat', '$jenis_kelamin', '$pekerjaan', '$id_rt', '$id_kategori_bantuan', '$id_kategori_kelas_ekonomi', '$keterangan', '$foto_ktp')");
+       $this->db->query("INSERT INTO user_detail(id_user_detail,nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan, foto_ktp, id_status_verifikasi) VALUES (autoInc_user_detail(),'$nama', '$nik', '$tempat_lahir', '$tgl_lahir', '$alamat', '$jenis_kelamin', '$pekerjaan', '$id_rt', '$id_kategori_bantuan', '$id_kategori_kelas_ekonomi', '$keterangan', '$foto_ktp', '$id_status_verifikasi')");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
             return true;
