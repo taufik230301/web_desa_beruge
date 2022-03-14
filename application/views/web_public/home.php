@@ -192,60 +192,33 @@
         <section id="services">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
-                    <h3 class="section-title">Services</h3>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque</p>
+                    <h3 class="section-title">Langkah-langkah melengkapi Data</h3>
+                    <p class="section-description">Berikut Langkah - langkah melengkapi data bantuan bagi masyarakat</p>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                         <div class="box">
                             <div class="icon"><a href=""><i class="bi bi-briefcase"></i></a></div>
-                            <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-                            <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias
-                                excepturi sint occaecati cupiditate non provident</p>
+                            <h4 class="title"><a href="">1. Kunjungi Web SISM-DWM</a></h4>
+                            <p class="description">Kunjungi Web Sistem Informasi Manjemen Penrima Bantuan.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                         <div class="box">
                             <div class="icon"><a href=""><i class="bi bi-card-checklist"></i></a></div>
-                            <h4 class="title"><a href="">Dolor Sitema</a></h4>
-                            <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                aliquip ex ea commodo consequat tarad limino ata</p>
+                            <h4 class="title"><a href="">2. Klik Lengkapi Data</a></h4>
+                            <p class="description">Bisa langsung klik Tombol Lengkapi data Bantuan masyarakat.</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6" data-aos="zoom-in">
                         <div class="box">
                             <div class="icon"><a href=""><i class="bi bi-bar-chart"></i></a></div>
-                            <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-                            <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                dolore eu fugiat nulla pariatur</p>
+                            <h4 class="title"><a href="">3. Konfirmasi Status Data Dana Bantuan</a></h4>
+                            <p class="description">Setelah melengkapi data dana bantuan, masyarakat akan mendapat informasi terkait data persebaran dana bantuan masyarakat sekaligus status verifikasi berkas dari admin.</p>
                         </div>
                     </div>
 
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="bi bi-binoculars"></i></a></div>
-                            <h4 class="title"><a href="">Magni Dolores</a></h4>
-                            <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="bi bi-brightness-high"></i></a></div>
-                            <h4 class="title"><a href="">Nemo Enim</a></h4>
-                            <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                                blanditiis praesentium voluptatum deleniti atque</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6" data-aos="zoom-in">
-                        <div class="box">
-                            <div class="icon"><a href=""><i class="bi bi-calendar4-week"></i></a></div>
-                            <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-                            <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero
-                                tempore, cum soluta nobis est eligendi</p>
-                        </div>
-                    </div>
+                   
                 </div>
 
             </div>
@@ -260,7 +233,7 @@
                         <p class="cta-text"> Validasi data bantuan masyarakat desa wanamukti.</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="#">Lengkapi Data Anda</a>
+                        <a class="cta-btn align-middle" href="<?= base_url()?>Register/index" target="_blank">Lengkapi Data Anda</a>
                     </div>
                 </div>
 

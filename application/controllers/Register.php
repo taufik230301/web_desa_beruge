@@ -22,9 +22,10 @@ class Register extends CI_Controller {
 		$password = $this->input->post("password");
 		$re_password = $this->input->post("re_password");
 		$id_user_level = 4;
+		$id_status_verifikasi = 1;
 
 		if($password == $re_password){
-			$hasil = $this->m_user->pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level);
+			$hasil = $this->m_user->pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level, $id_status_verifikasi);
 	
 			if($hasil==false){
 				$this->session->set_flashdata('eror','eror');
