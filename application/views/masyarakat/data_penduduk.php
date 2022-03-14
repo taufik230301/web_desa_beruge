@@ -115,14 +115,52 @@
                                   $alamat = $i['alamat']; 
                                   $jenis_kelamin = $i['jenis_kelamin']; 
                                   $pekerjaan = $i['pekerjaan']; 
-                                  $nomor_rt = $i['nomor_rt']; 
-                                  $kategori_bantuan = $i['kategori_bantuan']; 
-                                  $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
+                                  $nomor_rt_masyarakat = $i['nomor_rt']; 
+                                  $kategori_bantuan_masyarakat = $i['kategori_bantuan']; 
+                                  $kategori_kelas_ekonomi_masyarakat = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
                                   $foto_ktp = $i['foto_ktp']; 
+                                  $id_status_verifikasi = $i['id_status_verifikasi']; 
 
                 
                               ?>
+                            <!-- Button trigger modal -->
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#exampleModal">
+                               Cek Status Verfikasi
+                            </button>
+
+                            <!-- Modal -->
+                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Status Data</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="card text-white bg-white mb-3" style="max-width: 30rem;">
+                                                <div class="card-body">
+                                                    <?php if($id_status_verifikasi == 1){?>
+                                                    <p class="text-danger">Belum Diverfikasi Admin PKH</p>
+                                                    <?php } else{?>
+                                                    <p class="text-success">Telah Diverfikasi Admin PKH</p>
+                                                    <?php } ?>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                             <form action="<?= base_url(); ?>Data_penduduk/edit_data_masyarakat"
                                 enctype="multipart/form-data" method="POST" class="mb-3">
                                 <input type="text" name="id" value="<?= $id_user ?>" hidden>
@@ -186,7 +224,7 @@
                                     <input type="text" class="form-control" id="pekerjaan" name="pekerjaan"
                                         value="<?= $pekerjaan ?>">
                                 </div>
-                                <div class="form-group">
+                                <div class="form-group mt-5">
                                     <label for="id_rt">Pilih RT</label>
                                     <select class="form-control" id="id_rt" name="id_rt">
                                         <?php foreach($rt_data as $u)
@@ -201,6 +239,12 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="keterangan">Kategori Kelas Ekonomi Yang Anda Pilih :</label>
+                                    <?php if($nomor_rt_masyarakat){?>
+                                    <p><?php echo $nomor_rt_masyarakat?></p>
+                                    <?php }?>
+                                </div>
+                                <div class="form-group mt-5">
                                     <label for="id_kategori_kelas_ekonomi">Pilih
                                         Kategori Kelas Ekonomi</label>
                                     <select class="form-control" id="id_kategori_kelas_ekonomi"
@@ -217,7 +261,17 @@
                                         <?php endforeach?>
                                     </select>
                                 </div>
+
                                 <div class="form-group">
+                                    <label for="keterangan">Kategori Kelas Ekonomi Yang Anda Pilih :</label>
+                                    <?php if($kategori_kelas_ekonomi_masyarakat){?>
+                                    <p><?php echo $kategori_kelas_ekonomi_masyarakat?></p>
+                                    <?php }else{ ?>
+                                    <p>Belum Memasukan Kategori Kelas Ekonomi</p>
+                                    <?php } ?>
+                                </div>
+
+                                <div class="form-group mt-5">
                                     <label for="id_kategori_bantuan">Pilih Kategori
                                         Bantuan</label>
                                     <select class="form-control" id="id_kategori_bantuan" name="id_kategori_bantuan">
@@ -232,11 +286,19 @@
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label for="keterangan">Kategori Bantuan Yang Anda Pilih :</label>
+                                    <?php if($kategori_bantuan_masyarakat){?>
+                                    <p><?php echo $kategori_bantuan_masyarakat?></p>
+                                    <?php }else{ ?>
+                                    <p>Belum Memasukan Kategori Bantuan</p>
+                                    <?php } ?>
+                                </div>
+                                <div class="form-group mt-5">
                                     <label for="keterangan">Keterangan</label>
                                     <input type="text" class="form-control" id="keterangan" name="keterangan"
                                         value="<?= $keterangan ?>">
                                 </div>
-                                
+
 
                                 <div class="form-group">
                                     <label for="foto_ktp">Foto KTP</label>
@@ -247,7 +309,7 @@
                                     <?php if($foto_ktp){?>
                                     <img src="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>" style="width: 25%">
                                     <?php }else{ ?>
-                                        <p>Masukan Foto KTP !</p>
+                                    <p>Masukan Foto KTP !</p>
                                     <?php } ?>
                                 </div>
                                 <input type="text" class="form-control" id="foto_ktp_old" aria-describedby="emailHelp"

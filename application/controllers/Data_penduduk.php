@@ -9,6 +9,7 @@ class Data_penduduk extends CI_Controller {
 		$this->load->model('m_rt');
 		$this->load->model('m_kategori_kelas_ekonomi');
 		$this->load->model('m_kategori_bantuan');
+		$this->load->model('m_status_verifikasi');
 	}
 	public function view_admin_utama()
 	{
@@ -636,6 +637,7 @@ class Data_penduduk extends CI_Controller {
 			$id_user_detail = $this->input->post("id_user_detail");
 			$id_user_level = 4;
 			$file_name = md5($username.$password);
+			$id_status_verifikasi = 1;
 	
 			// echo $nama;
 			// echo "<br>";
@@ -689,7 +691,7 @@ class Data_penduduk extends CI_Controller {
 				redirect('Data_penduduk/view_admin_rt');
 			}
 
-			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name']);
+			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);
 		
 				if($hasil==false){
 					$this->session->set_flashdata('eror_edit','eror_edit');

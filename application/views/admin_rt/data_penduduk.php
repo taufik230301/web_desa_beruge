@@ -129,6 +129,7 @@
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
+                                                <th>Status Verifkasi</th>
                                                 <th>Foto KTP</th>
                                                 <th>Aksi</th>
                                             </tr>
@@ -158,6 +159,7 @@
                                   $kategori_bantuan = $i['kategori_bantuan']; 
                                   $kategori_kelas_ekonomi = $i['kategori_kelas_ekonomi']; 
                                   $keterangan = $i['keterangan']; 
+                                  $status_verifikasi = $i['status_verifikasi']; 
                                   $foto_ktp = $i['foto_ktp']; 
 
                 
@@ -177,6 +179,7 @@
                                                 <td><?= $kategori_bantuan ?></td>
                                                 <td><?= $kategori_kelas_ekonomi ?></td>
                                                 <td><?= $keterangan ?></td>
+                                                <td><?= $status_verifikasi ?></td>
                                                 <td>
                                                     <center> <a
                                                             href="<?= base_url();?>assets/ktp/<?php echo $foto_ktp?>"
