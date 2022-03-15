@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 10, 2022 at 04:44 AM
+-- Generation Time: Mar 15, 2022 at 01:57 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -66,7 +66,8 @@ CREATE TABLE `kategori_bantuan` (
 INSERT INTO `kategori_bantuan` (`id_kategori_bantuan`, `kategori_bantuan`) VALUES
 (1, 'Belum Ada Kategori'),
 (2, 'Bantuan Langsung Tunai'),
-(3, 'Bantuan Dana Bupati\r\n');
+(3, 'Bantuan Dana Bupati\r\n'),
+(4, 'TIdak Mendapat Bantuan');
 
 -- --------------------------------------------------------
 
@@ -109,7 +110,8 @@ CREATE TABLE `kegiatan` (
 --
 
 INSERT INTO `kegiatan` (`id_kegiatan`, `nama_kegiatan`, `foto_kegiatan`, `keterangan`, `tgl_kegiatan`, `id_penulis`, `created_at`) VALUES
-(5, 'Gotong Royong', '4242c1f292fb50177492336833874018.png', 'Gotong Royong', '2022-03-09', 1, '2022-03-09');
+(5, 'Gotong Royong', '4242c1f292fb50177492336833874018.jpeg', 'penduduk Indonesia dikenal sebagai penduduk yang ramah di mata bangsa lain. Di samping itu juga, Indonesia terkenal dengan budaya gotong royong, khususnya di pedesaan. Budaya gotong royong sangat kental dengan masyarakat desa. Gotong royong (solidaritas sosial) merupakan bentuk kepedulian atau keprihatinan seseorang terhadap orang lain, sehingga ia rela memberikan waktu, tenaga atau pikirannya untuk orang lain. Budaya inilah yang masih dipegang oleh masyarakat desa di Indonesia pada umumnya. Sebagai contoh, di desa tempat saya  berada yaitu di Desa Lamajang', '2022-03-09', 1, '2022-03-09'),
+(6, 'Penyerahan Bantuan Desa', '75824109d37cd1db6cc418fe24436120.jpeg', 'penduduk Indonesia dikenal sebagai penduduk yang ramah di mata bangsa lain. Di samping itu juga, Indonesia terkenal dengan budaya gotong royong, khususnya di pedesaan. Budaya gotong royong sangat kental dengan masyarakat desa. Gotong royong (solidaritas sosial) merupakan bentuk kepedulian atau keprihatinan seseorang terhadap orang lain, sehingga ia rela memberikan waktu, tenaga atau pikirannya untuk orang lain. Budaya inilah yang masih dipegang oleh masyarakat desa di Indonesia pada umumnya. Sebagai contoh, di desa tempat saya  berada yaitu di Desa Lamajang', '2022-03-10', 1, '2022-03-11');
 
 -- --------------------------------------------------------
 
@@ -146,6 +148,25 @@ INSERT INTO `rt` (`id_rt`, `nomor_rt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `status_verifikasi`
+--
+
+CREATE TABLE `status_verifikasi` (
+  `id_status_verifikasi` int(11) NOT NULL,
+  `status_verifikasi` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `status_verifikasi`
+--
+
+INSERT INTO `status_verifikasi` (`id_status_verifikasi`, `status_verifikasi`) VALUES
+(1, 'Belum Diverifikasi'),
+(2, 'Telah Diverfikasi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -167,18 +188,26 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_hp`, `id_user_lev
 (1, 'admin_utama', 'admin123', 'admin_utama@gmail.com', '082912716726', 1, 1),
 (2, 'admin_pkh', 'admin123', 'admin_pkh@gmail.com', '08126712', 2, 2),
 (3, 'admin_rt', 'admin123', 'admin_rt@gmail.com', '01821726712', 3, 3),
-(4, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 4),
 (19, 'admin_rt_01', 'admin123', 'admin_rt_01@gmail.com', '0812781728', 3, 5),
-(20, 'kresna123', 'kresna12', 'kresna123@gmail.com', '0812781728', 4, 6),
-(21, 'Zaki12', 'zaki123', 'zaki12@gmail.com', '08129819821', 4, 7),
-(22, 'Heru', 'heru123', 'haru23@gmail.com', '01821291892', 4, 8),
-(23, 'Hendra', 'hendra123', 'hendra@gmail.com', '0812781721', 4, 9),
 (24, 'admin_rt_02', 'admin123', 'admin_rt_02@gmail.com', '0812781728', 3, 10),
 (25, 'admin_rt_03', 'admin123', 'admin_rt_03@gmail.com', '0812781728', 3, 11),
 (26, 'admin_rt_04', 'admin123', 'admin_rt_04@gmail.com', '0812781728', 3, 12),
 (27, 'admin_rt_05', 'admin123', 'admin_rt_05@gmail.com', '0812781728', 3, 13),
-(29, 'aziz12', 'aziz23', 'aziz25@gmail.com', '081271281', 4, 15),
-(30, 'malian12', 'malian123', 'malian123@gmail.com', '0812781728', 4, 16);
+(33, 'admin_rt_06', 'admin123', 'admin_rt_06@gmail.com', '08126712612', 3, 14),
+(34, 'admin_rt_07', 'admin123', 'admin_rt_07@gmail.com', '08128912712', 3, 15),
+(35, 'admin_rt_08', 'admin123', 'admin_rt_08@gmail.com', '0865124513162', 3, 16),
+(36, 'admin_rt_09', 'admin123', 'admin_rt_09@gmail.com', '0812781728712', 3, 17),
+(37, 'admin_rt_10', 'admin123', 'admin_rt_10@gmail.com', '08127817127182', 3, 18),
+(38, 'admin_rt_11', 'admin123', 'admin_rt_11@gmail.com', '089126162716', 3, 19),
+(39, 'admin_rt_12', 'admin123', 'admin_rt_12@gmail.com', '081721627617', 3, 20),
+(40, 'admin_rt_13', 'admin123', 'admin_rt_13@gmail.com', '0819271726112', 3, 21),
+(41, 'admin_rt_14', 'admin123', 'admin_rt_14@gmail.com', '08125342521', 3, 22),
+(42, 'admin_rt_15', 'admin123', 'admin_rt_15@gmail.com', '089763425212', 3, 23),
+(46, 'malian123', 'malian123', 'malian123@gmail.com', '0812781728', 4, 24),
+(48, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 25),
+(52, 'Kresna', 'kresna123', 'kresna123@gmail.com', '0812781728', 4, 26),
+(53, 'Irfan', 'irfan123', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 27),
+(54, 'Rian', 'rian123', 'rian23@gmail.com', '0812712671', 4, 28);
 
 -- --------------------------------------------------------
 
@@ -198,29 +227,39 @@ CREATE TABLE `user_detail` (
   `id_rt` int(11) DEFAULT NULL,
   `id_kategori_bantuan` int(11) DEFAULT NULL,
   `id_kategori_kelas_ekonomi` int(11) DEFAULT NULL,
-  `keterangan` text DEFAULT NULL
+  `keterangan` text DEFAULT NULL,
+  `foto_ktp` varchar(250) NOT NULL,
+  `id_status_verifikasi` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user_detail`
 --
 
-INSERT INTO `user_detail` (`id_user_detail`, `nama`, `nik`, `tempat_lahir`, `tgl_lahir`, `alamat`, `jenis_kelamin`, `pekerjaan`, `id_rt`, `id_kategori_bantuan`, `id_kategori_kelas_ekonomi`, `keterangan`) VALUES
-(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(4, 'Taufiiqulhakim', '16172121298192', 'Palembang', '2022-02-10', 'Jl.Belanti', 'L', 'Programmer', 1, 1, 2, 'Bagus'),
-(5, '', '', '', '0000-00-00', '', 'L', '', 2, 2, 1, ''),
-(6, 'Kresna Vespri', '1929102', 'Palembang', '2022-03-08', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 3, 'Bgus'),
-(7, 'Zaki Tirta', '0128918921', 'Kenten', '2022-03-16', 'Jl. Sekip', 'L', 'Siswa', 2, 2, 3, 'Bagus'),
-(8, 'Heru M', '06182718728172', 'Bukit', '2022-03-08', 'Bagus', 'L', 'Programmer', 3, 2, 3, 'Bagus'),
-(9, 'Hendra Nasution', '061827187281', 'Palembang', '2022-03-08', 'Jl. Sekip', 'L', 'PNS', 3, 2, 2, 'Bagus'),
-(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, 1, NULL),
-(11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, 1, NULL),
-(12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 1, 1, NULL),
-(13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, 1, NULL),
-(15, 'Aziz Akbar', '0617267126712', 'Tg Raja', '0000-00-00', 'Jl. Sekip', 'L', 'PNS', 2, 1, 1, 'Bagus'),
-(16, 'Malian', '061727817821', 'Sekip', '2022-03-09', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 1, 1, 'Bagus');
+INSERT INTO `user_detail` (`id_user_detail`, `nama`, `nik`, `tempat_lahir`, `tgl_lahir`, `alamat`, `jenis_kelamin`, `pekerjaan`, `id_rt`, `id_kategori_bantuan`, `id_kategori_kelas_ekonomi`, `keterangan`, `foto_ktp`, `id_status_verifikasi`) VALUES
+(1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1),
+(2, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1),
+(3, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', 1),
+(5, '', '', '', '0000-00-00', '', 'L', '', 2, 2, 1, '', '', 1),
+(10, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 3, 1, 1, NULL, '', 1),
+(11, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, 1, 1, NULL, '', 1),
+(12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 5, 1, 1, NULL, '', 1),
+(13, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 6, 1, 1, NULL, '', 1),
+(14, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(15, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(16, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(17, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(18, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(19, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(20, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(21, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(22, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
+(24, 'Malian', '017828912671', 'Palembang', '2022-03-11', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 2, 'Bagus', '6c97c5153f000218f0f0000ef647bcfa.jpg', 1),
+(25, 'Taufiiqulhakim', '061827182871812', 'Palembang', '2022-03-13', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 2, 2, 'baik', 'e1416dc7b1aea5b12b0352258027f0ff.png', 1),
+(26, 'Kresna Vespri', '06127172717281', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 6, 3, 2, 'Baik', 'e97e16103cd7ae61b97ad8b1c7d7fd89.png', 1),
+(27, 'Muhammad Irfan', '06128781728121', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 2, 3, 'Bantuan Bupati', 'b90dd6910160135a870afdd3cfb684d7.png', 2),
+(28, 'RianHariyadi', '061827812', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'PNS', 1, 3, 2, 'bagus', '8585d36b90f277a5cd38bf0475e8e506.png', 1);
 
 -- --------------------------------------------------------
 
@@ -272,6 +311,12 @@ ALTER TABLE `rt`
   ADD PRIMARY KEY (`id_rt`);
 
 --
+-- Indexes for table `status_verifikasi`
+--
+ALTER TABLE `status_verifikasi`
+  ADD PRIMARY KEY (`id_status_verifikasi`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -297,7 +342,7 @@ ALTER TABLE `user_level`
 -- AUTO_INCREMENT for table `kategori_bantuan`
 --
 ALTER TABLE `kategori_bantuan`
-  MODIFY `id_kategori_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori_bantuan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `kategori_kelas_ekonomi`
@@ -309,7 +354,7 @@ ALTER TABLE `kategori_kelas_ekonomi`
 -- AUTO_INCREMENT for table `kegiatan`
 --
 ALTER TABLE `kegiatan`
-  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_kegiatan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `rt`
@@ -318,10 +363,16 @@ ALTER TABLE `rt`
   MODIFY `id_rt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `status_verifikasi`
+--
+ALTER TABLE `status_verifikasi`
+  MODIFY `id_status_verifikasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `user_level`
