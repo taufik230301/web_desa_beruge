@@ -96,9 +96,9 @@ class M_user extends CI_Model
                 return false;
            }
 
-           public function update_data_kategori_penduduk( $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $id_user_detail){
+           public function update_data_kategori_penduduk( $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $id_user_detail, $id_status_verifikasi){
             $this->db->trans_start();
-            $this->db->query("UPDATE user_detail SET id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi'  WHERE id_user_detail='$id_user_detail'");
+            $this->db->query("UPDATE user_detail SET id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', id_status_verifikasi='$id_status_verifikasi'  WHERE id_user_detail='$id_user_detail'");
             $this->db->trans_complete();
             if($this->db->trans_status()==true)
                 return true;

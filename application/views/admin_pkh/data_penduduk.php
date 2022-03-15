@@ -214,7 +214,7 @@
                                                                 enctype="multipart/form-data" method="POST">
                                                                 <input type="text" name="id_user_detail"
                                                                     value="<?= $id_user_detail ?>" hidden>
-                                                                
+
                                                                 <div class="form-group">
                                                                     <label for="id_kategori_kelas_ekonomi">Pilih
                                                                         Kategori Kelas Ekonomi</label>
@@ -249,7 +249,24 @@
                                                                         <?php endforeach?>
                                                                     </select>
                                                                 </div>
-                                                                
+                                                                <div class="form-group">
+                                                                    <label for="id_status_verifikasi">Pilih Status
+                                                                        Verfikasi</label>
+                                                                    <select class="form-control"
+                                                                        id="id_status_verifikasi"
+                                                                        name="id_status_verifikasi">
+                                                                        <?php foreach($status_verifikasi_data as $u)
+                                                                :
+                                                                $id_status_verifikasi = $u["id_status_verifikasi"];
+                                                                $status_verifikasi = $u["status_verifikasi"];
+                                                                ?>
+
+                                                                        <option value="<?=$id_status_verifikasi?>">
+                                                                            <?= $status_verifikasi ?></option>
+                                                                        <?php endforeach?>
+                                                                    </select>
+                                                                </div>
+
                                                                 <button type="submit"
                                                                     class="btn btn-primary">Submit</button>
                                                             </form>
