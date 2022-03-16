@@ -59,6 +59,7 @@ class M_user extends CI_Model
         JOIN rt ON user_detail.id_rt = rt.id_rt
         JOIN kategori_kelas_ekonomi ON user_detail.id_kategori_kelas_ekonomi = kategori_kelas_ekonomi.id_kategori_kelas_ekonomi
         JOIN kategori_bantuan ON user_detail.id_kategori_bantuan = kategori_bantuan.id_kategori_bantuan
+        JOIN status_verifikasi ON user_detail.id_status_verifikasi = status_verifikasi.id_status_verifikasi
         WHERE user.id_user_level = 4 AND user_detail.id_kategori_kelas_ekonomi = '$id'");
         return $hasil;
        }
@@ -69,6 +70,7 @@ class M_user extends CI_Model
         JOIN rt ON user_detail.id_rt = rt.id_rt
         JOIN kategori_kelas_ekonomi ON user_detail.id_kategori_kelas_ekonomi = kategori_kelas_ekonomi.id_kategori_kelas_ekonomi
         JOIN kategori_bantuan ON user_detail.id_kategori_bantuan = kategori_bantuan.id_kategori_bantuan
+        JOIN status_verifikasi ON user_detail.id_status_verifikasi = status_verifikasi.id_status_verifikasi
         WHERE user.id_user_level = 4 AND user_detail.id_rt = '$id'");
         return $hasil;
        }

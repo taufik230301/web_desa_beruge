@@ -58,14 +58,7 @@
                     <li><a class="nav-link scrollto " href="#portfolio">Kegiatan</a></li>
                     <li class="dropdown"><a href="#"><span>Data Bantuan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Data Bantuan</a></li>
-                            <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i
-                                        class="bi bi-chevron-right"></i></a>
-                                <ul>
-                                    <li><a href="#">Deep Drop Down 1</a></li>
-                                </ul>
-                            </li>
-                           
+                            <li><a href="#">Data Bantuan</a></li>  
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="<?=base_url();?>" target="_blank">Login</a></li>
@@ -302,8 +295,9 @@
 
             <!-- Uncomment below if you wan to use dynamic maps -->
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d22864.11283411948!2d-73.96468908098944!3d40.630720240038435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sbg!4v1540447494452"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31885.7836378196!2d104.45804036729093!3d-2.596238378932168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b3b4babedac21%3A0x18b1e6a9d23f652d!2sWana%20Mukti%2C%20Pulau%20Rimau%2C%20Banyuasin%20Regency%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1647433801265!5m2!1sen!2sid"
                 width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
+                
 
             <div class="container mt-5">
                 <div class="row justify-content-center">
@@ -325,14 +319,6 @@
                                 <i class="bi bi-phone"></i>
                                 <p>+1 5589 55488 55s</p>
                             </div>
-                        </div>
-
-                        <div class="social-links">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                         </div>
 
                     </div>
@@ -383,16 +369,10 @@
 
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>Regna</strong>. All Rights Reserved
+                &copy; Copyright <strong>Desa Wanamukti</strong>
             </div>
             <div class="credits">
-                <!--
-        All the links in the footer should remain intact.
-        You can delete the links only if you purchased the pro version.
-        Licensing information: https://bootstrapmade.com/license/
-        Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Regna
-      -->
-                Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      
             </div>
         </div>
     </footer><!-- End Footer -->

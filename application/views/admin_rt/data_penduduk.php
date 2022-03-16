@@ -231,7 +231,7 @@
                                                                             value="<?php echo $id_user?>" />
                                                                         <input type="hidden" name="id_user_detail"
                                                                             value="<?php echo $id_user_detail?>" />
-                                                                            <input type="text" class="form-control"
+                                                                        <input type="text" class="form-control"
                                                                             id="foto_ktp_old"
                                                                             aria-describedby="emailHelp"
                                                                             name="foto_ktp_old" value="<?=$foto_ktp?>"
@@ -344,8 +344,8 @@
                                                                             id="pekerjaan" name="pekerjaan"
                                                                             value="<?= $pekerjaan ?>">
                                                                     </div>
-                                                                    <input type="text" value="<?= $id_rt?>"
-                                                                        name="id_rt" hidden>
+                                                                    <input type="text" value="<?= $id_rt?>" name="id_rt"
+                                                                        hidden>
                                                                     <div class="form-group">
                                                                         <label for="id_kategori_kelas_ekonomi">Pilih
                                                                             Kategori Kelas Ekonomi</label>
@@ -382,6 +382,23 @@
                                                                         </select>
                                                                     </div>
                                                                     <div class="form-group">
+                                                                        <label for="id_status_verifikasi">Pilih Status
+                                                                            Verfikasi</label>
+                                                                        <select class="form-control"
+                                                                            id="id_status_verifikasi"
+                                                                            name="id_status_verifikasi">
+                                                                            <?php foreach($status_verifikasi_data as $u)
+                                                                :
+                                                                $id_status_verifikasi = $u["id_status_verifikasi"];
+                                                                $status_verifikasi = $u["status_verifikasi"];
+                                                                ?>
+
+                                                                            <option value="<?=$id_status_verifikasi?>">
+                                                                                <?= $status_verifikasi ?></option>
+                                                                            <?php endforeach?>
+                                                                        </select>
+                                                                    </div>
+                                                                    <div class="form-group">
                                                                         <label for="keterangan">Keterangan</label>
                                                                         <input type="text" class="form-control"
                                                                             id="keterangan" name="keterangan"
@@ -394,9 +411,9 @@
                                                                             value="<?= $foto_ktp ?>">
                                                                     </div>
                                                                     <input type="text" class="form-control"
-                                                                    id="foto_ktp_old" aria-describedby="emailHelp"
-                                                                    name="foto_ktp_old" value="<?=$foto_ktp?>"
-                                                                    hidden>
+                                                                        id="foto_ktp_old" aria-describedby="emailHelp"
+                                                                        name="foto_ktp_old" value="<?=$foto_ktp?>"
+                                                                        hidden>
                                                                     <button type="submit"
                                                                         class="btn btn-primary">Submit</button>
                                                             </form>
@@ -451,7 +468,8 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="nik">NIK</label>
-                                                        <input type="text" class="form-control" id="nik" name="nik" required>
+                                                        <input type="text" class="form-control" id="nik" name="nik"
+                                                            required>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="tempat_lahir">Tempat Lahir</label>
@@ -512,6 +530,22 @@
 
                                                             <option value="<?=$id_kategori_bantuan?>">
                                                                 <?= $kategori_bantuan ?></option>
+                                                            <?php endforeach?>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="id_status_verifikasi">Pilih Status
+                                                            Verfikasi</label>
+                                                        <select class="form-control" id="id_status_verifikasi"
+                                                            name="id_status_verifikasi">
+                                                            <?php foreach($status_verifikasi_data as $u)
+                                                                :
+                                                                $id_status_verifikasi = $u["id_status_verifikasi"];
+                                                                $status_verifikasi = $u["status_verifikasi"];
+                                                                ?>
+
+                                                            <option value="<?=$id_status_verifikasi?>">
+                                                                <?= $status_verifikasi ?></option>
                                                             <?php endforeach?>
                                                         </select>
                                                     </div>
