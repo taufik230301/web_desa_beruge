@@ -7,6 +7,7 @@ class Web_Public extends CI_Controller {
 		parent::__construct();
 		$this->load->model('m_user');
 		$this->load->model('m_kegiatan');
+		$this->load->model('m_saran');
 	}
 
 	public function index()
@@ -26,6 +27,27 @@ class Web_Public extends CI_Controller {
 	{
 		$data['kegiatan'] = $this->m_kegiatan->get_kegiatan_by_id($id)->result_array();
 		$this->load->view('web_public/detail_kegiatan', $data);
-    }
+	}
+	
+	public function input_saran()
+	{
+		$nama = $this->input->post("nama");
+		$email = $this->input->post("email");
+		$subject = $this->input->post("subject");
+		$message = $this->input->post("message");
+
+		$hasil = $this->m_saran->insert_saran($nama, $email, $subject, $message);
+        
+		if($hasil==false){
+			$this->session->set_flashdata('eror_input','eror_input');
+		
+		}else{
+			$this->session->set_flashdata('input','input');
+		}
+		
+		redirect('Web_Public/index');
+
+
+	}
     
 }
