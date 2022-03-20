@@ -28,7 +28,6 @@ class Kategori_bantuan extends CI_Controller {
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
             $kategori_bantuan = $this->input->post("kategori_bantuan");
             
-    
             // echo $nama;
             // echo "<br>";
             // echo $username;
@@ -58,6 +57,7 @@ class Kategori_bantuan extends CI_Controller {
             // echo $kategori_bantuan;
             // echo "<br>";
             // die();
+            
             $hasil = $this->m_kategori_bantuan->insert_data_kategori_bantuan($kategori_bantuan);
         
                 if($hasil==false){
@@ -81,7 +81,6 @@ class Kategori_bantuan extends CI_Controller {
             $kategori_bantuan = $this->input->post("kategori_bantuan");
             $id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
             
-    
             // echo $nama;
             // echo "<br>";
             // echo $username;
@@ -111,6 +110,7 @@ class Kategori_bantuan extends CI_Controller {
             // echo $kategori_bantuan;
             // echo "<br>";
             // die();
+
             $hasil = $this->m_kategori_bantuan->update_data_kategori_bantuan($kategori_bantuan, $id_kategori_bantuan);
         
                 if($hasil==false){

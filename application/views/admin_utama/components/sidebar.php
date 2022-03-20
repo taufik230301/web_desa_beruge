@@ -52,7 +52,6 @@
                          </p>
                      </a>
                  </li>
-
                  <li class="nav-item">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-bars"></i>
@@ -173,7 +172,6 @@
                          </li>
                      </ul>
                  </li>
-
                  <li class="nav-item">
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-bars"></i>
@@ -196,6 +194,14 @@
                              </a>
                          </li>
                      </ul>
+                 </li>
+                 <li class="nav-item">
+                     <a href="<?=base_url();?>Saran/view_admin_utama" class="nav-link">
+                         <i class="nav-icon fas fa-chart-line"></i>
+                         <p>
+                             Saran
+                         </p>
+                     </a>
                  </li>
 
              </ul>

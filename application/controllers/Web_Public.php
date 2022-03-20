@@ -44,7 +44,6 @@ class Web_Public extends CI_Controller {
 		}else{
 			$this->session->set_flashdata('input','input');
 		}
-		
 		redirect('Web_Public/index');
 
 

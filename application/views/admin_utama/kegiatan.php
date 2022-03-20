@@ -246,13 +246,13 @@
                                                                     <input type="text" class="form-control"
                                                                         id="nama_kegiatan" aria-describedby="emailHelp"
                                                                         name="nama_kegiatan"
-                                                                        value="<?= $nama_kegiatan ?>" >
+                                                                        value="<?= $nama_kegiatan ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="foto_kegiatan">Foto Kegiatan</label>
                                                                     <input type="file" class="form-control"
                                                                         id="foto_kegiatan" aria-describedby="emailHelp"
-                                                                        name="foto_kegiatan">
+                                                                        name="foto_kegiatan" required>
 
                                                                 </div>
                                                                 <input type="text" class="form-control"
@@ -262,7 +262,7 @@
                                                                 <div class="form-group">
                                                                     <label for="nama_kegiatan">Keterangan</label>
                                                                     <textarea class="form-control" id="keterangan"
-                                                                        rows="3" name="keterangan" "><?= $keterangan ?></textarea>
+                                                                        rows="3" name="keterangan" required><?= $keterangan ?></textarea>
                                                                 </div>
                                                                 <div class=" form-group">
                                                                     <label for="tgl_kegiatan">Tanggal Kegiatan</label>

@@ -28,7 +28,6 @@ class Kategori_kelas_ekonomi extends CI_Controller {
         if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 1) {
             $kategori_kelas_ekonomi = $this->input->post("kategori_kelas_ekonomi");
             
-    
             // echo $nama;
             // echo "<br>";
             // echo $username;
@@ -58,6 +57,7 @@ class Kategori_kelas_ekonomi extends CI_Controller {
             // echo $kategori_kelas_ekonomi;
             // echo "<br>";
             // die();
+
             $hasil = $this->m_kategori_kelas_ekonomi->insert_data_kategori_kelas_ekonomi($kategori_kelas_ekonomi);
         
                 if($hasil==false){
