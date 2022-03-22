@@ -220,7 +220,7 @@
                                                                         Kategori Kelas Ekonomi</label>
                                                                     <select class="form-control"
                                                                         id="id_kategori_kelas_ekonomi"
-                                                                        name="id_kategori_kelas_ekonomi">
+                                                                        name="id_kategori_kelas_ekonomi" required>
 
                                                                         <?php foreach($kategori_kelas_ekonomi_data as $u)
                                                                             :
@@ -238,7 +238,7 @@
                                                                         Bantuan</label>
                                                                     <select class="form-control"
                                                                         id="id_kategori_bantuan"
-                                                                        name="id_kategori_bantuan">
+                                                                        name="id_kategori_bantuan" required>
                                                                         <?php foreach($kategori_bantuan_data as $u)
                                                                             :
                                                                             $id_kategori_bantuan = $u["id_kategori_bantuan"];
@@ -254,7 +254,7 @@
                                                                         Verfikasi</label>
                                                                     <select class="form-control"
                                                                         id="id_status_verifikasi"
-                                                                        name="id_status_verifikasi">
+                                                                        name="id_status_verifikasi" required>
                                                                         <?php foreach($status_verifikasi_data as $u)
                                                                 :
                                                                 $id_status_verifikasi = $u["id_status_verifikasi"];
@@ -306,53 +306,53 @@
                                     <div class="form-group">
                                         <label for="nama">Nama Lengkap</label>
                                         <input type="text" class="form-control" id="nama" name="nama"
-                                            aria-describedby="emailHelp">
+                                            aria-describedby="emailHelp" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="password">Password</label>
                                         <input type="text" class="form-control" id="password" name="password"
-                                            aria-describedby="emailHelp">
+                                            aria-describedby="emailHelp" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="no_hp">No HP</label>
                                         <input type="text" class="form-control" id="no_hp" name="no_hp"
-                                            aria-describedby="emailHelp">
+                                            aria-describedby="emailHelp" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">Email</label>
                                         <input type="text" class="form-control" id="email" name="email"
-                                            aria-describedby="emailHelp">
+                                            aria-describedby="emailHelp" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="nik">NIK</label>
-                                        <input type="text" class="form-control" id="nik" name="nik">
+                                        <input type="text" class="form-control" id="nik" name="nik" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="tempat_lahir">Tempat Lahir</label>
-                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
+                                        <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="tanggal_lahir">Tanggal Lahir</label>
-                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir">
+                                        <input type="date" class="form-control" id="tanggal_lahir" name="tanggal_lahir" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="alamat">Alamat</label>
-                                        <textarea class="form-control" id="alamat" rows="3" name="alamat"></textarea>
+                                        <textarea class="form-control" id="alamat" rows="3" name="alamat" required></textarea>
                                     </div>
                                     <div class="form-group">
                                         <label for="jenis_kelamin">Jenis Kelamin</label>
-                                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin">
+                                        <select class="form-control" id="jenis_kelamin" name="jenis_kelamin" required>
                                             <option value="L">Laki-Laki</option>
                                             <option value="P">Perempuan</option>
                                         </select>
                                     </div>
                                     <div class="form-group">
                                         <label for="pekerjaan">Pekerjaan</label>
-                                        <input type="text" class="form-control" id="pekerjaan" name="pekerjaan">
+                                        <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="id_rt">Pilih RT</label>
-                                        <select class="form-control" id="id_rt" name="id_rt">
+                                        <select class="form-control" id="id_rt" name="id_rt" required>
                                             <?php foreach($rt_data as $u)
                                                                 :
                                                                 $id_rt = $u["id_rt"];
@@ -366,7 +366,7 @@
                                     <div class="form-group">
                                         <label for="id_kategori_kelas_ekonomi">Pilih Kategori Kelas Ekonomi</label>
                                         <select class="form-control" id="id_kategori_kelas_ekonomi"
-                                            name="id_kategori_kelas_ekonomi">
+                                            name="id_kategori_kelas_ekonomi" required>
                                             <?php foreach($kategori_kelas_ekonomi_data as $u)
                                                                 :
                                                                 $id_kategori_kelas_ekonomi = $u["id_kategori_kelas_ekonomi"];
@@ -381,7 +381,7 @@
                                     <div class="form-group">
                                         <label for="id_kategori_bantuan">Pilih Kategori Bantuan</label>
                                         <select class="form-control" id="id_kategori_bantuan"
-                                            name="id_kategori_bantuan">
+                                            name="id_kategori_bantuan" required>
                                             <?php foreach($kategori_bantuan_data as $u)
                                                                 :
                                                                 $id_kategori_bantuan = $u["id_kategori_bantuan"];

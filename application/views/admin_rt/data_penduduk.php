@@ -289,143 +289,140 @@
                                                                     <label for="nama">Nama Lengkap</label>
                                                                     <input type="text" class="form-control" id="nama"
                                                                         name="nama" aria-describedby="emailHelp"
-                                                                        value="<?= $nama ?>">
+                                                                        value="<?= $nama ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="username">Username</label>
                                                                     <input type="text" class="form-control"
                                                                         id="username" name="username"
                                                                         aria-describedby="emailHelp"
-                                                                        value="<?= $username ?>">
+                                                                        value="<?= $username ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="password">Password</label>
                                                                     <input type="text" class="form-control"
                                                                         id="password" name="password"
                                                                         aria-describedby="emailHelp"
-                                                                        value="<?= $password ?>">
+                                                                        value="<?= $password ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label for="no_hp">No HP</label>
                                                                     <input type="text" class="form-control" id="no_hp"
                                                                         name="no_hp" aria-describedby="emailHelp"
-                                                                        value="<?= $no_hp ?>" </div>
-                                                                    <div class="form-group">
-                                                                        <label for="email">Email</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="email" name="email"
-                                                                            aria-describedby="emailHelp"
-                                                                            value="<?= $email ?>">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="nik">NIK</label>
-                                                                        <input type="text" class="form-control" id="nik"
-                                                                            name="nik" value="<?= $nik ?>">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="tempat_lahir">Tempat Lahir</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="tempat_lahir" name="tempat_lahir"
-                                                                            value="<?= $tempat_lahir ?>">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="tanggal_lahir">Tanggal Lahir</label>
-                                                                        <input type="date" class="form-control"
-                                                                            id="tanggal_lahir" name="tanggal_lahir"
-                                                                            value="<?= $tgl_lahir ?>">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="alamat">Alamat</label>
-                                                                        <textarea class="form-control" id="alamat"
-                                                                            rows="3"
-                                                                            name="alamat"><?= $alamat ?></textarea>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="jenis_kelamin">Jenis Kelamin</label>
-                                                                        <select class="form-control" id="jenis_kelamin"
-                                                                            name="jenis_kelamin">
-                                                                            <option value="L">Laki-Laki</option>
-                                                                            <option value="P">Perempuan</option>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="pekerjaan">Pekerjaan</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="pekerjaan" name="pekerjaan"
-                                                                            value="<?= $pekerjaan ?>">
-                                                                    </div>
-                                                                    <input type="text" value="<?= $id_rt?>" name="id_rt"
-                                                                        hidden>
-                                                                    <div class="form-group">
-                                                                        <label for="id_kategori_kelas_ekonomi">Pilih
-                                                                            Kategori Kelas Ekonomi</label>
-                                                                        <select class="form-control"
-                                                                            id="id_kategori_kelas_ekonomi"
-                                                                            name="id_kategori_kelas_ekonomi">
-                                                                            <?php foreach($kategori_kelas_ekonomi_data as $u)
+                                                                        value="<?= $no_hp ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="email">Email</label>
+                                                                    <input type="text" class="form-control" id="email"
+                                                                        name="email" aria-describedby="emailHelp"
+                                                                        value="<?= $email ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="nik">NIK</label>
+                                                                    <input type="text" class="form-control" id="nik"
+                                                                        name="nik" value="<?= $nik ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tempat_lahir">Tempat Lahir</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="tempat_lahir" name="tempat_lahir"
+                                                                        value="<?= $tempat_lahir ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="tanggal_lahir">Tanggal Lahir</label>
+                                                                    <input type="date" class="form-control"
+                                                                        id="tanggal_lahir" name="tanggal_lahir"
+                                                                        value="<?= $tgl_lahir ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="alamat">Alamat</label>
+                                                                    <textarea class="form-control" id="alamat" rows="3"
+                                                                        name="alamat" required><?= $alamat ?></textarea>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="jenis_kelamin">Jenis Kelamin</label>
+                                                                    <select class="form-control" id="jenis_kelamin"
+                                                                        name="jenis_kelamin" required>
+                                                                        <option value="L">Laki-Laki</option>
+                                                                        <option value="P">Perempuan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="pekerjaan">Pekerjaan</label>
+                                                                    <input type="text" class="form-control"
+                                                                        id="pekerjaan" name="pekerjaan"
+                                                                        value="<?= $pekerjaan ?>" required>
+                                                                </div>
+                                                                <input type="text" value="<?= $id_rt?>" name="id_rt"
+                                                                    hidden>
+                                                                <div class="form-group">
+                                                                    <label for="id_kategori_kelas_ekonomi">Pilih
+                                                                        Kategori Kelas Ekonomi</label>
+                                                                    <select class="form-control"
+                                                                        id="id_kategori_kelas_ekonomi"
+                                                                        name="id_kategori_kelas_ekonomi" required>
+                                                                        <?php foreach($kategori_kelas_ekonomi_data as $u)
                                                                 :
                                                                 $id_kategori_kelas_ekonomi = $u["id_kategori_kelas_ekonomi"];
                                                                 $kategori_kelas_ekonomi = $u["kategori_kelas_ekonomi"];
                                                                 ?>
 
-                                                                            <option
-                                                                                value="<?=$id_kategori_kelas_ekonomi?>">
-                                                                                <?= $kategori_kelas_ekonomi ?></option>
-                                                                            <?php endforeach?>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="id_kategori_bantuan">Pilih Kategori
-                                                                            Bantuan</label>
-                                                                        <select class="form-control"
-                                                                            id="id_kategori_bantuan"
-                                                                            name="id_kategori_bantuan">
-                                                                            <?php foreach($kategori_bantuan_data as $u)
+                                                                        <option value="<?=$id_kategori_kelas_ekonomi?>">
+                                                                            <?= $kategori_kelas_ekonomi ?></option>
+                                                                        <?php endforeach?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="id_kategori_bantuan">Pilih Kategori
+                                                                        Bantuan</label>
+                                                                    <select class="form-control"
+                                                                        id="id_kategori_bantuan"
+                                                                        name="id_kategori_bantuan" required>
+                                                                        <?php foreach($kategori_bantuan_data as $u)
                                                                 :
                                                                 $id_kategori_bantuan = $u["id_kategori_bantuan"];
                                                                 $kategori_bantuan = $u["kategori_bantuan"];
                                                                 ?>
 
-                                                                            <option value="<?=$id_kategori_bantuan?>">
-                                                                                <?= $kategori_bantuan ?></option>
-                                                                            <?php endforeach?>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="id_status_verifikasi">Pilih Status
-                                                                            Verfikasi</label>
-                                                                        <select class="form-control"
-                                                                            id="id_status_verifikasi"
-                                                                            name="id_status_verifikasi">
-                                                                            <?php foreach($status_verifikasi_data as $u)
+                                                                        <option value="<?=$id_kategori_bantuan?>">
+                                                                            <?= $kategori_bantuan ?></option>
+                                                                        <?php endforeach?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="id_status_verifikasi">Pilih Status
+                                                                        Verfikasi</label>
+                                                                    <select class="form-control"
+                                                                        id="id_status_verifikasi"
+                                                                        name="id_status_verifikasi" required>
+                                                                        <?php foreach($status_verifikasi_data as $u)
                                                                 :
                                                                 $id_status_verifikasi = $u["id_status_verifikasi"];
                                                                 $status_verifikasi = $u["status_verifikasi"];
                                                                 ?>
 
-                                                                            <option value="<?=$id_status_verifikasi?>">
-                                                                                <?= $status_verifikasi ?></option>
-                                                                            <?php endforeach?>
-                                                                        </select>
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="keterangan">Keterangan</label>
-                                                                        <input type="text" class="form-control"
-                                                                            id="keterangan" name="keterangan"
-                                                                            value="<?= $keterangan ?>">
-                                                                    </div>
-                                                                    <div class="form-group">
-                                                                        <label for="foto_ktp">Foto KTP</label>
-                                                                        <input type="file" class="form-control"
-                                                                            id="foto_ktp" name="foto_ktp"
-                                                                            value="<?= $foto_ktp ?>">
-                                                                    </div>
+                                                                        <option value="<?=$id_status_verifikasi?>">
+                                                                            <?= $status_verifikasi ?></option>
+                                                                        <?php endforeach?>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="keterangan">Keterangan</label>
                                                                     <input type="text" class="form-control"
-                                                                        id="foto_ktp_old" aria-describedby="emailHelp"
-                                                                        name="foto_ktp_old" value="<?=$foto_ktp?>"
-                                                                        hidden>
-                                                                    <button type="submit"
-                                                                        class="btn btn-primary">Submit</button>
+                                                                        id="keterangan" name="keterangan"
+                                                                        value="<?= $keterangan ?>" required>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label for="foto_ktp">Foto KTP</label>
+                                                                    <input type="file" class="form-control"
+                                                                        id="foto_ktp" name="foto_ktp"
+                                                                        value="<?= $foto_ktp ?>" required>
+                                                                </div>
+                                                                <input type="text" class="form-control"
+                                                                    id="foto_ktp_old" aria-describedby="emailHelp"
+                                                                    name="foto_ktp_old" value="<?=$foto_ktp?>" hidden>
+                                                                <button type="submit"
+                                                                    class="btn btn-primary">Submit</button>
                                                             </form>
                                                         </div>
                                                     </div>
