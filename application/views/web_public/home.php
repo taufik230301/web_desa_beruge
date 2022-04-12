@@ -79,7 +79,7 @@
                     <li><a class="nav-link scrollto " href="#portfolio">Kegiatan</a></li>
                     <li class="dropdown"><a href="#"><span>Data Bantuan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="#">Data Bantuan</a></li>
+                            <li><a href="<?= base_url()?>assets/public/data_penduduk/DATA.xlsx" target="_blank">Data Bantuan</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="<?=base_url();?>" target="_blank">Login</a></li>
