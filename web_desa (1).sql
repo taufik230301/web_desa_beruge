@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 15, 2022 at 01:57 AM
+-- Generation Time: Apr 19, 2022 at 01:02 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -148,6 +148,28 @@ INSERT INTO `rt` (`id_rt`, `nomor_rt`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `saran`
+--
+
+CREATE TABLE `saran` (
+  `id_saran` int(11) NOT NULL,
+  `nama` varchar(25) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `subject` varchar(50) NOT NULL,
+  `message` text NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `saran`
+--
+
+INSERT INTO `saran` (`id_saran`, `nama`, `email`, `subject`, `message`, `created_at`) VALUES
+(11, 'Taufiiqul Hakim', 'taufiiqulhakim23@gmail.com', 'Dana Bantuan Desa', 'Saya tidak mendapat bantuan desa, tolong admin verifikasi', '2022-03-22');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `status_verifikasi`
 --
 
@@ -207,7 +229,8 @@ INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_hp`, `id_user_lev
 (48, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 25),
 (52, 'Kresna', 'kresna123', 'kresna123@gmail.com', '0812781728', 4, 26),
 (53, 'Irfan', 'irfan123', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 27),
-(54, 'Rian', 'rian123', 'rian23@gmail.com', '0812712671', 4, 28);
+(54, 'Rian', 'rian123', 'rian23@gmail.com', '0812712671', 4, 28),
+(55, 'jalal123', 'jalal123', 'jalal@gmail.com', '081271627812', 4, 29);
 
 -- --------------------------------------------------------
 
@@ -255,11 +278,12 @@ INSERT INTO `user_detail` (`id_user_detail`, `nama`, `nik`, `tempat_lahir`, `tgl
 (21, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
 (22, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
 (23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
-(24, 'Malian', '017828912671', 'Palembang', '2022-03-11', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 2, 'Bagus', '6c97c5153f000218f0f0000ef647bcfa.jpg', 1),
-(25, 'Taufiiqulhakim', '061827182871812', 'Palembang', '2022-03-13', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 2, 2, 'baik', 'e1416dc7b1aea5b12b0352258027f0ff.png', 1),
-(26, 'Kresna Vespri', '06127172717281', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 6, 3, 2, 'Baik', 'e97e16103cd7ae61b97ad8b1c7d7fd89.png', 1),
+(24, 'Malian', '017828912671', 'Palembang', '2022-03-11', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 2, 'Bagus', '6c97c5153f000218f0f0000ef647bcfa.jpg', 2),
+(25, 'Taufiiqulhakim', '061827182871812', 'Palembang', '2022-03-13', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 2, 2, 'baik', 'e1416dc7b1aea5b12b0352258027f0ff.jpg', 2),
+(26, 'Kresna Vespri', '06127172717281', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 6, 3, 2, 'Baik', 'e97e16103cd7ae61b97ad8b1c7d7fd89.png', 2),
 (27, 'Muhammad Irfan', '06128781728121', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 2, 3, 'Bantuan Bupati', 'b90dd6910160135a870afdd3cfb684d7.png', 2),
-(28, 'RianHariyadi', '061827812', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'PNS', 1, 3, 2, 'bagus', '8585d36b90f277a5cd38bf0475e8e506.png', 1);
+(28, 'RianHariyadi', '061827812', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'PNS', 1, 3, 2, 'bagus', '8585d36b90f277a5cd38bf0475e8e506.png', 1),
+(29, 'Jalal', '061827182817218', 'Plaju', '2022-03-15', 'Jl. Plaju Raya utama', 'L', 'Pengusaha', 2, 2, 2, 'bagus', '48778d7667ae45f975d414276b19daa81.png', 1);
 
 -- --------------------------------------------------------
 
@@ -311,6 +335,12 @@ ALTER TABLE `rt`
   ADD PRIMARY KEY (`id_rt`);
 
 --
+-- Indexes for table `saran`
+--
+ALTER TABLE `saran`
+  ADD PRIMARY KEY (`id_saran`);
+
+--
 -- Indexes for table `status_verifikasi`
 --
 ALTER TABLE `status_verifikasi`
@@ -348,7 +378,7 @@ ALTER TABLE `kategori_bantuan`
 -- AUTO_INCREMENT for table `kategori_kelas_ekonomi`
 --
 ALTER TABLE `kategori_kelas_ekonomi`
-  MODIFY `id_kategori_kelas_ekonomi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kategori_kelas_ekonomi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kegiatan`
@@ -363,6 +393,12 @@ ALTER TABLE `rt`
   MODIFY `id_rt` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `saran`
+--
+ALTER TABLE `saran`
+  MODIFY `id_saran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
 -- AUTO_INCREMENT for table `status_verifikasi`
 --
 ALTER TABLE `status_verifikasi`
@@ -372,7 +408,7 @@ ALTER TABLE `status_verifikasi`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT for table `user_level`
