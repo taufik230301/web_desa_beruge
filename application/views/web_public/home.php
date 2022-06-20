@@ -10,7 +10,7 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link rel="icon" href="<?= base_url() ?>assets/image/logo.jpg" />
+    <link rel="icon" href="<?= base_url(); ?>assets/image/logo.jpg" />
     <link href="<?= base_url();?>assets/public/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
@@ -18,7 +18,7 @@
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
-    <link href="<?= base_url();?><?= base_url();?>assets/public/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="<?= base_url();?>assets/public/assets/vendor/aos/aos.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/public/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/public/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="<?= base_url();?>assets/public/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 
             <div id="logo">
                 <a href="<?= base_url()?>Web_public/index">
-                    <h1 class="text-white">DESA WANAMUKTI</h1>
+                    <h1 class="text-white">DESA BERUGE DARAT</h1>
                 </a>
                 <!-- Uncomment below if you prefer to use a text logo -->
                 <!--<h1><a href="index.html">Regna</a></h1>-->
@@ -79,7 +79,8 @@
                     <li><a class="nav-link scrollto " href="#portfolio">Kegiatan</a></li>
                     <li class="dropdown"><a href="#"><span>Data Bantuan</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
-                            <li><a href="<?= base_url()?>assets/public/data_penduduk/DATA.xlsx" target="_blank">Data Bantuan</a></li>
+                            <li><a href="<?= base_url()?>assets/public/data_penduduk/DATA.xlsx" target="_blank">Data
+                                    Bantuan</a></li>
                         </ul>
                     </li>
                     <li><a class="nav-link scrollto" href="<?=base_url();?>" target="_blank">Login</a></li>
@@ -92,8 +93,8 @@
     <!-- ======= Hero Section ======= -->
     <section id="hero">
         <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
-            <h1>Selamat Datang di Desa Wanamukti</h1>
-            <h2>Sistem Informasi Desa Wanamukti</h2>
+            <h1>Selamat Datang di Desa Beruge Darat</h1>
+            <h2>Sistem Informasi Desa Beruge Darat</h2>
             <a href="#about" class="btn-get-started">Selengkapnya</a>
         </div>
     </section><!-- End Hero Section -->
@@ -106,20 +107,19 @@
                 <div class="row about-container">
 
                     <div class="col-lg-6 content order-lg-1 order-2">
-                        <h2 class="title">Tentang Desa Wanamukti</h2>
+                        <h2 class="title">Tentang Desa Beruge Darat</h2>
                         <p>
-                            Sekilas Tentang Desa Wanamukti.
+                            Sekilas Tentang Desa Beruge Darat.
                         </p>
 
                         <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
                             <div class="icon"><i class="bi bi-briefcase"></i></div>
                             <h4 class="title"><a href="">Tentang Desa</a></h4>
-                            <p class="description">Wana Mukti adalah desa di kecamatan pulau rimau, Kabupaten Banyuasin
-                                Sumatera Selatan, Indonesia.
-                                Wana Mukti merupakan sebuah desa yang banyak dihuni transmigran sejak tahun 1983 dengan
-                                jumlah penduduk 825 Jiwa. Dimana desa
-                                tersebut berasal dari pemekaran kecamatan pulau rimau tahun 2006 yang membentuk tungkal
-                                ilir yang terbagi menjadi 29 desa.</p>
+                            <p class="description">Desa Beruge Darat merupakan Desa Pemekaran dari Desa Benuang yang
+                                merupakan Desa Induk, pada tanggal 25 Februari 2008 sesuai Keputusan Bupati Muara Enim
+                                Nomor 5 Tahun 2008 Desa Beruge Darat menjadi Desa Persiapan dan pada tanggal 4 Oktober
+                                2011 sesuai dengan Peraturan Bupati Muara Enim Nomor 25 tahun 2011 tentang penetapan
+                                Desa Beruge Darat dari Persiapan menjadi Desa Definitif.</p>
                         </div>
                     </div>
 
@@ -135,26 +135,20 @@
                     <div class="col-lg-6 content order-lg-1 order-2">
                         <h2 class="title">Visi</h2>
                         <p>
-                            Menjadikan Desa Wana Mukti Religious, adil dan sejahtera
+                            Bersama-sama meningkatkan pembangunan Desa baik Sumber Daya Manusia maupun Infrastruktur
+                            Desa untuk Kemajuan Bersama demi mencapai kesejahteraan Masyarakat Desa Beruge Darat
                         </p>
 
                     </div>
                     <div class="col-lg-6 content order-lg-1 order-2">
                         <h2 class="title">Misi</h2>
                         <p>
-                            1. Meciptakan penataan desa yang berkualitas melalui program tata ruang desa berbasis
-                            produktivitas ekonomi. <br>
-                            2. Meningkatkan mutu layanan kesehatan di desa wana mukti melalui gerakan desa sehat. <br>
-                            3. Meluaskan kesadaran hukum masyarakat melaui program sadar hukum. <br>
-                            4. Meningkatkan kualitas pendidik baik formal maupun non formal melalui gerakan kampong
-                            cerdas. <br>
-                            5. Mengoptimalkan hasil produksi perkebunan dan peternakan masyarakat melalui program
-                            gerakan mandiri pangan. <br>
-                            6. Meningkatkan pelayanan public dan keterbukaan informasi melalui program internet desa.
-                            <br>
-                            7. Meningkatkan pendapatan asli desa (PAD) melalui program BUMDES (Badan Usaha Milik Desa).
-                            <br>
-                            8. Peningkatan air bersih layak konsumsi melaui program PAMSIMAS Desa.
+                            1. Melanjutkan Pembangunan Desa yang multifungsi. <br>
+                            2. Pemerataan pembangunan infrastruktur disemua Dusun di Desa Beruge Darat. <br>
+                            3. Mengali dan Melatih Peningkatan Sumber Daya Manusia yang ada di Desa Beruge Darat. <br>
+                            4. Menyediakan ruang bagi masyarakat yang memberi saran dan kritikan yang membangun untuk
+                            menujuh masyarakat yang sejahteran dan berkeadilan. <br>
+
                         </p>
 
                     </div>
@@ -168,9 +162,8 @@
         <section id="facts">
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
-                    <h3 class="section-title">Data Penduduk Desa Wanamukti</h3>
-                    <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque</p>
+                    <h3 class="section-title">Data Penduduk Desa Beruge Darat</h3>
+                    <p class="section-description">Berikut data rincian data penduduk Desa Beruge Darat.</p>
                 </div>
                 <div class="row counters">
 
@@ -268,7 +261,7 @@
                 <div class="row" data-aos="zoom-in">
                     <div class="col-lg-9 text-center text-lg-start">
                         <h3 class="cta-title">Lengkapi data bantuan masyarakat</h3>
-                        <p class="cta-text"> Validasi data bantuan masyarakat desa wanamukti.</p>
+                        <p class="cta-text"> Validasi data bantuan masyarakat desa beruge darat.</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
                         <a class="cta-btn align-middle" href="<?= base_url()?>Register/index" target="_blank">Lengkapi
@@ -284,7 +277,7 @@
             <div class="container" data-aos="fade-up">
                 <div class="section-header">
                     <h3 class="section-title">Kegiatan</h3>
-                    <p class="section-description">Kegiatan Desa Wanamukti</p>
+                    <p class="section-description">Kegiatan Desa Beruge Darat</p>
                 </div>
 
 
@@ -334,7 +327,7 @@
                 </div>
             </div>
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31885.7836378196!2d104.45804036729093!3d-2.596238378932168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b3b4babedac21%3A0x18b1e6a9d23f652d!2sWana%20Mukti%2C%20Pulau%20Rimau%2C%20Banyuasin%20Regency%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1647433801265!5m2!1sen!2sid"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63728.146373932614!2d103.98017595!3d-3.3478809499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3a3f176278646b%3A0x608f05f269c73793!2sBeruge%20Darat%2C%20Talang%20Ubi%2C%20Muara%20Enim%20Regency%2C%20South%20Sumatra!5e0!3m2!1sen!2sid!4v1655696764630!5m2!1sen!2sid"
                 width="100%" height="380" frameborder="0" style="border:0" allowfullscreen></iframe>
 
 
@@ -346,7 +339,7 @@
                         <div class="info">
                             <div>
                                 <i class="bi bi-geo-alt"></i>
-                                <p>Jl. 19 Desa Wana Mukti t<br>Kecamatan Pulau Rimau <br>Kabupaten Banyuasin</p>
+                                <p>Beruge Darat, Talang Ubi, Penukal Abab Lematang Ilir</p>
                             </div>
 
                             <div>
@@ -397,7 +390,7 @@
         </div>
         <div class="container">
             <div class="copyright">
-                &copy; Copyright <strong>Desa Wanamukti</strong>
+                &copy; Copyright <strong>Desa Beruge Darat</strong>
             </div>
             <div class="credits">
             </div>

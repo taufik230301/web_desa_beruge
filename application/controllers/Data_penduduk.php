@@ -178,6 +178,7 @@ class Data_penduduk extends CI_Controller {
 				$nama = $this->input->post("nama");
 				$id = $this->input->post("id");
 				$id_user_detail = $this->input->post("id_user_detail");
+				$id_status_verifikasi = $this->input->post("id_status_verifikasi");
 				$id_user_level = 4;
 				$file_name = md5($username.$password);
 		
@@ -233,7 +234,10 @@ class Data_penduduk extends CI_Controller {
 				redirect('Data_penduduk/view_admin_utama');
 			}
 
-				$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name']);
+				$hasil = $this->m_user->update_data_penduduk($username, 
+				$password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, 
+				$alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, 
+				$keterangan, $id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);
 			
 					if($hasil==false){
 						$this->session->set_flashdata('eror_edit','eror_edit');
@@ -523,7 +527,6 @@ class Data_penduduk extends CI_Controller {
 				$id_kategori_kelas_ekonomi = $this->input->post("id_kategori_kelas_ekonomi");
 				$id_kategori_bantuan = $this->input->post("id_kategori_bantuan");
 				$keterangan = $this->input->post("keterangan");
-				$nama = $this->input->post("nama");
 				$id = $this->input->post("id");
 				$id_user_detail = $this->input->post("id_user_detail");
 				$id_status_verifikasi = $this->input->post("id_status_verifikasi");
@@ -586,7 +589,10 @@ class Data_penduduk extends CI_Controller {
 				redirect('Data_penduduk/view_admin_rt');
 			}
 
-				$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);
+				$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, 
+				$no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, 
+				$pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, 
+				$id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);
 			
 					if($hasil==false){
 						$this->session->set_flashdata('eror_edit','eror_edit');

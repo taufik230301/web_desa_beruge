@@ -4,7 +4,7 @@ class M_user extends CI_Model
 
     public function pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level, $id_status_verifikasi){
         $this->db->trans_start();
-       $this->db->query("INSERT INTO user(username,password,email ,no_hp ,id_user_level, id_user_detail) VALUES ('$username','$password','$email','$no_hp','$id_user_level',autoInc())");
+       $this->db->query("INSERT INTO user(id, username,password,email ,no_hp ,id_user_level, id_user_detail) VALUES ('$id','$username','$password','$email','$no_hp','$id_user_level',autoInc())");
        $this->db->query("INSERT INTO user_detail(id_user_detail, nama,nik,tempat_lahir ,tgl_lahir ,alamat, jenis_kelamin, pekerjaan, id_rt, id_kategori_bantuan, id_kategori_kelas_ekonomi, keterangan, id_status_verifikasi) VALUES (autoInc_user_detail(), null, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL,'$id_status_verifikasi')");
         $this->db->trans_complete();
         if($this->db->trans_status()==true)
@@ -87,7 +87,10 @@ class M_user extends CI_Model
             return false;
        }
 
-        public function update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp, $id_status_verifikasi){
+        public function update_data_penduduk($username, 
+        $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, 
+        $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, 
+        $keterangan, $id, $id_user_detail, $foto_ktp, $id_status_verifikasi){
             $this->db->trans_start();
             $this->db->query("UPDATE user SET username='$username',  password='$password',  email='$email',  no_hp='$no_hp'  WHERE id='$id'");
             $this->db->query("UPDATE user_detail SET nama='$nama',  nik='$nik',  tempat_lahir='$tempat_lahir',  tgl_lahir='$tgl_lahir',  alamat='$alamat',  jenis_kelamin='$jenis_kelamin',  pekerjaan='$pekerjaan', id_rt='$id_rt', id_kategori_bantuan='$id_kategori_bantuan', id_kategori_kelas_ekonomi='$id_kategori_kelas_ekonomi', keterangan='$keterangan' , foto_ktp='$foto_ktp', id_status_verifikasi='$id_status_verifikasi' WHERE id_user_detail='$id_user_detail'");
