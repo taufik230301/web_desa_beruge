@@ -70,21 +70,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
 
                     <div class="signin-form">
-                        <h2 class="form-title">Log in Akun</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?= base_url()?>Login/proses">
+                        <h2 class="form-title">Masukan Email</h2>
+                        <form method="POST" class="register-form" id="login-form" action="<?= base_url()?>ForgotPassword/proses">
                             <div class="form-group">
-                                <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="your_name" placeholder="Masukan Nama" />
-                            </div>
-                            <div class="form-group">
-                                <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="your_pass" placeholder="Kata Sandi" />
-                            </div>
-                            <div class="form-group">
-                                <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                <label for="email"><i class="zmdi zmdi-email material-icons-name"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Masukan Email" />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Log in" />
+                                <input type="submit" name="signin" id="signin" class="form-submit" value="Send Settings Request" />
                             </div>
                         </form>
 
