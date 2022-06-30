@@ -53,7 +53,7 @@ $(function() {
         "responsive": true,
         "lengthChange": true,
         "autoWidth": true,
-        "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"],
+        "buttons": [ "excel","print", "colvis"],
     }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
 
 });

@@ -37,6 +37,8 @@ class Data_penduduk extends CI_Controller {
 			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
 			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
 			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+			$data['status_verifikasi_data'] = $this->m_status_verifikasi->get_status_verifikasi()->result_array();
+			
 
 			$this->load->view('admin_utama/data_penduduk', $data);
 
@@ -55,6 +57,7 @@ class Data_penduduk extends CI_Controller {
 			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
 			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
 			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+			$data['status_verifikasi_data'] = $this->m_status_verifikasi->get_status_verifikasi()->result_array();
 
 			$this->load->view('admin_utama/data_penduduk', $data);
 
@@ -307,6 +310,7 @@ class Data_penduduk extends CI_Controller {
 			$data['rt_data'] = $this->m_rt->get_rt()->result_array();
 			$data['kategori_kelas_ekonomi_data'] = $this->m_kategori_kelas_ekonomi->get_kategori_kelas_ekonomi()->result_array();
 			$data['kategori_bantuan_data'] = $this->m_kategori_bantuan->get_kategori_bantuan()->result_array();
+			$data['status_verifikasi_data'] = $this->m_status_verifikasi->get_status_verifikasi()->result_array();
 
 			$this->load->view('admin_pkh/data_penduduk', $data);
 
@@ -721,6 +725,23 @@ class Data_penduduk extends CI_Controller {
 	
 		}
 
+		
+
+	}
+
+	public function view_masyarakat_penduduk()
+	{
+		if ($this->session->userdata('logged_in') == true AND $this->session->userdata('id_user_level') == 4) {
+			$data['data_penduduk'] = $this->m_user->get_user_penduduk()->result_array();
+			$this->load->view('masyarakat/data_penduduk_all', $data);
+
+		}else{
+
+			$this->session->set_flashdata('loggin_err','loggin_err');
+			redirect('Login/index');
+
+		}
+			
 	}
 
 }

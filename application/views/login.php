@@ -21,6 +21,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
+    <?php if ($this->session->flashdata('edit')){ ?>
+    <script>
+    swal({
+        title: "Berhasil!",
+        text: "Password Berhasil Diubah !",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
+    <?php if ($this->session->flashdata('success_send')){ ?>
+    <script>
+    swal({
+        title: "Berhasil Terkirim!",
+        text: "Request Setting Password Berhasil Terkirim!",
+        icon: "success"
+    });
+    </script>
+    <?php } ?>
     <?php if ($this->session->flashdata('input')){ ?>
     <script>
     swal({

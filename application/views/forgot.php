@@ -21,38 +21,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 
 <body>
-    <?php if ($this->session->flashdata('input')){ ?>
+    <?php if ($this->session->flashdata('error_send_no_email')){ ?>
     <script>
     swal({
-        title: "Berhasil Terdaftar!",
-        text: "Silahkan Anda Login!",
-        icon: "success"
-    });
-    </script>
-    <?php } ?>
-    <?php if ($this->session->flashdata('eror')){ ?>
-    <script>
-    swal({
-        title: "Eror!",
-        text: "Terjadi Kesalahan Dalam Proses data!",
+        title: "Error Email!",
+        text: "Email Anda Tidak Ditemukan!",
         icon: "error"
     });
     </script>
     <?php } ?>
-    <?php if ($this->session->flashdata('loggin_err')){ ?>
+
+    <?php if ($this->session->flashdata('error_send')){ ?>
     <script>
     swal({
-        title: "Session Anda Berakhir!",
-        text: "Silahkan Login Ulang!",
+        title: "Error Email!",
+        text: "Gagal Mengirim Request!",
         icon: "error"
     });
     </script>
     <?php } ?>
-    <?php if ($this->session->flashdata('loggin_err_no_user')){ ?>
+
+    <?php if ($this->session->flashdata('error_input')){ ?>
     <script>
     swal({
-        title: "Erorr!",
-        text: "Password dan Username Yang Anda Masukan Salah!",
+        title: "Error Update Token!",
+        text: "Gagal Mengirim Request!",
         icon: "error"
     });
     </script>
@@ -71,13 +64,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                     <div class="signin-form">
                         <h2 class="form-title">Masukan Email</h2>
-                        <form method="POST" class="register-form" id="login-form" action="<?= base_url()?>ForgotPassword/proses">
+                        <form method="POST" class="register-form" id="login-form"
+                            action="<?= base_url()?>ForgotPassword/proses">
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email material-icons-name"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Masukan Email" />
                             </div>
                             <div class="form-group form-button">
-                                <input type="submit" name="signin" id="signin" class="form-submit" value="Send Settings Request" />
+                                <input type="submit" name="signin" id="signin" class="form-submit"
+                                    value="Send Settings Request" />
                             </div>
                         </form>
 

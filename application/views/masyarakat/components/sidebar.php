@@ -2,9 +2,9 @@
  <aside class="main-sidebar sidebar-dark-primary elevation-4">
      <!-- Brand Logo -->
      <a href="index3.html" class="brand-link">
-         <img src="<?= base_url();?>assets/admin_lte/dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+         <img src="<?= base_url() ?>assets/image/logo.jpg" alt="AdminLTE Logo"
              class="brand-image img-circle elevation-3" style="opacity: .8">
-         <span class="brand-text font-weight-light">AdminLTE 3</span>
+         <span class="brand-text font-weight-light">SISM-DWM</span>
      </a>
 
      <!-- Sidebar -->
@@ -41,6 +41,15 @@
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Update Data
+                         </p>
+                     </a>
+                 </li>
+                 
+                 <li class="nav-item">
+                     <a href="<?=base_url();?>Data_penduduk/view_masyarakat_penduduk" class="nav-link">
+                         <i class="nav-icon fas fa-th"></i>
+                         <p>
+                             Penduduk Terdata
                          </p>
                      </a>
                  </li>

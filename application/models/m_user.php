@@ -23,6 +23,31 @@ class M_user extends CI_Model
         return $hasil;
     }
 
+    public function read_user_by_token($token){
+        $hasil=$this->db->query("SELECT * FROM user JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail WHERE token='$token' ");
+        return $hasil;
+    }
+
+    public function update_token_user($token,  $id){
+        $this->db->trans_start();
+       $this->db->query("UPDATE user SET token='$token' WHERE id='$id'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }   
+
+    public function edit_user($id, $password){
+        $this->db->trans_start();
+       $this->db->query("UPDATE user SET password='$password' WHERE id='$id'");
+        $this->db->trans_complete();
+        if($this->db->trans_status()==true)
+            return true;
+        else
+            return false;
+    }   
+
     public function get_user_penduduk(){
         $hasil=$this->db->query("SELECT * FROM user 
         JOIN user_detail ON user.id_user_detail = user_detail.id_user_detail
