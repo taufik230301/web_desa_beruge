@@ -51,7 +51,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="signup-form">
                         <h2 class="form-title">Buat Password Baru</h2>
                         <form method="POST" class="register-form"
-                            action="<?=base_url()?>forgotpasswordsetting_account/<?=$user['id']?>/<?=$user['token']?>"
+                            action="<?=base_url()?>forgotpassword/setting_account/<?=$user['id']?>/<?=$user['token']?>"
                             id="register-form">
 
                             <div class="form-group">

@@ -19,7 +19,7 @@
 
         <center>
             <h2>Request Ubah Password</h2>
-            <p>Berikut Link Yang digunakan untuk ubah password  <a href="http://localhost/web_desa/forgotpasswordchange_password/<?=$token?>">Link</a></p>
+            <p>Berikut Link Yang digunakan untuk ubah password  <a href="http://localhost/web_desa/forgotpassword/change_password/<?=$token?>">Link</a></p>
            
         </center>
 

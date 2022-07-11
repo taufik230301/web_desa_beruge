@@ -3,7 +3,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class forgotpassword extends CI_Controller {
+class forgotpassword/ extends CI_Controller {
 
     public function __construct()
     {
@@ -39,7 +39,7 @@ class forgotpassword extends CI_Controller {
 				if($hasil==false){
 
                     $this->session->set_flashdata('eror_input','eror_input');
-                    redirect('forgotpasswordindex');
+                    redirect('forgotpassword/index');
 				
 				}else{
 
@@ -74,7 +74,7 @@ class forgotpassword extends CI_Controller {
                         }else{
 
                             $this->session->set_flashdata('error_send','error_send');
-                            redirect('forgotpasswordindex');
+                            redirect('forgotpassword/index');
 
                         }
 		        }
@@ -82,7 +82,7 @@ class forgotpassword extends CI_Controller {
         }else{
 
             $this->session->set_flashdata('error_send_no_email','error_send_no_email');
-            redirect('forgotpasswordindex');
+            redirect('forgotpassword/index');
 
         }
 
@@ -108,7 +108,7 @@ class forgotpassword extends CI_Controller {
 
             if($hasil==false){
                 $this->session->set_flashdata('eror_edit','eror_edit');
-                redirect('forgotpasswordchange_password/'.$token);
+                redirect('forgotpassword/change_password/'.$token);
 			}else{
 				$this->session->set_flashdata('edit','edit');
 				redirect('Login/index');
@@ -116,7 +116,7 @@ class forgotpassword extends CI_Controller {
 
         }else{
             $this->session->set_flashdata('password_err','password_err');
-			redirect('forgotpasswordchange_password/'.$token);
+			redirect('forgotpassword/change_password/'.$token);
         }
     }
 
