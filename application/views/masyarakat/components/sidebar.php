@@ -29,7 +29,7 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                     <a href="<?=base_url();?>Dashboard/view_masyarakat" class="nav-link">
+                     <a href="<?=base_url();?>dashboardview_masyarakat" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Dashboard

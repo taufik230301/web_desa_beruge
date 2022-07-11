@@ -59,13 +59,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="signin-image">
                         <figure><img src="<?= base_url();?>assets/image/logo_desa.jpeg" alt="sing up image"></figure>
                         <a href="<?= base_url()?>Register/index" class="signup-image-link">Buat akun !</a>
-                        <a href="<?= base_url()?>ForgotPassword/index" class="signup-image-link">Lupa Password ?</a>
+                        <a href="<?= base_url()?>forgotpasswordindex" class="signup-image-link">Lupa Password ?</a>
                     </div>
 
                     <div class="signin-form">
                         <h2 class="form-title">Masukan Email</h2>
                         <form method="POST" class="register-form" id="login-form"
-                            action="<?= base_url()?>ForgotPassword/proses">
+                            action="<?= base_url()?>forgotpasswordproses">
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email material-icons-name"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Masukan Email" />

@@ -111,7 +111,7 @@
                                 <div class="icon">
                                     <i class="ion ion-pie-graph"></i>
                                 </div>
-                                <a href="<?=base_url();?>Dashboard/view_admin_pkh" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>dashboard/view_admin_pkh" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
@@ -126,7 +126,7 @@
                                 <div class="icon">
                                     <i class="ion ion-connection-bars"></i>
                                 </div>
-                                <a href="<?=base_url();?>Dashboard/view_admin_pkh" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>dashboard/view_admin_pkh" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

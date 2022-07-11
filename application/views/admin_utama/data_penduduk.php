@@ -82,7 +82,7 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a
-                                        href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
+                                        href="<?=base_url();?>dashboard/view_admin_utama">Home</a></li>
                                 <li class="breadcrumb-item"><a
                                         href="<?=base_url();?>Data_penduduk/view_admin_utama">Data Penduduk</a></li>
                             </ol>

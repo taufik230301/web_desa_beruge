@@ -34,7 +34,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('email', $user['email']);
 				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				$this->session->set_flashdata('login_success','login_success');
-				redirect('Dashboard/view_admin_utama');
+				redirect('dashboard/view_admin_utama');
 
 			}else if($user['id_user_level'] == 2){
 
@@ -45,7 +45,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('email', $user['email']);
 				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				$this->session->set_flashdata('login_success','login_success');
-				redirect('Dashboard/view_admin_pkh');
+				redirect('dashboard/view_admin_pkh');
 
 			}
 			else if($user['id_user_level'] == 3){
@@ -58,7 +58,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('email', $user['email']);
 				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				$this->session->set_flashdata('login_success','login_success');
-				redirect('Dashboard/view_admin_rt');
+				redirect('dashboard/view_admin_rt');
 
 			}else if($user['id_user_level'] == 4){
 
@@ -69,7 +69,7 @@ class Login extends CI_Controller {
 				$this->session->set_userdata('email', $user['email']);
 				$this->session->set_userdata('id_user_level', $user['id_user_level']);
 				$this->session->set_flashdata('login_success','login_success');
-				redirect('Dashboard/view_masyarakat');
+				redirect('dashboard/view_masyarakat');
 
 			}else{
 				$this->session->set_flashdata('loggin_err','loggin_err');
