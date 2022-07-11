@@ -1,5 +1,5 @@
 <?php
-class M_kegiatan extends CI_Model
+class m_kegiatan extends CI_Model
 {
     function get_kegiatan(){
         $hasil=$this->db->query("SELECT * FROM kegiatan JOIN user ON kegiatan.id_penulis = user.id ");

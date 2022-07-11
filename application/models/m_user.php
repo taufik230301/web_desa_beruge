@@ -1,5 +1,5 @@
 <?php
-class M_user extends CI_Model
+class m_user extends CI_Model
 {
 
     public function pendaftaran_user($username,  $email, $no_hp, $password, $id_user_level, $id_status_verifikasi){

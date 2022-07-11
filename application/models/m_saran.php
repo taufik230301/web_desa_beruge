@@ -1,5 +1,5 @@
 <?php
-class M_saran extends CI_Model
+class m_saran extends CI_Model
 {
     function get_saran(){
         $hasil=$this->db->query("SELECT * FROM saran");
