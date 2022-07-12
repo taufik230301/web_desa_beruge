@@ -126,7 +126,7 @@
                                                 <th>Alamat</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>Pekerjaan</th>
-                                                <th>RT</th>
+                                                <th>Dusun</th>
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>
@@ -343,7 +343,7 @@
                                                                         value="<?= $pekerjaan ?>" required>
                                                                 </div>
                                                                 <div class="form-group">
-                                                                    <label for="id_rt">Pilih RT</label>
+                                                                    <label for="id_rt">Pilih Dusun</label>
                                                                     <select class="form-control" id="id_rt"
                                                                         name="id_rt" required>
                                                                         <?php foreach($rt_data as $u)
@@ -511,7 +511,7 @@
                                         <input type="text" class="form-control" id="pekerjaan" name="pekerjaan" required>
                                     </div>
                                     <div class="form-group">
-                                        <label for="id_rt">Pilih RT</label>
+                                        <label for="id_rt">Pilih Dusun</label>
                                         <select class="form-control" id="id_rt" name="id_rt" required>
                                             <?php foreach($rt_data as $u)
                                                                 :

@@ -81,7 +81,7 @@
                      <a href="#" class="nav-link">
                          <i class="nav-icon fas fa-bars"></i>
                          <p>
-                             Filter RT Penduduk
+                             Filter Dusun Penduduk
                              <i class="fas fa-angle-left right"></i>
                          </p>
                      </a>
@@ -89,19 +89,19 @@
                          <li class="nav-item">
                              <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/2" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>RT 001</p>
+                                 <p>Dusun 01</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/3" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>RT 002</p>
+                                 <p>Dusun 02</p>
                              </a>
                          </li>
                          <li class="nav-item">
                              <a href="<?=base_url();?>Data_Penduduk/view_admin_utama_filter_rt/4" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
-                                 <p>RT 003</p>
+                                 <p>Dusun 03</p>
                              </a>
                          </li>
                         

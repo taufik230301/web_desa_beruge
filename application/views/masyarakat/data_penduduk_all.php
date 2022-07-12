@@ -76,7 +76,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Dashboard</h1>
+                            <h1 class="m-0">Data Penduduk Terdaftar</h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">
@@ -121,7 +121,7 @@
                                                 <th>Alamat</th>
                                                 <th>Jenis Kelamin</th>
                                                 <th>Pekerjaan</th>
-                                                <th>RT</th>
+                                                <th>Dusun</th>
                                                 <th>Kategori Bantuan</th>
                                                 <th>Kategori Kelas Ekonomi</th>
                                                 <th>Keterangan</th>

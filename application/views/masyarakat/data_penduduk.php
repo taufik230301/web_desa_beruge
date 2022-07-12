@@ -225,7 +225,7 @@
                                         value="<?= $pekerjaan ?>">
                                 </div>
                                 <div class="form-group mt-5">
-                                    <label for="id_rt">Pilih RT</label>
+                                    <label for="id_rt">Pilih Dusun</label>
                                     <select class="form-control" id="id_rt" name="id_rt">
                                         <?php foreach($rt_data as $u)
                                                                 :
