@@ -82,9 +82,9 @@
                         <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
                                 <li class="breadcrumb-item"><a
-                                        href="<?=base_url();?>dashboard/view_admin_utama">Home</a></li>
+                                        href="<?=base_url();?>Dashboard/view_admin_utama">Home</a></li>
                                 <li class="breadcrumb-item"><a
-                                        href="<?=base_url();?>Data_penduduk/view_admin_utama">Data Penduduk</a></li>
+                                        href="<?=base_url();?>Data_Penduduk/view_admin_utama">Data Penduduk</a></li>
                             </ol>
                         </div>
                         <!-- /.col -->
@@ -224,7 +224,7 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <form
-                                                                action="<?php echo base_url()?>Data_penduduk/hapus_data_admin_utama?>"
+                                                                action="<?php echo base_url()?>Data_Penduduk/hapus_data_admin_utama?>"
                                                                 method="post" enctype="multipart/form-data">
                                                                 <div class="row">
                                                                     <div class="col-md-12">
@@ -268,7 +268,7 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <form
-                                                                action="<?= base_url(); ?>Data_penduduk/edit_data_admin_utama"
+                                                                action="<?= base_url(); ?>Data_Penduduk/edit_data_admin_utama"
                                                                 enctype="multipart/form-data" method="POST">
                                                                 <input type="text" name="id" value="<?= $id_user ?>"
                                                                     hidden>
@@ -456,7 +456,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?= base_url(); ?>Data_penduduk/input_data_admin_utama"
+                                <form action="<?= base_url(); ?>Data_Penduduk/input_data_admin_utama"
                                     enctype="multipart/form-data" method="POST">
                                     <div class="form-group">
                                         <label for="username">Username</label>

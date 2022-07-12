@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Data_penduduk extends CI_Controller {
+class Data_Penduduk extends CI_Controller {
 	public function __construct()
     {
 		parent::__construct();
@@ -138,7 +138,7 @@ class Data_penduduk extends CI_Controller {
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_utama');
+				redirect('Data_Penduduk/view_admin_utama');
 			}
 			
 					
@@ -151,7 +151,7 @@ class Data_penduduk extends CI_Controller {
 				}else{
 					$this->session->set_flashdata('input','input');
 				}
-				redirect('Data_penduduk/view_admin_utama');
+				redirect('Data_Penduduk/view_admin_utama');
 		}else{
 
 			$this->session->set_flashdata('loggin_err','loggin_err');
@@ -234,7 +234,7 @@ class Data_penduduk extends CI_Controller {
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_utama');
+				redirect('Data_Penduduk/view_admin_utama');
 			}
 
 				$hasil = $this->m_user->update_data_penduduk($username, 
@@ -249,7 +249,7 @@ class Data_penduduk extends CI_Controller {
 						$this->session->set_flashdata('edit','edit');
 					}
 					@unlink($path.$this->input->post('foto_ktp_old'));
-					redirect('Data_penduduk/view_admin_utama');
+					redirect('Data_Penduduk/view_admin_utama');
 			}else{
 		
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -275,7 +275,7 @@ class Data_penduduk extends CI_Controller {
 					$this->session->set_flashdata('hapus','hapus');
 				}
 				@unlink($path.$this->input->post('foto_ktp_old'));
-				redirect('Data_penduduk/view_admin_utama');
+				redirect('Data_Penduduk/view_admin_utama');
 			}else{
 	
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -370,7 +370,7 @@ class Data_penduduk extends CI_Controller {
 					}else{
 						$this->session->set_flashdata('edit','edit');
 					}
-					redirect('Data_penduduk/view_admin_pkh');
+					redirect('Data_Penduduk/view_admin_pkh');
 			}else{
 		
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -468,7 +468,7 @@ class Data_penduduk extends CI_Controller {
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_utama');
+				redirect('Data_Penduduk/view_admin_utama');
 			}
 			
 				
@@ -480,7 +480,7 @@ class Data_penduduk extends CI_Controller {
 					}else{
 						$this->session->set_flashdata('input','input');
 					}
-					redirect('Data_penduduk/view_admin_rt');
+					redirect('Data_Penduduk/view_admin_rt');
 			}else{
 		
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -505,7 +505,7 @@ class Data_penduduk extends CI_Controller {
 					$this->session->set_flashdata('hapus','hapus');
 				}
 				@unlink($path.$this->input->post('foto_ktp_old'));
-				redirect('Data_penduduk/view_admin_rt');
+				redirect('Data_Penduduk/view_admin_rt');
 			}else{
 	
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -590,7 +590,7 @@ class Data_penduduk extends CI_Controller {
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_rt');
+				redirect('Data_Penduduk/view_admin_rt');
 			}
 
 				$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, 
@@ -605,7 +605,7 @@ class Data_penduduk extends CI_Controller {
 						$this->session->set_flashdata('edit','edit');
 					}
 					@unlink($path.$this->input->post('foto_ktp_old'));
-					redirect('Data_penduduk/view_admin_rt');
+					redirect('Data_Penduduk/view_admin_rt');
 			}else{
 		
 				$this->session->set_flashdata('loggin_err','loggin_err');
@@ -705,7 +705,7 @@ class Data_penduduk extends CI_Controller {
 				$foto_ktp = $this->upload->data();
 			}else{
 				$this->session->set_flashdata('error_file','error_file');
-				redirect('Data_penduduk/view_admin_rt');
+				redirect('Data_Penduduk/view_admin_rt');
 			}
 
 			$hasil = $this->m_user->update_data_penduduk($username, $password, $nama, $email, $no_hp, $id_user_level, $nik, $tempat_lahir, $tgl_lahir, $alamat, $jenis_kelamin, $pekerjaan, $id_rt, $id_kategori_bantuan, $id_kategori_kelas_ekonomi, $keterangan, $id, $id_user_detail, $foto_ktp['file_name'], $id_status_verifikasi);
@@ -717,7 +717,7 @@ class Data_penduduk extends CI_Controller {
 					$this->session->set_flashdata('edit','edit');
 				}
 				@unlink($path.$this->input->post('foto_ktp_old'));
-				redirect('Data_penduduk/view_masyarakat/'.$id);
+				redirect('Data_Penduduk/view_masyarakat/'.$id);
 		}else{
 	
 			$this->session->set_flashdata('loggin_err','loggin_err');

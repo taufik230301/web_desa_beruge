@@ -210,7 +210,7 @@
                                                         </div>
                                                         <div class="modal-body">
                                                             <form
-                                                                action="<?= base_url(); ?>Data_penduduk/edit_data_admin_pkh"
+                                                                action="<?= base_url(); ?>Data_Penduduk/edit_data_admin_pkh"
                                                                 enctype="multipart/form-data" method="POST">
                                                                 <input type="text" name="id_user_detail"
                                                                     value="<?= $id_user_detail ?>" hidden>
@@ -301,7 +301,7 @@
                                 </button>
                             </div>
                             <div class="modal-body">
-                                <form action="<?= base_url(); ?>Data_penduduk/input_data_admin_pkh"
+                                <form action="<?= base_url(); ?>Data_Penduduk/input_data_admin_pkh"
                                     enctype="multipart/form-data" method="POST">
                                     <div class="form-group">
                                         <label for="nama">Nama Lengkap</label>

@@ -161,7 +161,7 @@
                             </div>
 
 
-                            <form action="<?= base_url(); ?>Data_penduduk/edit_data_masyarakat"
+                            <form action="<?= base_url(); ?>Data_Penduduk/edit_data_masyarakat"
                                 enctype="multipart/form-data" method="POST" class="mb-3">
                                 <input type="text" name="id" value="<?= $id_user ?>" hidden>
                                 <input type="text" name="id_user_detail" value="<?= $id_user_detail ?>" hidden>

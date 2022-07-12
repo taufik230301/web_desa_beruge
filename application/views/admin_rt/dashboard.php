@@ -66,7 +66,7 @@
                                 <div class="icon">
                                     <i class="ion ion-bag"></i>
                                 </div>
-                                <a href="<?=base_url();?>Data_penduduk/view_admin_rt" class="small-box-footer">More info <i
+                                <a href="<?=base_url();?>Data_Penduduk/view_admin_rt" class="small-box-footer">More info <i
                                         class="fas fa-arrow-circle-right"></i></a>
                             </div>
                         </div>

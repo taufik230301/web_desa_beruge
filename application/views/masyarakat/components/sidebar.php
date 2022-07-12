@@ -29,7 +29,7 @@
                  <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                  <li class="nav-item">
-                     <a href="<?=base_url();?>dashboard/view_masyarakat" class="nav-link">
+                     <a href="<?=base_url();?>Dashboard/view_masyarakat" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Dashboard
@@ -37,7 +37,7 @@
                      </a>
                  </li>
                  <li class="nav-item">
-                     <a href="<?=base_url();?>Data_penduduk/view_masyarakat/<?=$this->session->userdata('id');?>" class="nav-link">
+                     <a href="<?=base_url();?>Data_Penduduk/view_masyarakat/<?=$this->session->userdata('id');?>" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Update Data
@@ -46,7 +46,7 @@
                  </li>
                  
                  <li class="nav-item">
-                     <a href="<?=base_url();?>Data_penduduk/view_masyarakat_penduduk" class="nav-link">
+                     <a href="<?=base_url();?>Data_Penduduk/view_masyarakat_penduduk" class="nav-link">
                          <i class="nav-icon fas fa-th"></i>
                          <p>
                              Penduduk Terdata
