@@ -123,7 +123,7 @@
                              </a>
                          </li>
                          <li class="nav-item">
-                             <a href="<?=base_url();?>Kategori_kelas_Ekonomi/view_admin_utama" class="nav-link">
+                             <a href="<?=base_url();?>Kategori_kelas_ekonomi/view_admin_utama" class="nav-link">
                                  <i class="far fa-circle nav-icon"></i>
                                  <p>Kategori Kelas Ekonomi</p>
                              </a>
