@@ -203,11 +203,6 @@
                                         value="<?= $tgl_lahir ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="tempat_lahir">Tempat Lahir</label>
-                                    <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir"
-                                        value="<?= $tempat_lahir ?>">
-                                </div>
-                                <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <textarea class="form-control" id="alamat" rows="3"
                                         name="alamat"><?= $alamat ?></textarea>
