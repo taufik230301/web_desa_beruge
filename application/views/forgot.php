@@ -68,7 +68,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             action="<?= base_url()?>ForgotPassword/proses">
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email material-icons-name"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Masukan Email" />
+                                <input type="email" name="email" id="email" placeholder="Masukan Email" required
+                                    oninvalid="this.setCustomValidity('Enter Email Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit"

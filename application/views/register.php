@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <!-- Main css -->
     <link rel="stylesheet" href="<?= base_url();?>assets/login/css/style.css">
     <script src="<?= base_url() ?>node_modules/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="icon"href="<?= base_url() ?>assets/image/logo.jpg" />
+    <link rel="icon" href="<?= base_url() ?>assets/image/logo.jpg" />
 </head>
 
 <body>
@@ -42,24 +42,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             id="register-form">
                             <div class="form-group">
                                 <label for="username"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="text" name="username" id="username" placeholder="Your Name" />
+                                <input type="text" name="username" id="username" placeholder="Your Name" required
+                                    oninvalid="this.setCustomValidity('Enter User Name Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email" />
+                                <input type="email" name="email" id="email" placeholder="Your Email" required
+                                    oninvalid="this.setCustomValidity('Enter Email Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group">
                                 <label for="no_hp"><i class="zmdi zmdi-phone"></i></label>
-                                <input type="text" name="no_hp" id="no_hp" placeholder="Your Phone" />
+                                <input type="text" name="no_hp" id="no_hp" placeholder="Your Phone" required
+                                    oninvalid="this.setCustomValidity('Enter NO Hp Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="pass" placeholder="Password" />
+                                <input type="password" name="password" id="pass" placeholder="Password" required
+                                    oninvalid="this.setCustomValidity('Enter Password Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_password" id="re_pass"
-                                    placeholder="Repeat your password" />
+                                    placeholder="Repeat your password" required
+                                    oninvalid="this.setCustomValidity('Enter Password Here')"
+                                    oninput="this.setCustomValidity('')" />
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" />

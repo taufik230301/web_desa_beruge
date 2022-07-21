@@ -56,12 +56,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="password" id="pass" placeholder="Password" />
+                                <input type="password" name="password" id="pass" placeholder="Password" required
+                                    oninvalid="this.setCustomValidity('Enter Password Here')"
+                                    oninput="this.setCustomValidity('')"/>
                             </div>
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_password" id="re_pass"
-                                    placeholder="Repeat your password" />
+                                    placeholder="Repeat your password" required
+                                    oninvalid="this.setCustomValidity('Enter Password Here')"
+                                    oninput="this.setCustomValidity('')"/>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signup" id="signup" class="form-submit" />
