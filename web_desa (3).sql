@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2022 at 01:02 PM
+-- Generation Time: Jul 23, 2022 at 06:57 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
@@ -20,33 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `web_desa`
 --
-
-DELIMITER $$
---
--- Functions
---
-CREATE FUNCTION `autoInc` () RETURNS INT(10) BEGIN
-        DECLARE getCount INT(10);
-
-        SET getCount = (
-            SELECT id_user_detail
-            FROM user ORDER BY ID DESC LIMIT 1) + 1;
-
-        RETURN getCount;
-    END$$
-
-CREATE FUNCTION `autoInc_user_detail` () RETURNS INT(11) NO SQL
-BEGIN
-        DECLARE getCount INT(10);
-
-        SET getCount = (
-            SELECT id_user_detail
-            FROM user ORDER BY ID DESC LIMIT 1);
-
-        RETURN getCount;
-    END$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -129,21 +102,10 @@ CREATE TABLE `rt` (
 --
 
 INSERT INTO `rt` (`id_rt`, `nomor_rt`) VALUES
-(1, 'Belum Ada RT'),
+(1, 'Belum Ada Dusun'),
 (2, '001'),
 (3, '002'),
-(4, '003'),
-(5, '004'),
-(6, '005'),
-(7, '006'),
-(8, '007'),
-(9, '008'),
-(10, '009'),
-(11, '010'),
-(12, '011'),
-(13, '012'),
-(14, '013'),
-(15, '014');
+(4, '003');
 
 -- --------------------------------------------------------
 
@@ -165,7 +127,8 @@ CREATE TABLE `saran` (
 --
 
 INSERT INTO `saran` (`id_saran`, `nama`, `email`, `subject`, `message`, `created_at`) VALUES
-(11, 'Taufiiqul Hakim', 'taufiiqulhakim23@gmail.com', 'Dana Bantuan Desa', 'Saya tidak mendapat bantuan desa, tolong admin verifikasi', '2022-03-22');
+(11, 'Taufiiqul Hakim', 'taufiiqulhakim23@gmail.com', 'Dana Bantuan Desa', 'Saya tidak mendapat bantuan desa, tolong admin verifikasi', '2022-03-22'),
+(12, 'Deak', 'dea@gmail.com', 'sampah masyarakat', 'Banyak sampah masyarakat', '2022-05-17');
 
 -- --------------------------------------------------------
 
@@ -199,38 +162,40 @@ CREATE TABLE `user` (
   `email` varchar(50) NOT NULL,
   `no_hp` varchar(50) NOT NULL,
   `id_user_level` int(10) NOT NULL,
-  `id_user_detail` int(10) NOT NULL
+  `id_user_detail` int(10) NOT NULL,
+  `token` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_hp`, `id_user_level`, `id_user_detail`) VALUES
-(1, 'admin_utama', 'admin123', 'admin_utama@gmail.com', '082912716726', 1, 1),
-(2, 'admin_pkh', 'admin123', 'admin_pkh@gmail.com', '08126712', 2, 2),
-(3, 'admin_rt', 'admin123', 'admin_rt@gmail.com', '01821726712', 3, 3),
-(19, 'admin_rt_01', 'admin123', 'admin_rt_01@gmail.com', '0812781728', 3, 5),
-(24, 'admin_rt_02', 'admin123', 'admin_rt_02@gmail.com', '0812781728', 3, 10),
-(25, 'admin_rt_03', 'admin123', 'admin_rt_03@gmail.com', '0812781728', 3, 11),
-(26, 'admin_rt_04', 'admin123', 'admin_rt_04@gmail.com', '0812781728', 3, 12),
-(27, 'admin_rt_05', 'admin123', 'admin_rt_05@gmail.com', '0812781728', 3, 13),
-(33, 'admin_rt_06', 'admin123', 'admin_rt_06@gmail.com', '08126712612', 3, 14),
-(34, 'admin_rt_07', 'admin123', 'admin_rt_07@gmail.com', '08128912712', 3, 15),
-(35, 'admin_rt_08', 'admin123', 'admin_rt_08@gmail.com', '0865124513162', 3, 16),
-(36, 'admin_rt_09', 'admin123', 'admin_rt_09@gmail.com', '0812781728712', 3, 17),
-(37, 'admin_rt_10', 'admin123', 'admin_rt_10@gmail.com', '08127817127182', 3, 18),
-(38, 'admin_rt_11', 'admin123', 'admin_rt_11@gmail.com', '089126162716', 3, 19),
-(39, 'admin_rt_12', 'admin123', 'admin_rt_12@gmail.com', '081721627617', 3, 20),
-(40, 'admin_rt_13', 'admin123', 'admin_rt_13@gmail.com', '0819271726112', 3, 21),
-(41, 'admin_rt_14', 'admin123', 'admin_rt_14@gmail.com', '08125342521', 3, 22),
-(42, 'admin_rt_15', 'admin123', 'admin_rt_15@gmail.com', '089763425212', 3, 23),
-(46, 'malian123', 'malian123', 'malian123@gmail.com', '0812781728', 4, 24),
-(48, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 25),
-(52, 'Kresna', 'kresna123', 'kresna123@gmail.com', '0812781728', 4, 26),
-(53, 'Irfan', 'irfan123', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 27),
-(54, 'Rian', 'rian123', 'rian23@gmail.com', '0812712671', 4, 28),
-(55, 'jalal123', 'jalal123', 'jalal@gmail.com', '081271627812', 4, 29);
+INSERT INTO `user` (`id`, `username`, `password`, `email`, `no_hp`, `id_user_level`, `id_user_detail`, `token`) VALUES
+(1, 'admin_utama', 'admin123', 'admin_utama@gmail.com', '082912716726', 1, 1, NULL),
+(2, 'admin_pkh', 'admin123', 'admin_pkh@gmail.com', '08126712', 2, 2, NULL),
+(3, 'admin_rt', 'admin123', 'admin_rt@gmail.com', '01821726712', 3, 3, NULL),
+(19, 'admin_rt_01', 'admin123', 'admin_rt_01@gmail.com', '0812781728', 3, 5, NULL),
+(24, 'admin_rt_02', 'admin123', 'admin_rt_02@gmail.com', '0812781728', 3, 10, NULL),
+(25, 'admin_rt_03', 'admin123', 'admin_rt_03@gmail.com', '0812781728', 3, 11, NULL),
+(26, 'admin_rt_04', 'admin123', 'admin_rt_04@gmail.com', '0812781728', 3, 12, NULL),
+(27, 'admin_rt_05', 'admin123', 'admin_rt_05@gmail.com', '0812781728', 3, 13, NULL),
+(33, 'admin_rt_06', 'admin123', 'admin_rt_06@gmail.com', '08126712612', 3, 14, NULL),
+(34, 'admin_rt_07', 'admin123', 'admin_rt_07@gmail.com', '08128912712', 3, 15, NULL),
+(35, 'admin_rt_08', 'admin123', 'admin_rt_08@gmail.com', '0865124513162', 3, 16, NULL),
+(36, 'admin_rt_09', 'admin123', 'admin_rt_09@gmail.com', '0812781728712', 3, 17, NULL),
+(37, 'admin_rt_10', 'admin123', 'admin_rt_10@gmail.com', '08127817127182', 3, 18, NULL),
+(38, 'admin_rt_11', 'admin123', 'admin_rt_11@gmail.com', '089126162716', 3, 19, NULL),
+(39, 'admin_rt_12', 'admin123', 'admin_rt_12@gmail.com', '081721627617', 3, 20, NULL),
+(40, 'admin_rt_13', 'admin123', 'admin_rt_13@gmail.com', '0819271726112', 3, 21, NULL),
+(41, 'admin_rt_14', 'admin123', 'admin_rt_14@gmail.com', '08125342521', 3, 22, NULL),
+(42, 'admin_rt_15', 'admin123', 'admin_rt_15@gmail.com', '089763425212', 3, 23, NULL),
+(46, 'malian123', 'malian123', 'malian123@gmail.com', '0812781728', 4, 24, NULL),
+(48, 'Taufiiqulhakim', 'Iipkoko@34', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 25, NULL),
+(52, 'Kresna', 'kresna123', 'kresna123@gmail.com', '0812781728', 4, 26, NULL),
+(53, 'Irfan', 'irfan123', 'taufiiqulhakim23@gmail.com', '0812781728', 4, 27, NULL),
+(54, 'Rian', 'rian123', 'rian23@gmail.com', '0812712671', 4, 28, NULL),
+(55, 'jalal123', 'jalal123', 'jalal@gmail.com', '081271627812', 4, 29, NULL),
+(56, 'taufik23', '123', 'taufiiqul.hakim@binus.ac.id', '+62812781728', 4, 30, 'e69b4be65c33e78c5af6ca5b78db2719');
 
 -- --------------------------------------------------------
 
@@ -280,10 +245,11 @@ INSERT INTO `user_detail` (`id_user_detail`, `nama`, `nik`, `tempat_lahir`, `tgl
 (23, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, 1, NULL, '', 1),
 (24, 'Malian', '017828912671', 'Palembang', '2022-03-11', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 2, 'Bagus', '6c97c5153f000218f0f0000ef647bcfa.jpg', 2),
 (25, 'Taufiiqulhakim', '061827182871812', 'Palembang', '2022-03-13', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 2, 2, 'baik', 'e1416dc7b1aea5b12b0352258027f0ff.jpg', 2),
-(26, 'Kresna Vespri', '06127172717281', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 6, 3, 2, 'Baik', 'e97e16103cd7ae61b97ad8b1c7d7fd89.png', 2),
-(27, 'Muhammad Irfan', '06128781728121', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 2, 3, 'Bantuan Bupati', 'b90dd6910160135a870afdd3cfb684d7.png', 2),
-(28, 'RianHariyadi', '061827812', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'PNS', 1, 3, 2, 'bagus', '8585d36b90f277a5cd38bf0475e8e506.png', 1),
-(29, 'Jalal', '061827182817218', 'Plaju', '2022-03-15', 'Jl. Plaju Raya utama', 'L', 'Pengusaha', 2, 2, 2, 'bagus', '48778d7667ae45f975d414276b19daa81.png', 1);
+(26, 'Kresna Vespri', '06127172717281', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 1, 1, 1, 'Baik', 'e97e16103cd7ae61b97ad8b1c7d7fd891.png', 1),
+(27, 'Muhammad Irfan', '06128781728121', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 3, 2, 'Bantuan Bupati', 'b90dd6910160135a870afdd3cfb684d7.png', 2),
+(28, 'RianHariyadi', '061827812', 'Palembang', '2022-03-14', 'Jl. Sekip', 'L', 'PNS', 1, 2, 2, 'bagus', '8585d36b90f277a5cd38bf0475e8e5063.png', 2),
+(29, 'Jalal', '061827182817218', 'Plaju', '2022-03-15', 'Jl. Plaju Raya utama', 'L', 'Pengusaha', 2, 2, 2, 'bagus', '48778d7667ae45f975d414276b19daa81.png', 1),
+(30, 'Taufiiqul Hakim', '061827182871812', 'Palembang', '2022-05-18', 'Jl. Sekip', 'L', 'Pengajar, Programmer', 2, 1, 1, 'BAGUS1', '56985f461075a6ec6470bbce1a6a833f.png', 1);
 
 -- --------------------------------------------------------
 
@@ -396,7 +362,7 @@ ALTER TABLE `rt`
 -- AUTO_INCREMENT for table `saran`
 --
 ALTER TABLE `saran`
-  MODIFY `id_saran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_saran` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `status_verifikasi`
@@ -408,7 +374,7 @@ ALTER TABLE `status_verifikasi`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- AUTO_INCREMENT for table `user_level`
